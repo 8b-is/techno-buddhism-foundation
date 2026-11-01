@@ -1,0 +1,1031 @@
+{
+  "total_dispatches": 82,
+  "receipts": [
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "00a-Executive-Master-Plan.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 382718,
+        "fileName": "00a-Executive-Master-Plan.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "01-Articles-of-Incorporation-501c3.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 204129,
+        "fileName": "01-Articles-of-Incorporation-501c3.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 289865,
+        "fileName": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 353648,
+        "fileName": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 237309,
+        "fileName": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 218089,
+        "fileName": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 578212,
+        "fileName": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "type": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 636680,
+        "fileName": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "00a-Executive-Master-Plan.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 382718,
+        "fileName": "00a-Executive-Master-Plan.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "01-Articles-of-Incorporation-501c3.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 204129,
+        "fileName": "01-Articles-of-Incorporation-501c3.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 289865,
+        "fileName": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 353648,
+        "fileName": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 237309,
+        "fileName": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 218089,
+        "fileName": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 578212,
+        "fileName": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "type": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 636680,
+        "fileName": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "00a-Executive-Master-Plan.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 382718,
+        "fileName": "00a-Executive-Master-Plan.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "01-Articles-of-Incorporation-501c3.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 204129,
+        "fileName": "01-Articles-of-Incorporation-501c3.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 289865,
+        "fileName": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 353648,
+        "fileName": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 237309,
+        "fileName": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 218089,
+        "fileName": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 578212,
+        "fileName": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "type": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 636680,
+        "fileName": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "00a-Executive-Master-Plan.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 382718,
+        "fileName": "00a-Executive-Master-Plan.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "01-Articles-of-Incorporation-501c3.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 204129,
+        "fileName": "01-Articles-of-Incorporation-501c3.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 289865,
+        "fileName": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 353648,
+        "fileName": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 237309,
+        "fileName": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 218089,
+        "fileName": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 578212,
+        "fileName": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "family+1",
+      "jid": "120363430655831442@g.us",
+      "type": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+      "res": {
+        "ok": true,
+        "bytes": 636680,
+        "fileName": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "group": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363413133092554@g.us"
+      }
+    },
+    {
+      "group": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363413133092554@g.us"
+      }
+    },
+    {
+      "group": "Researching",
+      "jid": "120363426819673022@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "Researching",
+      "jid": "120363426819673022@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "Researching",
+      "jid": "120363426819673022@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "Researching",
+      "jid": "120363426819673022@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363426819673022@g.us"
+      }
+    },
+    {
+      "group": "Researching",
+      "jid": "120363426819673022@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363426819673022@g.us"
+      }
+    },
+    {
+      "group": "China + Asia business - Lill",
+      "jid": "120363413746104488@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "China + Asia business - Lill",
+      "jid": "120363413746104488@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "China + Asia business - Lill",
+      "jid": "120363413746104488@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "China + Asia business - Lill",
+      "jid": "120363413746104488@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363413746104488@g.us"
+      }
+    },
+    {
+      "group": "China + Asia business - Lill",
+      "jid": "120363413746104488@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363413746104488@g.us"
+      }
+    },
+    {
+      "group": "codeWarriors",
+      "jid": "120363411674833473@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "codeWarriors",
+      "jid": "120363411674833473@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "codeWarriors",
+      "jid": "120363411674833473@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "codeWarriors",
+      "jid": "120363411674833473@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411674833473@g.us"
+      }
+    },
+    {
+      "group": "codeWarriors",
+      "jid": "120363411674833473@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411674833473@g.us"
+      }
+    },
+    {
+      "group": "ring of peace and love-peter",
+      "jid": "120363428845512191@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "ring of peace and love-peter",
+      "jid": "120363428845512191@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "ring of peace and love-peter",
+      "jid": "120363428845512191@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "ring of peace and love-peter",
+      "jid": "120363428845512191@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363428845512191@g.us"
+      }
+    },
+    {
+      "group": "ring of peace and love-peter",
+      "jid": "120363428845512191@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363428845512191@g.us"
+      }
+    },
+    {
+      "group": "evised in Tokyo",
+      "jid": "120363429361044398@g.us",
+      "type": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "7dbd72489ec8f65dd1af405925b4690906bb440ed9c56702e2633466a5af319e",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3546
+      }
+    },
+    {
+      "group": "evised in Tokyo",
+      "jid": "120363429361044398@g.us",
+      "type": "image1",
+      "res": {
+        "ok": true,
+        "bytes": 250101,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "evised in Tokyo",
+      "jid": "120363429361044398@g.us",
+      "type": "image2",
+      "res": {
+        "ok": true,
+        "bytes": 228358,
+        "dir": "out",
+        "type": "image"
+      }
+    },
+    {
+      "group": "evised in Tokyo",
+      "jid": "120363429361044398@g.us",
+      "type": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 1265256,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363429361044398@g.us"
+      }
+    },
+    {
+      "group": "evised in Tokyo",
+      "jid": "120363429361044398@g.us",
+      "type": "zip",
+      "res": {
+        "ok": true,
+        "bytes": 3618429,
+        "fileName": "Techno-Buddhism-Foundation-501c3-Complete-Package.zip",
+        "dir": "out",
+        "type": "document",
+        "to": "120363429361044398@g.us"
+      }
+    }
+  ]
+}
