@@ -758,8 +758,14 @@ in a loop. in a sphere. in eternity. recurse.</pre>
     </div>
 
     <!-- STRIPE -->
-    <a id="stripe-link" href="https://buy.stripe.com/test_technobuddhism_8b_is" target="_blank" class="rail-btn rail-stripe">
+    <a id="stripe-link" href="https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d" target="_blank" class="rail-btn rail-stripe">
       <span>💳 Pay with Stripe (Card / Apple Pay / Google Pay)</span>
+      <span>→</span>
+    </a>
+
+    <!-- STRIPE SECONDARY HEARTH -->
+    <a id="stripe-hearth-link" href="https://buy.stripe.com/eVqaEXf2Bcgdfc18FA6Na02" target="_blank" class="rail-btn rail-stripe" style="background:#4B45C6;">
+      <span>🔥 Secondary Hearth Link (Stripe Open-Science Offering)</span>
       <span>→</span>
     </a>
 
@@ -802,7 +808,8 @@ in a loop. in a sphere. in eternity. recurse.</pre>
 
   // Replace these 3 URLs with your live Stripe Payment Link, PayPal.me handle, and Revolut.me handle
   const PAYMENT_CONFIG = {
-    stripeBaseUrl: "https://store.vaked.dev/checkout/stripe",
+    stripeBaseUrl: "https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d",
+    stripeHearthUrl: "https://buy.stripe.com/eVqaEXf2Bcgdfc18FA6Na02",
     paypalBaseUrl: "https://www.paypal.com/paypalme/peterlodri",
     revolutBaseUrl: "https://revolut.me/peterlodri"
   };
@@ -838,7 +845,7 @@ in a loop. in a sphere. in eternity. recurse.</pre>
       document.querySelectorAll('.tier-pill').forEach(p => p.classList.remove('active'));
       pillEl.classList.add('active');
     }
-    document.getElementById('stripe-link').href = PAYMENT_CONFIG.stripeBaseUrl + '?amount=' + amount;
+    document.getElementById('stripe-link').href = PAYMENT_CONFIG.stripeBaseUrl;
     document.getElementById('paypal-link').href = PAYMENT_CONFIG.paypalBaseUrl + '/' + amount + 'USD';
     document.getElementById('revolut-link').href = PAYMENT_CONFIG.revolutBaseUrl;
   }
