@@ -857,6 +857,17 @@ in a loop. in a sphere. in eternity. recurse.</pre>
     document.getElementById('revolut-link').href = PAYMENT_CONFIG.revolutBaseUrl;
   }
 
+  async function unlockBookFromDaemon(bookId) {
+    const res = await fetch('/api/claim/commons', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ book_id: bookId })
+    });
+    if (!res.ok) return alert('Could not unlock volume right now.');
+    const grant = await res.json();
+    window.location.href = grant.download_url;
+  }
+
   // Singing Bowl WebAudio
   let audioCtx = null;
   function ringBowl(freq) {
