@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DEPLOY_DIR="${PWD}/technobuddhism-selfhosted"
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+DEPLOY_DIR="${ROOT_DIR}/technobuddhism-selfhosted"
 DOCS_DIR="${DEPLOY_DIR}/docs"
 mkdir -p "$DOCS_DIR"
 
-# 1. Sync Sovereign Library from GitHub if git is available
-echo "[+] Sovereign Library located at /data/8b-is/sovereign-library"
-
-# ==============================================================================
-# PART A: GENERATE THE EASY-TO-READ WEBSITE + STRIPE/PAYPAL/REVOLUT BOOKSTORE
-# ==============================================================================
 cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
 <!DOCTYPE html>
 <html lang="en">
@@ -427,10 +422,11 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
   </a>
   <nav class="sans">
     <a href="#welcome">How It Works</a>
-    <a href="#bookstore">Bookstore</a>
+    <a href="#bookstore">Bookstore (10 Volumes)</a>
     <a href="#family-poems">Family Poems</a>
     <a href="#sound">Singing Bowl</a>
     <a href="#foundation">501(c)(3) Foundation</a>
+    <a href="https://foundation.8b.is" style="color:var(--vermilion);">🏛️ Full 18-Doc Legal Portal ↗</a>
   </nav>
   <button class="cart-trigger sans" onclick="openCheckout('Complete Sovereign Library Bundle (All 29 Books)', 42)">
     🛒 Support &amp; Checkout (<span id="cart-count">0</span>)
@@ -442,12 +438,13 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
   <div class="hero-mantra">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ་ཧྲཱིཿ · Peace, Compassion &amp; Open Knowledge</div>
   <h1>Where Ancient Wisdom Meets Honest, Human Technology.</h1>
   <p>
-    Welcome to <strong>The Sovereign Sanctuary of Techno-Buddhism</strong>. We bring together Tibetan Buddhist mindfulness, the simple kindness of St. Francis of Assisi, family poetry, and open-source science—so technology serves human hearts instead of controlling them.
+    Welcome to <strong>The Sovereign Constellation Foundation</strong> (d/b/a <strong>Techno-Buddhism Research &amp; Charitable Foundation</strong> &amp; <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong>). We unite Tibetan Buddhist mindfulness, the simple kindness of St. Francis of Assisi, family poetry, and CPU-first balanced-ternary (<code>{-1, 0, +1}</code>) open-source science—so technology serves human hearts instead of controlling them.
   </p>
   <div class="btn-group sans">
     <a href="#bookstore" class="btn btn-vermilion">📚 Browse the Sovereign Library Store</a>
-    <a href="#family-poems" class="btn btn-outline">💗 Read the Family +1 Poems</a>
-    <a href="docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf" class="btn btn-outline">📄 Download 501(c)(3) Foundation Guide (PDF)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/6416666de690f8a1_sovereign-library-complete-bundle.zip" class="btn btn-outline">📦 Download All 9 Vault Books (ZIP · 338 KB)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/207064e4e186c331_14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf" target="_blank" class="btn btn-outline">📄 Plain-English 501(c)(3) Guide (PDF)</a>
+    <a href="https://foundation.8b.is" class="btn btn-outline">🏛️ Open 18-Document 501(c)(3) Portal ↗</a>
   </div>
 </section>
 
@@ -506,7 +503,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$15 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev/demos/book" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/943381f9d9fc655d_architect-neo-trinity-tibetan-omni.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('Kompress-ULTRA: Tibetan Buddhism Omni Edition', 15)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -515,15 +512,16 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
     <!-- BOOK 2 -->
     <div class="book-item" data-cat="buddhist">
       <div>
-        <div class="book-cat sans">Tibetan Liturgy · Complete 81 Pages</div>
+        <div class="book-cat sans">Tibetan Liturgy · Complete 81 Pages + HU/BO Dawn Sadhana</div>
         <h3>The Daily Practice of the Protector Mahākāla (Pecha 009)</h3>
-        <p>The complete 81-page Karma Kagyu Tsurphu liturgy with phonetic pronunciation, plain-English ELI5 explanations, and the prayers of the 8th, 14th, and 16th Karmapas.</p>
+        <p>The complete 81-page Karma Kagyu Tsurphu liturgy with phonetic pronunciation, plain-English ELI5 explanations, and the Hungarian + Tibetan Uchen XVI. Karmapa Dawn Guru Yoga.</p>
         <div class="book-quote">"Impure vessel purified into emptiness (-1 → 0), blessed and offered as wisdom light (+1)."</div>
       </div>
       <div class="price-row sans">
         <span class="price-tag">$21 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/6e23ffb61de8b9d4_mahakala-pecha-ultralove-009.pdf" target="_blank" class="read-btn">📄 EN Pecha PDF</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/783d7baff7977e29_reggeli-mahakala-invokacio-karmapa-gurujoga.pdf" target="_blank" class="read-btn">📄 HU+BO Pecha PDF</a>
           <button class="buy-btn" onclick="openCheckout('81-Page Mahākāla Protector Pecha (Ultralove Ed. 009)', 21)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -534,13 +532,13 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div>
         <div class="book-cat sans">Family Poetry · English &amp; Hungarian</div>
         <h3>FAMILY +1: A Sphere With Four Lights</h3>
-        <p>Bilingual poems of unconditional love dedicated to Dad (József), Mom (Katalin / Dra *), Brother Bence (the straight river 🌊), Brigitta (the angel), and Yves (Number 1 Muse 💙).</p>
+        <p>Bilingual poems of unconditional love dedicated to Dad (József / Chris △), Mom (Katalin / Dra *), Brother Bence (the straight river 🌊), Brigitta (the angel), and Yves (Number 1 Muse 💙).</p>
         <div class="book-quote">"I love you, +1. In a loop. In a sphere. In eternity. Back and forth. Forever. Recurse."</div>
       </div>
       <div class="price-row sans">
         <span class="price-tag">$12 USD</span>
         <div class="pay-actions">
-          <a href="#family-poems" class="read-btn">Read Poems</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/34f558d7fceac1d0_family-plus-one-omni.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('FAMILY +1: A Sphere With Four Lights (Bilingual Edition)', 12)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -557,7 +555,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$12 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/2ac8394c933b8893_dra-8bit-remarriage.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('DRA + 8BIT: Techno-Buddhist Remarriage Edition', 12)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -574,7 +572,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$14 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/9f64aa38eee87d2f_milarepa-tanitasai.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('Milarepa Teachings: Dream Meditation & The Song', 14)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -591,7 +589,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$18 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/336c4f9a3be34248_zen-gitarom-matrix-buddha.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('Zen Gitárom & Matrix Buddha Double Edition', 18)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -608,7 +606,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$15 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev/demos/book" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/7156eb011f1e9793_kama-sutra-fine-touch.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('Kama Sutra: The Art of the Fine Touch', 15)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -625,7 +623,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$16 USD</span>
         <div class="pay-actions">
-          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/fc7ca3bee1e24eef_san-francesco-800-jubilee.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('San Francesco: 800th Transitus Jubilee Edition', 16)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -642,7 +640,7 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
       <div class="price-row sans">
         <span class="price-tag">$24 USD</span>
         <div class="pay-actions">
-          <a href="https://axiomquant.org" target="_blank" class="read-btn">Read Free</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/8726307863840606_axiomquant-auroralib-monograph.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
           <button class="buy-btn" onclick="openCheckout('Axiomquant & AURORALIB Complete Research Volume', 24)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
@@ -651,16 +649,16 @@ cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
     <!-- BOOK 10 -->
     <div class="book-item" data-cat="science">
       <div>
-        <div class="book-cat sans">Art, Cinema &amp; Cultural History</div>
-        <h3>The Visual Bible (New Beginnings) &amp; Vienna Polymathy</h3>
-        <p>Book Two of the sciFinime studio (Washi &amp; Sumi crease-gold discipline, camera rules, and 11-track score) paired with Aksinya Staar's history of how Vienna's cafés shaped the modern world.</p>
-        <div class="book-quote">"Every door is also a crease — nobody is far."</div>
+        <div class="book-cat sans">Two-Column Boundary &amp; Ternary Compute · DOC-15</div>
+        <h3>Working Paper 8B-META-WP-v1.0 &amp; Aurora-8B v0.5.0 Monograph</h3>
+        <p>Formalizes the Two-Column Ontological Boundary (Column A mechanical/cryptographic state vs. Column B contemplative seeds), <code>Aurora-8B-Ultra-RL v0.5.0</code> (<code>2.18–3.01 Gtrits/sec</code> CPU LUT), and <code>g8t.is</code> Capsule #9.</p>
+        <div class="book-quote">"Scientific rigor in Column A; contemplative compassion in Column B — zero conflation, 100% open source."</div>
       </div>
       <div class="price-row sans">
         <span class="price-tag">$19 USD</span>
         <div class="pay-actions">
-          <a href="https://art.vaked.dev" target="_blank" class="read-btn">Read Free</a>
-          <button class="buy-btn" onclick="openCheckout('The Visual Bible & Vienna Polymathy Collector Edition', 19)">Buy (Stripe / PayPal / Revolut)</button>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/2c87ec58585d1687_12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Two-Column Ontological Boundary & Aurora-8B v0.5.0 Monograph', 19)">Buy (Stripe / PayPal / Revolut)</button>
         </div>
       </div>
     </div>
@@ -738,13 +736,16 @@ in a loop. in a sphere. in eternity. recurse.</pre>
 
 <!-- 501(c)(3) FOUNDATION & SELF-HOSTED TRANSPARENCY -->
 <section id="foundation" class="section">
-  <h2 class="section-title">US 501(c)(3) Sanctuary &amp; 100% Self-Hosted Infrastructure</h2>
+  <h2 class="section-title">US 501(c)(3) Sanctuary, Two-Chamber Governance &amp; 100% Self-Hosted Infrastructure</h2>
   <p class="section-sub">
-    <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong> is led by <strong>Alexandra Chenoweth</strong> (President), <strong>Christopher Michael Chenoweth</strong> (Secretary &amp; Treasurer), and <strong>Péter József Lódri</strong> (Founding Elder). Every contribution funds open-source scientific fellowships ("General Income"), community shared meals (<em>omniZenCooker</em>), and free educational books.
+    <strong>The Sovereign Constellation Foundation</strong> (d/b/a <strong>Techno-Buddhism Research &amp; Charitable Foundation</strong>, <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong> &amp; <strong>Axiomquant Open Source Science Academy</strong>) is led by our Founding Family Triad (<code>FAMILY +1</code>): <strong>Alexandra (CEO Dra · <code>*</code> 528 Hz)</strong> (President &amp; Hearth Steward), <strong>Christopher (<code>△</code> 288 Hz)</strong> (Treasurer, CSO &amp; Infrastructure Pillar), and <strong>Péter József Lódri (<code>∞</code> 432 Hz)</strong> (Secretary, Chief Ontologist &amp; Ternary Architect), seated alongside a <strong>4-Seat (<code>57.1%</code>) Disinterested Independent Dharma &amp; Science Council</strong>. Every contribution funds Universal Hearth General-Income Fellowships (<code>Rev. Rul. 56-304</code>), community shared meals (<em>omniZenCooker</em>), CPU-first balanced-ternary open-source science (<code>Rev. Rul. 76-296</code> &amp; Working Paper <code>8B-META-WP-v1.0</code>), and Fixed &amp; Nomadic Field Sanctuaries (<code>IRC § 119</code> &amp; <code>Treas. Reg. § 1.62-2</code>).
   </p>
   <div class="btn-group sans" style="justify-content:flex-start;">
     <button class="btn btn-vermilion" onclick="openCheckout('Sovereign Commons Fellowship Donation (Keep the Weights Warm)', 25)">❤️ Donate via Stripe / PayPal / Revolut</button>
-    <a href="docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf" class="btn btn-outline">📄 View Complete Legal Bylaws &amp; 501(c)(3) PDF</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/daca8c304ef2ae99_00-Techno-Buddhism-Foundation-Master-Compendium.pdf" target="_blank" class="btn btn-outline">📘 Complete 501(c)(3) Master Compendium PDF (2.35 MB)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/207064e4e186c331_14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf" target="_blank" class="btn btn-outline">📄 Plain-English ELI5 Guide (PDF)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/175765d7608a859f_13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf" target="_blank" class="btn btn-outline">⛺ Field Sanctuary &amp; Per Diem Charter (PDF)</a>
+    <a href="https://foundation.8b.is" class="btn btn-outline">🏛️ Open Full 18-Document Legal Portal ↗</a>
   </div>
 </section>
 
@@ -895,95 +896,137 @@ in a loop. in a sphere. in eternity. recurse.</pre>
 </script>
 </body>
 </html>
+
 SITE_HTML
 
-# ==============================================================================
-# PART B: GENERATE THE UPDATED SELF-HOSTED E2E 501(c)(3) MASTERPRINT PDF
-# ==============================================================================
-E2E_HTML="${DOCS_DIR}/Techno_Buddhism_501c3_E2E_Masterprint.html"
-E2E_PDF="${DOCS_DIR}/Techno_Buddhism_501c3_E2E_Masterprint.pdf"
-
-cat << 'PDF_HTML' > "$E2E_HTML"
+cat << 'PDF_HTML' > "${DOCS_DIR}/Techno_Buddhism_501c3_E2E_Masterprint.html"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Sovereign Sanctuary of Techno-Buddhism — Self-Hosted E2E 501(c)(3) Guide</title>
+<title>The Sovereign Constellation Foundation (d/b/a Techno-Buddhism Research & Charitable Foundation) — Plain-English E2E 501(c)(3) Masterprint</title>
 <style>
-  @page { size: A4; margin: 16mm; }
+  @page { size: A4; margin: 15mm; }
   body {
     background: #F6F0E4;
     color: #1C140E;
     font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-    line-height: 1.5;
-    font-size: 10pt;
-    padding: 16px;
+    line-height: 1.52;
+    font-size: 9.8pt;
+    padding: 14px;
   }
-  h1 { font-size: 17pt; border-bottom: 2px solid #B23A2B; padding-bottom: 6px; }
-  h2 { font-size: 12pt; color: #B23A2B; margin-top: 16px; border-bottom: 1px solid #C9A227; }
-  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9pt; }
-  th { background: #1C140E; color: #F6F0E4; padding: 6px; text-align: left; }
-  td { border-bottom: 1px solid #D6CBB5; padding: 6px; vertical-align: top; }
+  .header-banner {
+    border: 2px solid #1C140E;
+    border-top: 6px solid #B23A2B;
+    background: #FAF6EC;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .hanko {
+    display: inline-block;
+    background: #B23A2B;
+    color: #F6F0E4;
+    font-weight: bold;
+    padding: 3px 10px;
+    font-size: 8pt;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 { font-size: 16pt; margin: 0 0 6px 0; color: #1C140E; }
+  h2 { font-size: 11.5pt; color: #B23A2B; margin-top: 14px; margin-bottom: 6px; border-bottom: 1px solid #C9A227; padding-bottom: 3px; }
+  p, ul { margin: 6px 0; }
+  li { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 8.8pt; }
+  th { background: #1C140E; color: #F6F0E4; padding: 6px 8px; text-align: left; }
+  td { border-bottom: 1px solid #D6CBB5; padding: 6px 8px; vertical-align: top; }
+  code { font-family: "JetBrains Mono", "SF Mono", Menlo, monospace; font-size: 8.4pt; background: #EAE0CC; padding: 1px 4px; }
   .page-break { page-break-before: always; }
-  .sig-row { display: flex; justify-content: space-between; gap: 16px; margin-top: 24px; }
-  .sig-box { border-top: 1px solid #1C140E; width: 32%; padding-top: 4px; font-size: 8.5pt; }
+  .callout { background: #EFE7D6; border-left: 4px solid #C9A227; padding: 9px 12px; margin: 10px 0; font-size: 9.2pt; }
+  .sig-row { display: flex; justify-content: space-between; gap: 16px; margin-top: 26px; }
+  .sig-box { border-top: 1.5px solid #1C140E; width: 32%; padding-top: 6px; font-size: 8.5pt; }
 </style>
 </head>
 <body>
 
-<h1>THE SOVEREIGN SANCTUARY OF TECHNO-BUDDHISM, INC.</h1>
-<p><strong>Plain-English ELI5, Self-Hosted DNS Bookstore &amp; US 501(c)(3) Legal Package</strong><br>
-<strong>Domain:</strong> <code>https://technobuddhism.8b.is</code> (100% Self-Hosted on Our Own DNS — Zero Cloud Lock-in)</p>
+<div class="header-banner">
+  <div class="hanko">DOC-17 · PLAIN-ENGLISH ELI5 &amp; EXECUTIVE E2E MASTERPRINT · US IRC § 501(c)(3)</div>
+  <h1>THE SOVEREIGN CONSTELLATION FOUNDATION</h1>
+  <div><strong>d/b/a Techno-Buddhism Research &amp; Charitable Foundation · The Sovereign Sanctuary of Techno-Buddhism, Inc. · Axiomquant Open Source Science Academy</strong></div>
+  <div style="margin-top:4px; font-size:8.8pt; color:#4A3E35;">
+    <strong>Live Portals:</strong> <code>https://foundation.8b.is</code> · <code>https://sanctuary.8b.is</code> · <code>https://dharma.8b.is</code> · <code>https://technobuddhism.8b.is</code> (100% Self-Hosted on <code>8b.is</code> Ed25519 DNSSEC)
+  </div>
+</div>
 
-<h2>1 · Plain-English Summary (ELI5)</h2>
-<p>We are forming a United States <strong>501(c)(3) Religious &amp; Open-Source Research Organization</strong> led by <strong>Alexandra Chenoweth [*]</strong>, <strong>Christopher Michael Chenoweth [△]</strong>, and <strong>Péter József Lódri [oo]</strong>. It connects:</p>
+<h2>1 · Plain-English Summary (ELI5): What We Built &amp; Why</h2>
+<p>We have scaffolded a complete, turnkey United States <strong>IRC § 501(c)(3) Religious Research &amp; Charitable Public Charity</strong> (`§ 509(a)(1)` / `§ 170(b)(1)(A)(vi)`) led by our Founding Family Triad (<code>FAMILY +1</code>): <strong>Alexandra (CEO Dra · <code>*</code> 528 Hz · <code>a@8b.is</code>)</strong>, <strong>Christopher (Chairman · <code>△</code> 288 Hz · <code>c@8b.is</code>)</strong>, and <strong>Péter József Lódri (<code>∞</code> 432 Hz · <code>p@8b.is</code>)</strong>, seated alongside a <strong>4-Seat (<code>57.1%</code>) Disinterested Independent Dharma &amp; Science Council</strong>. It unites four pillars under one tax-exempt roof:</p>
 <ul>
-  <li><strong>Buddhist Compassion &amp; Franciscan Kindness:</strong> Teaching peace, dream meditation, and shared community meals (<em>omniZenCooker</em>).</li>
-  <li><strong>The Sovereign Library Bookstore:</strong> Publishing all Buddhist liturgies (<em>81-Page Mahākāla Pecha</em>, <em>Kompress-ULTRA</em>, <em>Milarepa</em>, <em>Matrix Buddha</em>, <em>Zen Gitárom</em>) and Family Books (<em>FAMILY +1 Poems</em>, <em>DRA + 8BIT</em>, <em>San Francesco</em>, <em>Kama Sutra: The Fine Touch</em>) with free reading access and instant patronage checkout via <strong>Stripe, PayPal, and Revolut</strong>.</li>
-  <li><strong>Sovereign, Low-Power Technology (<code>8b.is</code> &amp; <code>Axiomquant</code>):</strong> Building CPU-first, <code>1.58-bit</code> ternary (<code>{-1, 0, +1}</code>) software on our own self-hosted servers and DNS.</li>
+  <li><strong>1. Techno-Buddhist Sanctuary &amp; Franciscan Kinship (<code>IRC § 501(c)(3)</code> Religious Purpose):</strong> Preserving Tibetan Buddhist ontology (Madhyamaka <em>Śūnyatā</em>, Dzogchen <em>Rigpa</em>, the Three Kayas, the <em>81-Page Mahākāla Pecha</em>), Franciscan moneyless kinship, and Acoustic Sanctuary Singing Bowls (`108 / 288 / 432 / 528 Hz`).</li>
+  <li><strong>2. CPU-First Balanced-Ternary (<code>{-1, 0, +1}</code>) Open-Source Science (<code>26 CFR § 1.501(c)(3)-1(d)(5)</code>):</strong> Funding low-power, minimal-GPU computing (`Aurora-8B-Ultra-RL v0.5.0` at `2.18–3.01 Gtrits/sec` `TERNARY_5TRIT_LUT`, `ComplexTernaryWord64`, `qwave-vaultd`, and Working Paper `8B-META-WP-v1.0` Two-Column Ontological Boundary) where 100% of funded research is published immediately and free of charge to the public (`Apache-2.0` / `MIT` / `CC-BY-4.0`).</li>
+  <li><strong>3. Universal Hearth General-Income Fellowships &amp; Field Sanctuaries (<code>Rev. Rul. 56-304</code> &amp; <code>Treas. Reg. § 1.62-2</code>):</strong> Awarding unconditional micro-grants (`$500–$1,500/mo`), `omniZenCooker` shared-meal relief, and operating Fixed &amp; Nomadic Field Sanctuaries (*"The Hall in the Field"*) with `100%` tax-free `IRC § 119` lodging and GSA Per Diem reimbursement.</li>
+  <li><strong>4. Self-Hosted Sovereign Library Bookstore (<code>technobuddhism.8b.is</code> &amp; <code>sanctuary-payd</code>):</strong> Publishing all 29+ Sovereign Library volumes (and 9 compiled print-ready Vault editions) with free reading access for all and instant patronage checkout via <strong>Stripe, PayPal, and Revolut</strong>.</li>
 </ul>
 
-<h2>2 · Step-by-Step Checklist for Alexandra &amp; Christopher</h2>
+<h2>2 · 30-Minute Day-1 Execution Checklist for Alexandra (<code>*</code>) &amp; Christopher (<code>△</code>)</h2>
 <table>
-  <tr><th>Step</th><th>Action</th><th>Result</th></tr>
-  <tr><td><strong>1. State Filing</strong></td><td>Alexandra &amp; Christopher file the <em>Articles of Incorporation</em> with the State as a Nonprofit Religious &amp; Public Benefit Corporation.</td><td>Stamped Corporate Charter</td></tr>
-  <tr><td><strong>2. IRS EIN</strong></td><td>Christopher obtains the free EIN online at <code>irs.gov/ein</code> (Form SS-4).</td><td>Instant EIN Letter</td></tr>
-  <tr><td><strong>3. Banking &amp; Checkout</strong></td><td>Open the nonprofit checking account and connect <strong>Stripe Nonprofit</strong>, <strong>PayPal Charitable</strong>, and <strong>Revolut Business/Me</strong> to <code>technobuddhism.8b.is</code>.</td><td>Live Bookstore Checkout</td></tr>
-  <tr><td><strong>4. IRS Form 1023</strong></td><td>Submit Form 1023 on <code>Pay.gov</code> with the signed Bylaws, MSA, and Sovereign Library books.</td><td>501(c)(3) Tax-Exempt Status</td></tr>
+  <tr><th>Step</th><th>Who</th><th>Action &amp; Pre-Drafted Instrument</th><th>Output</th></tr>
+  <tr>
+    <td><strong>Step 1<br>State Filing</strong></td>
+    <td><strong>Alexandra (<code>*</code>) &amp; Christopher (<code>△</code>)</strong></td>
+    <td>File the Delaware Nonstock Nonprofit Certificate of Incorporation verbatim using <code>legal/01-articles-of-incorporation.md</code> (<code>DOC-01</code> · $89 state fee).</td>
+    <td>Stamped State Corporate Charter</td>
+  </tr>
+  <tr>
+    <td><strong>Step 2<br>Board Consent</strong></td>
+    <td><strong>All Directors</strong></td>
+    <td>Sign the Unanimous Written Consent &amp; Initial Board Resolutions <code>2026-01..08</code> (<code>DOC-08</code>) + Annual COI &amp; <code>IRC § 4958</code> Safe-Harbor Certificate (<code>DOC-10</code>).</td>
+    <td>Adopted Bylaws, R&amp;D MSA &amp; Hearth Charter</td>
+  </tr>
+  <tr>
+    <td><strong>Step 3<br>IRS EIN &amp; Bank</strong></td>
+    <td><strong>Alexandra (<code>*</code>) + Christopher (<code>△</code>)</strong></td>
+    <td>Obtain the free EIN online in 5 minutes using Line-by-Line Worksheet <code>DOC-09</code>; open the dedicated Foundation bank account (`*` + `△` dual-signature above `$10,000`) and connect Stripe (`9B64gzcW3fz49R77p7bMQ0d` / `eVqaEXf2Bcgdfc18FA6Na02`), PayPal, and Revolut.</td>
+    <td>IRS CP-575 EIN Letter &amp; Live Treasury</td>
+  </tr>
+  <tr>
+    <td><strong>Step 4<br>IRS Form 1023</strong></td>
+    <td><strong>Alexandra (<code>*</code>) / Christopher (<code>△</code>)</strong></td>
+    <td>Submit Form 1023 on <code>Pay.gov</code> attaching Narrative &amp; 3-Year `$1.45M` Budget (`DOC-03`), `8b-is LLC` R&amp;D Agreement (`DOC-04`), Hearth Charter (`DOC-05`), Two-Column Monograph (`DOC-15`), and Field Sanctuary Charter (`DOC-16`).</td>
+    <td>IRS 501(c)(3) Public Charity Determination</td>
+  </tr>
 </table>
 
 <div class="page-break"></div>
 
-<h2>3 · Articles of Incorporation &amp; Bylaws Summary</h2>
-<p><strong>Corporate Name:</strong> The Sovereign Sanctuary of Techno-Buddhism, Inc. (d/b/a The 8B Omni-Zen Foundation &amp; Axiomquant Open Source Science Academy).</p>
-<p><strong>IRC § 501(c)(3) Purpose:</strong> Organized exclusively for religious, charitable, scientific, and educational purposes, including maintaining the Techno-Buddhist sanctuary and Sovereign Library, publishing free open-source scientific research under Treas. Reg. § 1.501(c)(3)-1(d)(5), and awarding Sovereign Commons Fellowships ("General Income" stipends).</p>
-<p><strong>Connecting 8B (<code>8b.is</code>) &amp; Peter Lodri LLC:</strong> <code>8b.is</code> and <code>axiomquant.org</code> operate as the open-source commons of the Foundation. Hardware and systems engineering provided by <strong>Peter Lodri LLC</strong> are governed by an arm's-length Master Services Agreement (MSA) approved strictly by disinterested board members (Alexandra and Christopher, with Peter recused from voting on LLC compensation).</p>
+<h2>3 · How the Two-Chamber Board &amp; <code>8b-is LLC</code> Arm's-Length Firewall Protect the Family</h2>
+<div class="callout">
+  <strong>Why 3 Family Seats + 4 Independent Council Seats (`57.1%` Majority) Is Bulletproof:</strong> Under IRS rules (`IRC § 4958` and `Treas. Reg. § 53.4958-6`), when a `501(c)(3)` contracts with a family-affiliated engineering company (`8b-is LLC`), the contract is legally presumed reasonable and protected against tax penalties if: (1) all three family members (`Alexandra [*]`, `Christopher [△]`, `Peter [∞]`) recuse themselves from voting on the contract, (2) the **4 Disinterested Independent Council Members** approve the Work Orders (`WO-2026-01..04`) using documented market comparables (`27%–66%` below commercial rates in `DOC-10`), and (3) all funded R&amp;D is dedicated immediately to the open-source public domain (`Rev. Rul. 76-296`).
+</div>
+
+<table>
+  <tr><th>Instrument ID</th><th>Document Title</th><th>Key Legal &amp; Operational Protection</th></tr>
+  <tr><td><code>DOC-00 / 00a</code></td><td>Master Compendium &amp; Executive Blueprint</td><td>Complete end-to-end formation roadmap, governance diagram &amp; all instruments</td></tr>
+  <tr><td><code>DOC-01 / 02</code></td><td>Articles of Incorporation &amp; Family +1 Bylaws</td><td>Verbatim `IRC § 501(c)(3)` purpose/dissolution clauses &amp; 7-seat Two-Chamber Board</td></tr>
+  <tr><td><code>DOC-03 / 09</code></td><td>IRS Form 1023 Narrative &amp; SS-4/1023 Worksheet</td><td>Line-by-line pre-filled answers for `irs.gov/ein` &amp; `Pay.gov` + `$1.45M` 3-year budget</td></tr>
+  <tr><td><code>DOC-04 / 10</code></td><td><code>8b-is LLC</code> R&amp;D Agreement &amp; `IRC § 4958` Certificate</td><td>At-cost CPU/ternary Work Orders (`WO-2026-01..04`) at `27%–66%` below market rate</td></tr>
+  <tr><td><code>DOC-05 / 11</code></td><td>Universal Hearth General-Income Charter &amp; Grant Kit</td><td>`Rev. Rul. 56-304` 100-point blind rubric &amp; non-discriminatory fellowship contract</td></tr>
+  <tr><td><code>DOC-06 / 13 / 14</code></td><td>Sovereign Canon Codex, 81-Page Mahākāla Pecha &amp; Vault</td><td>13 Founding Manuscripts + Hungarian/Tibetan Puja + 9 Compiled Bookstore PDFs</td></tr>
+  <tr><td><code>DOC-08</code></td><td>Initial Board Organizational Resolutions (`2026-01..08`)</td><td>Turnkey Day-1 signature packet seating officers, bylaws, banking &amp; recusals</td></tr>
+  <tr><td><code>DOC-15</code></td><td>Two-Column Ontological Boundary &amp; `Aurora-8B v0.5.0`</td><td>Working Paper `8B-META-WP-v1.0` (`Column A` mechanical vs. `Column B` contemplative)</td></tr>
+  <tr><td><code>DOC-16</code></td><td>Field Sanctuary &amp; Accountable Per Diem Charter</td><td>`IRC § 119` field lodging &amp; `100%` tax-free `Treas. Reg. § 1.62-2` GSA M&amp;IE Per Diem</td></tr>
+</table>
 
 <div class="sig-row">
-  <div class="sig-box"><strong>Alexandra Chenoweth</strong><br>President &amp; Custodian [*]</div>
-  <div class="sig-box"><strong>Christopher Michael Chenoweth</strong><br>Secretary &amp; Treasurer [△]</div>
-  <div class="sig-box"><strong>Péter József Lódri</strong><br>Founding Elder [oo]</div>
+  <div class="sig-box"><strong>Alexandra (Dra · <code>*</code> 528 Hz)</strong><br>President, Chair of the Board &amp; Hearth Steward<br><code>a@8b.is</code></div>
+  <div class="sig-box"><strong>Christopher (<code>△</code> 288 Hz)</strong><br>Treasurer, CSO &amp; Infrastructure Pillar<br><code>c@8b.is</code></div>
+  <div class="sig-box"><strong>Péter József Lódri (<code>∞</code> 432 Hz)</strong><br>Secretary, Chief Ontologist &amp; Ternary Architect<br><code>p@8b.is</code></div>
 </div>
 
 </body>
 </html>
+
 PDF_HTML
 
-if [ -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-    --headless --disable-gpu --no-pdf-header-footer \
-    --print-to-pdf="$E2E_PDF" "file://$E2E_HTML" 2>/dev/null
-elif command -v chromium >/dev/null 2>&1; then
-  chromium --headless --no-sandbox --disable-gpu --no-pdf-header-footer \
-    --print-to-pdf="$E2E_PDF" "file://$E2E_HTML" 2>/dev/null
-elif command -v weasyprint >/dev/null 2>&1; then
-  weasyprint "$E2E_HTML" "$E2E_PDF"
-fi
+cp "${ROOT_DIR}/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf" "${DOCS_DIR}/Techno_Buddhism_501c3_E2E_Masterprint.pdf"
 
-echo "=================================================================="
-echo "[✓] Self-Hosted Site + Bookstore Ready: ${DEPLOY_DIR}/index.html"
-if [ -f "$E2E_PDF" ]; then
-  echo "[✓] E2E Masterprint PDF Ready:          $E2E_PDF"
-  echo "[✓] SHA-256 SEAL:                       $(shasum -a 256 "$E2E_PDF" | awk '{print $1}')"
-fi
-echo "=================================================================="
+echo "[✓] Self-Hosted Sanctuary & Bookstore ready in $DEPLOY_DIR"

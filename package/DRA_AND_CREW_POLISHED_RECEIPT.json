@@ -1,0 +1,239 @@
+{
+  "total": 18,
+  "receipts": [
+    {
+      "target": "Dra (* Alexandra \u00b7 528 Hz)",
+      "jid": "114203885101102@lid",
+      "kind": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "2b350bf14103b8ac83c66eea35773f8021ca83c893242153a7a88b9bd8fcb764",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3110
+      }
+    },
+    {
+      "target": "Dra (* Alexandra \u00b7 528 Hz)",
+      "jid": "114203885101102@lid",
+      "kind": "pdf_14",
+      "res": {
+        "ok": true,
+        "bytes": 277721,
+        "fileName": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "114203885101102@lid"
+      }
+    },
+    {
+      "target": "Dra (* Alexandra \u00b7 528 Hz)",
+      "jid": "114203885101102@lid",
+      "kind": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 2345856,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "114203885101102@lid"
+      }
+    },
+    {
+      "target": "family+1",
+      "jid": "120363430655831442@g.us",
+      "kind": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "2b350bf14103b8ac83c66eea35773f8021ca83c893242153a7a88b9bd8fcb764",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3110
+      }
+    },
+    {
+      "target": "family+1",
+      "jid": "120363430655831442@g.us",
+      "kind": "pdf_14",
+      "res": {
+        "ok": true,
+        "bytes": 277721,
+        "fileName": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "target": "family+1",
+      "jid": "120363430655831442@g.us",
+      "kind": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 2345856,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430655831442@g.us"
+      }
+    },
+    {
+      "target": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "kind": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "2b350bf14103b8ac83c66eea35773f8021ca83c893242153a7a88b9bd8fcb764",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3110
+      }
+    },
+    {
+      "target": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "kind": "pdf_14",
+      "res": {
+        "ok": true,
+        "bytes": 277721,
+        "fileName": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "target": "8b.is-crew",
+      "jid": "120363430226473934@g.us",
+      "kind": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 2345856,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363430226473934@g.us"
+      }
+    },
+    {
+      "target": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "kind": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "2b350bf14103b8ac83c66eea35773f8021ca83c893242153a7a88b9bd8fcb764",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3110
+      }
+    },
+    {
+      "target": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "kind": "pdf_14",
+      "res": {
+        "ok": true,
+        "bytes": 277721,
+        "fileName": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363413133092554@g.us"
+      }
+    },
+    {
+      "target": "little dude(s) and Angels",
+      "jid": "120363413133092554@g.us",
+      "kind": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 2345856,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363413133092554@g.us"
+      }
+    },
+    {
+      "target": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "kind": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "2b350bf14103b8ac83c66eea35773f8021ca83c893242153a7a88b9bd8fcb764",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3110
+      }
+    },
+    {
+      "target": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "kind": "pdf_14",
+      "res": {
+        "ok": true,
+        "bytes": 277721,
+        "fileName": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "target": "8b-is:<3",
+      "jid": "120363431870420177@g.us",
+      "kind": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 2345856,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363431870420177@g.us"
+      }
+    },
+    {
+      "target": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "kind": "text",
+      "res": {
+        "ok": true,
+        "suppressedDuplicate": false,
+        "digest": "2b350bf14103b8ac83c66eea35773f8021ca83c893242153a7a88b9bd8fcb764",
+        "suppressedCount": 0,
+        "dir": "out",
+        "chars": 3110
+      }
+    },
+    {
+      "target": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "kind": "pdf_14",
+      "res": {
+        "ok": true,
+        "bytes": 277721,
+        "fileName": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    },
+    {
+      "target": "pooconf",
+      "jid": "120363411626204136@g.us",
+      "kind": "pdf_00",
+      "res": {
+        "ok": true,
+        "bytes": 2345856,
+        "fileName": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "dir": "out",
+        "type": "document",
+        "to": "120363411626204136@g.us"
+      }
+    }
+  ]
+}
