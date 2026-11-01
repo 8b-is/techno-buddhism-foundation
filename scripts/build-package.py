@@ -549,6 +549,8 @@ def main() -> int:
         ("legal/07-irs-form-ss4-ein-and-1023-filing-checklist.md", "09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf", "Turnkey IRS Form SS-4 EIN & Form 1023 Pay.gov Matrix"),
         ("legal/08-annual-conflict-of-interest-and-independent-attestation.md", "10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf", "Annual COI Disclosures & Treas. Reg. § 53.4958-6 Certificate"),
         ("legal/09-universal-hearth-fellowship-application-and-grant-agreement.md", "11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf", "Universal Hearth Application, 100-Pt Rubric & Grantee Agreement"),
+        ("legal/10-two-column-ontological-boundary-and-aurora-8b-monograph.md", "12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf", "8B-META-WP-v1.0 Two-Column Boundary & Aurora-8B v0.5.0 Monograph"),
+        ("legal/11-sanctuary-field-operations-and-nomadic-monastic-charter.md", "13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf", "Field Sanctuary, Nomadic Monasticism & IRS § 62(a)(2)(A) Per Diem Charter"),
     ]
 
     generated_pdfs: list[pathlib.Path] = []

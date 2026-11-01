@@ -31,6 +31,8 @@ EXPECTED_FILES = [
     "legal/07-irs-form-ss4-ein-and-1023-filing-checklist.md",
     "legal/08-annual-conflict-of-interest-and-independent-attestation.md",
     "legal/09-universal-hearth-fellowship-application-and-grant-agreement.md",
+    "legal/10-two-column-ontological-boundary-and-aurora-8b-monograph.md",
+    "legal/11-sanctuary-field-operations-and-nomadic-monastic-charter.md",
     "canon/sovereign-canon-codex.md",
     "portal/index.html",
 ]
@@ -106,6 +108,20 @@ REQUIRED_INVARIANTS = {
         "Track A",
         "Track B",
         "Track C",
+    ],
+    "legal/10-two-column-ontological-boundary-and-aurora-8b-monograph.md": [
+        "8B-META-WP-v1.0",
+        "Two-Column Ontological Boundary",
+        "TERNARY_5TRIT_LUT",
+        "d7bf5878b192818865f9d4bb980b3e4e",
+        "WO-2026-04",
+    ],
+    "legal/11-sanctuary-field-operations-and-nomadic-monastic-charter.md": [
+        "1.62-2",
+        "Rev. Proc. 2019-48",
+        "IRC § 119",
+        "Nomadic",
+        "Per Diem",
     ],
     "canon/sovereign-canon-codex.md": [
         "8fb9cc110652cf07f75afb2609ea82f834a3a106f53a8de7596b24309549f7f0",
