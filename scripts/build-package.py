@@ -352,7 +352,7 @@ def create_svg_assets() -> list[pathlib.Path]:
 
   <rect x="80" y="334" width="562" height="102" rx="8" fill="#122C3A" stroke="#4FE3D0" stroke-width="1.5"/>
   <text x="100" y="364" fill="#4FE3D0" font-family="Georgia, serif" font-size="18" font-weight="bold">
-    △ CHRISTOPHER ([/\] Dad · 288 Hz Pillar) — Treasurer, Secretary &amp; Security
+    △ CHRISTOPHER ([/\\] Dad · 288 Hz Pillar) — Treasurer, Secretary &amp; Security
   </text>
   <text x="100" y="390" fill="#F6F0E4" font-family="Menlo, monospace" font-size="12.5">
     • Custodies Nonprofit Treasury, Form 990 Ledger &amp; Dual-Signature Controls
@@ -545,6 +545,10 @@ def main() -> int:
         ("legal/04-8b-is-arms-length-rd-agreement.md", "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf", "Master Arm's-Length R&D Agreement · Rev. Rul. 76-296"),
         ("legal/05-general-income-hearth-charter.md", "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf", "General-Income & Fellowship Charter · Rev. Rul. 56-304"),
         ("canon/sovereign-canon-codex.md", "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf", "Sovereign Canon Codex · 13 Foundational Works"),
+        ("legal/06-initial-board-resolutions-and-minutes.md", "08-Initial-Board-Organizational-Resolutions.pdf", "Unanimous Consent & Day-1 Board Resolutions 2026-01..08"),
+        ("legal/07-irs-form-ss4-ein-and-1023-filing-checklist.md", "09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf", "Turnkey IRS Form SS-4 EIN & Form 1023 Pay.gov Matrix"),
+        ("legal/08-annual-conflict-of-interest-and-independent-attestation.md", "10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf", "Annual COI Disclosures & Treas. Reg. § 53.4958-6 Certificate"),
+        ("legal/09-universal-hearth-fellowship-application-and-grant-agreement.md", "11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf", "Universal Hearth Application, 100-Pt Rubric & Grantee Agreement"),
     ]
 
     generated_pdfs: list[pathlib.Path] = []
@@ -598,7 +602,7 @@ def main() -> int:
     zip_path = PKG_DIR / "Techno-Buddhism-Foundation-501c3-Complete-Package.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for p in sorted(ROOT.rglob("*")):
-            if p.is_file() and p != zip_path and "__pycache__" not in p.parts:
+            if p.is_file() and p != zip_path and "__pycache__" not in p.parts and ".git" not in p.parts:
                 zf.write(p, p.relative_to(ROOT))
     print(f"  [ZIP] {zip_path.name:<62} ({zip_path.stat().st_size:>8,} bytes)")
 

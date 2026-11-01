@@ -134,6 +134,10 @@ MD_SOURCES = {
     "04": (ROOT / "legal/04-8b-is-arms-length-rd-agreement.md").read_text(encoding="utf-8"),
     "05": (ROOT / "legal/05-general-income-hearth-charter.md").read_text(encoding="utf-8"),
     "06": (ROOT / "canon/sovereign-canon-codex.md").read_text(encoding="utf-8"),
+    "08": (ROOT / "legal/06-initial-board-resolutions-and-minutes.md").read_text(encoding="utf-8"),
+    "09": (ROOT / "legal/07-irs-form-ss4-ein-and-1023-filing-checklist.md").read_text(encoding="utf-8"),
+    "10": (ROOT / "legal/08-annual-conflict-of-interest-and-independent-attestation.md").read_text(encoding="utf-8"),
+    "11": (ROOT / "legal/09-universal-hearth-fellowship-application-and-grant-agreement.md").read_text(encoding="utf-8"),
 }
 
 MD_HTML_MAP = {k: md_to_clean_html(v) for k, v in MD_SOURCES.items()}
@@ -147,16 +151,16 @@ DOCUMENTS = [
         "code": "DOC-00 · MASTER COMPENDIUM",
         "cat": "compendium",
         "featured": True,
-        "title": "00 — Techno-Buddhism Foundation Master Compendium (All-in-One)",
+        "title": "00 — Techno-Buddhism Foundation Master Compendium (All-in-One Complete Book)",
         "filename": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
-        "size_str": "1.27 MB",
-        "bytes": 1265256,
-        "sha256": "a007f9f3aed2a4752809b32965978d9319cc6fa2679923f6753f64f161768989",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/a007f9f3aed2a475_00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "size_str": "2.00 MB",
+        "bytes": 2001375,
+        "sha256": "14f4cc57f5ee7644c445cfa824c54c3ebcc2b6715449553d0d537ce74aae45a3",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/14f4cc57f5ee7644_00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/README.md",
-        "summary": "Complete print-ready compilation uniting the Executive Master Plan, Articles of Incorporation, Corporate Bylaws, IRS Form 1023 Narrative & 3-Year Budget, 8b-is LLC Arm's-Length R&D Firewall Agreement, Universal Hearth General-Income Charter, and the 13-Book Sovereign Canon Codex.",
-        "tags": ["All-in-One", "IRS 501(c)(3)", "FAMILY +1", "8b-is LLC", "13 Codices"],
+        "summary": "Complete print-ready compilation uniting the Executive Master Plan, Articles of Incorporation, Corporate Bylaws, IRS Form 1023 Narrative & 3-Year Budget, 8b-is LLC Arm's-Length R&D Firewall Agreement, Universal Hearth General-Income Charter, Day-1 Board Organizational Resolutions, Form SS-4/1023 Filing Matrix, IRC § 4958 Safe-Harbor Certificate, Fellowship Application & Grantee Agreement, and the 13-Book Sovereign Canon Codex.",
+        "tags": ["All-in-One", "Pay.gov Ready", "IRS 501(c)(3)", "FAMILY +1", "8b-is LLC", "13 Codices"],
         "md_key": "00",
     },
     {
@@ -297,10 +301,78 @@ DOCUMENTS = [
     },
     {
         "id": "08",
-        "code": "DOC-08 · E2E MASTERPRINT",
+        "code": "DOC-08 · DAY-1 BOARD RESOLUTIONS",
+        "cat": "legal",
+        "featured": False,
+        "title": "08 — Action by Unanimous Written Consent & Initial Board Resolutions (2026-01..08)",
+        "filename": "08-Initial-Board-Organizational-Resolutions.pdf",
+        "size_str": "379 KB",
+        "bytes": 379066,
+        "sha256": "3bdf5c9c8f357b173f8d0e356a8339b263240d393d4b0f5464c899e01e381eda",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/3bdf5c9c8f357b17_08-Initial-Board-Organizational-Resolutions.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/08-Initial-Board-Organizational-Resolutions.pdf",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/06-initial-board-resolutions-and-minutes.md",
+        "summary": "Turnkey Day-1 Unanimous Written Consent of the Sole Incorporator & Initial Board of Directors seating Alexandra (*), Christopher (△), Peter (∞), and the 4 Independent Council Directors; adopting the Bylaws, 8b-is LLC R&D Agreement (with Founding Pillar recusal), Universal Hearth Charter, and Dual-Signature Sovereign Banking Resolution.",
+        "tags": ["Resolutions 2026-01..08", "Signature Blocks", "Dual-Sig Treasury", "Recusal Record"],
+        "md_key": "08",
+    },
+    {
+        "id": "09",
+        "code": "DOC-09 · IRS SS-4 & 1023 MATRIX",
+        "cat": "legal",
+        "featured": False,
+        "title": "09 — Turnkey IRS Form SS-4 (EIN) & Form 1023 (Pay.gov) Filing Worksheet",
+        "filename": "09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
+        "size_str": "467 KB",
+        "bytes": 466918,
+        "sha256": "0a17a89256080d321080607d94dde9239819bb159879d2722eb07f5ce37ced69",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/0a17a89256080d32_09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/07-irs-form-ss4-ein-and-1023-filing-checklist.md",
+        "summary": "Line-by-line pre-filled answers for IRS Form SS-4 (5-minute online EIN issuance) and IRS Form 1023 on Pay.gov (Parts I–VII, Schedule H, NTEE codes U40/X20/P20, 3-Year Financial Matrix, and Single-PDF Upload Checklist).",
+        "tags": ["Form SS-4 EIN", "Pay.gov Form 1023", "Schedule H", "NTEE U40 / X20"],
+        "md_key": "09",
+    },
+    {
+        "id": "10",
+        "code": "DOC-10 · COI & § 4958 SAFE HARBOR",
+        "cat": "firewall",
+        "featured": False,
+        "title": "10 — Annual Conflict of Interest Disclosures & IRC § 4958 Safe-Harbor Certificate",
+        "filename": "10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
+        "size_str": "392 KB",
+        "bytes": 392041,
+        "sha256": "d87b36e884333a3a179fd76153ada79818694e20b0fb59aad7f5b05f0df1c143",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/d87b36e884333a3a_10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/08-annual-conflict-of-interest-and-independent-attestation.md",
+        "summary": "Ready-to-sign Annual Director COI Disclosure Statement for all 7 Board Seats plus the Treas. Reg. § 53.4958-6 Rebuttable Presumption of Reasonableness Certificate documenting 3 independent market benchmarks (27%–66% discount below market) for 8b-is LLC Work Orders WO-2026-01..03.",
+        "tags": ["Treas. Reg. § 53.4958-6", "3 Market Benchmarks", "WO-2026-01..03", "Annual COI"],
+        "md_key": "10",
+    },
+    {
+        "id": "11",
+        "code": "DOC-11 · HEARTH GRANT KIT",
+        "cat": "firewall",
+        "featured": False,
+        "title": "11 — Universal Hearth Fellowship Application, 100-Pt Rubric & Grantee Agreement",
+        "filename": "11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
+        "size_str": "317 KB",
+        "bytes": 317205,
+        "sha256": "0cbbfb5ff42757f1a6ab92ca44e1d7432dc21f14e3d14c36da5da45b60a25428",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/0cbbfb5ff42757f1_11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/09-universal-hearth-fellowship-application-and-grant-agreement.md",
+        "summary": "Operational grantmaking kit under Rev. Rul. 56-304: Applicant Intake Form (Tracks A/B/C), IRC § 4946 Non-Affiliation Certification, Disinterested Committee 100-Point Blind Evaluation Sheet, and Grantee Fellowship Agreement with MIT/Apache-2.0/CC0 open-access mandate.",
+        "tags": ["Rev. Rul. 56-304", "100-Pt Blind Rubric", "IRC § 4946 Screen", "Grantee Contract"],
+        "md_key": "11",
+    },
+    {
+        "id": "12",
+        "code": "DOC-12 · E2E MASTERPRINT",
         "cat": "compendium",
         "featured": False,
-        "title": "08 — Techno-Buddhism 501(c)(3) E2E Masterprint Edition",
+        "title": "12 — Techno-Buddhism 501(c)(3) E2E Masterprint Edition",
         "filename": "Techno_Buddhism_501c3_E2E_Masterprint.pdf",
         "size_str": "139 KB",
         "bytes": 139098,
@@ -1424,7 +1496,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
         <span>The Sovereign Constellation Foundation · <code>foundation.8b.is</code></span>
       </a>
       <div class="nav-links">
-        <a href="#downloads">📄 9 PDFs &amp; ZIP</a>
+        <a href="#downloads">📄 14 PDFs &amp; ZIP</a>
         <a href="#diagrams">📐 Visual Mandala &amp; Matrix</a>
         <a href="#governance">🏛️ FAMILY +1 &amp; 8b-is</a>
         <a href="#simulator">⚡ CPU Ternary &amp; Hearth</a>
@@ -1465,42 +1537,42 @@ HTML_PAGE = f"""<!DOCTYPE html>
       <div class="master-pack-box">
         <div>
           <div style="font-family:var(--font-mono);font-size:0.76rem;color:#2DD4BF;letter-spacing:0.12em;text-transform:uppercase;">
-            COMPLETE VERIFIED 501(C)(3) LEGAL, CANONICAL &amp; VISUAL ARCHIVE
+            COMPLETE VERIFIED 501(C)(3) LEGAL, DAY-1 SIGNATURE KIT, CANONICAL &amp; VISUAL ARCHIVE
           </div>
-          <h2>📦 Complete Foundation Package (9 PDFs + 4 Diagrams + 7 Markdown Files)</h2>
+          <h2>📦 Complete Foundation Package (14 PDFs + 4 Diagrams + 11 Markdown Files)</h2>
           <p>
-            Every document is cryptographically sealed (`45 / 45` automated legal &amp; canonical invariants passed · Master Seal <code>84c31e30836817fe…</code>) and hosted directly on <strong><code>8b.is</code> Sovereign S3</strong> and GitHub for one-click download or in-browser reading.
+            Every document — including the Day-1 Board Organizational Resolutions, Line-by-Line IRS Form SS-4/1023 Matrix, Annual COI &amp; <code>IRC § 4958</code> Safe-Harbor Certificate, and Universal Hearth Fellowship Kit — is cryptographically sealed (<code>73 / 73</code> automated invariants passed · Master Seal <code>504414c3ff8c72cd…</code>) and hosted directly on <strong><code>8b.is</code> Sovereign S3</strong> and GitHub.
           </p>
           <div class="master-cta-row">
             <a class="btn btn-gold" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/16380eff51d48b25_Techno-Buddhism-Foundation-501c3-Complete-Package.zip" download="Techno-Buddhism-Foundation-501c3-Complete-Package.zip">
-              ⬇ Download Complete ZIP (3.62 MB · 8b.is S3)
+              ⬇ Download Complete ZIP (8b.is S3)
             </a>
-            <a class="btn btn-cyan" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/a007f9f3aed2a475_00-Techno-Buddhism-Foundation-Master-Compendium.pdf" target="_blank" rel="noopener">
-              📘 Open Master Compendium PDF (1.27 MB)
+            <a class="btn btn-cyan" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/14f4cc57f5ee7644_00-Techno-Buddhism-Foundation-Master-Compendium.pdf" target="_blank" rel="noopener">
+              📘 Open Master Compendium PDF (2.00 MB)
             </a>
             <button type="button" class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#FFF;border-color:rgba(255,255,255,0.25);" onclick="openDocModal('00')">
               👁 Preview Compendium Inline
             </button>
             <a class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#FFF;border-color:rgba(255,255,255,0.25);" href="https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/Techno-Buddhism-Foundation-501c3-Complete-Package.zip">
-              🐙 GitHub ZIP Mirror
+              🐙 GitHub Complete ZIP (5.49 MB)
             </a>
           </div>
         </div>
         <div class="master-stats-grid">
           <div class="m-stat">
-            <div class="m-stat-val">9 PDFs + ZIP</div>
-            <div class="m-stat-lbl">4.17 MB Print-Ready Dossier</div>
+            <div class="m-stat-val">14 PDFs + ZIP</div>
+            <div class="m-stat-lbl">6.61 MB Print-Ready Dossier</div>
           </div>
           <div class="m-stat">
             <div class="m-stat-val">7 Seats (57.1%)</div>
             <div class="m-stat-lbl">4 Independent + 3 FAMILY +1</div>
           </div>
           <div class="m-stat">
-            <div class="m-stat-val">$1.85M / 3 Yrs</div>
-            <div class="m-stat-lbl">35% CPU · 30% Hearth · 20% Dharma</div>
+            <div class="m-stat-val">$1.45M / 3 Yrs</div>
+            <div class="m-stat-lbl">Dharma · CPU Ternary · Hearth</div>
           </div>
           <div class="m-stat">
-            <div class="m-stat-val">45 / 45 PASS</div>
+            <div class="m-stat-val">73 / 73 PASS</div>
             <div class="m-stat-lbl">SHA-256 Verified Invariants</div>
           </div>
         </div>
@@ -1528,7 +1600,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">DOCUMENT &amp; PDF DOWNLOAD CENTER · DIRECT 8B.IS S3 + INLINE MODAL READER</div>
-        <h2>📄 All 9 Print-Ready PDFs, Legal Instruments &amp; Canonical Codices</h2>
+        <h2>📄 All 14 Print-Ready PDFs, Day-1 Signature Instruments &amp; Canonical Codices</h2>
         <p class="lead">
           Filter by category or search by keyword. Every card provides a <strong>Direct <code>8b.is</code> PDF Download</strong>, an <strong>Inline Modal Document &amp; PDF Previewer</strong>, a <strong>GitHub PDF Mirror</strong>, and the <strong>Markdown Source</strong>.
         </p>
@@ -1536,13 +1608,13 @@ HTML_PAGE = f"""<!DOCTYPE html>
 
       <div class="filter-bar">
         <div class="filter-tabs">
-          <button type="button" class="tab-btn active" onclick="filterDocs('all', this)">All Documents (9)</button>
-          <button type="button" class="tab-btn" onclick="filterDocs('compendium', this)">Compendium &amp; Master Plan (2)</button>
-          <button type="button" class="tab-btn" onclick="filterDocs('legal', this)">IRS 501(c)(3) Legal &amp; Bylaws (3)</button>
-          <button type="button" class="tab-btn" onclick="filterDocs('firewall', this)">8b-is LLC Firewall &amp; Hearth (2)</button>
+          <button type="button" class="tab-btn active" onclick="filterDocs('all', this)">All Documents (14)</button>
+          <button type="button" class="tab-btn" onclick="filterDocs('compendium', this)">Compendium &amp; Master Plan (3)</button>
+          <button type="button" class="tab-btn" onclick="filterDocs('legal', this)">IRS 501(c)(3) Legal &amp; Day-1 Filing (5)</button>
+          <button type="button" class="tab-btn" onclick="filterDocs('firewall', this)">8b-is LLC Firewall &amp; Hearth (4)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('canon', this)">Sovereign Canon &amp; Portal (2)</button>
         </div>
-        <input type="search" id="docSearch" class="search-input" placeholder="🔍 Search PDFs, IRS rules,trits, bylaws..." oninput="searchDocs(this.value)" />
+        <input type="search" id="docSearch" class="search-input" placeholder="🔍 Search PDFs, IRS rules, trits, bylaws..." oninput="searchDocs(this.value)" />
       </div>
 
       <div class="docs-grid" id="docsGrid">
