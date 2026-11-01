@@ -127,7 +127,6 @@ def md_to_clean_html(md_text: str) -> str:
 # Load Markdown sources for instant inline reader
 MD_SOURCES = {
     "00": (ROOT / "README.md").read_text(encoding="utf-8"),
-    "00a": (ROOT / "README.md").read_text(encoding="utf-8"),
     "01": (ROOT / "legal/01-articles-of-incorporation.md").read_text(encoding="utf-8"),
     "02": (ROOT / "legal/02-bylaws-family-plus-one.md").read_text(encoding="utf-8"),
     "03": (ROOT / "legal/03-irs-form-1023-narrative.md").read_text(encoding="utf-8"),
@@ -140,9 +139,13 @@ MD_SOURCES = {
     "11": (ROOT / "legal/09-universal-hearth-fellowship-application-and-grant-agreement.md").read_text(encoding="utf-8"),
     "15": (ROOT / "legal/10-two-column-ontological-boundary-and-aurora-8b-monograph.md").read_text(encoding="utf-8"),
     "16": (ROOT / "legal/11-sanctuary-field-operations-and-nomadic-monastic-charter.md").read_text(encoding="utf-8"),
+    "17": (ROOT / "docs/Techno_Buddhism_501c3_E2E_Masterprint.html").read_text(encoding="utf-8"),
 }
 
-MD_HTML_MAP = {k: md_to_clean_html(v) for k, v in MD_SOURCES.items()}
+MD_HTML_MAP = {
+    k: (v if k == "17" else md_to_clean_html(v))
+    for k, v in MD_SOURCES.items()
+}
 
 SVG_MANDALA = (ASSETS_DIR / "governance-mandala-family-plus-one.svg").read_text(encoding="utf-8")
 SVG_ISOMORPHISM = (ASSETS_DIR / "four-fold-isomorphism-trit-matrix.svg").read_text(encoding="utf-8")
@@ -155,13 +158,13 @@ DOCUMENTS = [
         "featured": True,
         "title": "00 — Techno-Buddhism Foundation Master Compendium (All-in-One Complete Book)",
         "filename": "00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
-        "size_str": "2.00 MB",
-        "bytes": 2001375,
-        "sha256": "14f4cc57f5ee7644c445cfa824c54c3ebcc2b6715449553d0d537ce74aae45a3",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/14f4cc57f5ee7644_00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
+        "size_str": "2.35 MB",
+        "bytes": 2345856,
+        "sha256": "daca8c304ef2ae993070cf176b4f73ee28a6feb2c8d5aa52d611c2fb583dd94c",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/daca8c304ef2ae99_00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/00-Techno-Buddhism-Foundation-Master-Compendium.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/README.md",
-        "summary": "Complete print-ready compilation uniting the Executive Master Plan, Articles of Incorporation, Corporate Bylaws, IRS Form 1023 Narrative & 3-Year Budget, 8b-is LLC Arm's-Length R&D Firewall Agreement, Universal Hearth General-Income Charter, Day-1 Board Organizational Resolutions, Form SS-4/1023 Filing Matrix, IRC § 4958 Safe-Harbor Certificate, Fellowship Application & Grantee Agreement, and the 13-Book Sovereign Canon Codex.",
+        "summary": "Complete print-ready compilation uniting the Executive Master Plan, Articles of Incorporation, Corporate Bylaws, IRS Form 1023 Narrative & 3-Year Budget, 8b-is LLC Arm's-Length R&D Firewall Agreement, Universal Hearth General-Income Charter, Day-1 Board Organizational Resolutions, Form SS-4/1023 Filing Matrix, IRC § 4958 Safe-Harbor Certificate, Fellowship Application & Grantee Agreement, Two-Column Ontological Boundary & Aurora-8B v0.5.0 Monograph, Field Sanctuary Per Diem Charter, and the 13-Book Sovereign Canon Codex.",
         "tags": ["All-in-One", "Pay.gov Ready", "IRS 501(c)(3)", "FAMILY +1", "8b-is LLC", "13 Codices"],
         "md_key": "00",
     },
@@ -172,15 +175,15 @@ DOCUMENTS = [
         "featured": False,
         "title": "00a — Executive End-to-End Master Plan & Architecture",
         "filename": "00a-Executive-Master-Plan.pdf",
-        "size_str": "383 KB",
-        "bytes": 382718,
-        "sha256": "11f73e6a8f5cce2466a5401eb245312bf511f095ab510b19129f6bf4fc2cfee9",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/11f73e6a8f5cce24_00a-Executive-Master-Plan.pdf",
+        "size_str": "459 KB",
+        "bytes": 459480,
+        "sha256": "917671499e51fc47e9272479e8d246f9f339b35309cfa207def8f78b5a1bd09e",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/917671499e51fc47_00a-Executive-Master-Plan.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/00a-Executive-Master-Plan.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/README.md",
-        "summary": "7-phase formation roadmap (State Nonprofit Incorporation, EIN, Banking, Form 1023), seating Alexandra (* 528 Hz), Christopher (△ 288 Hz), and Peter (∞ 432 Hz) alongside the 4-seat (57.1%) Independent Dharma & Science Council.",
+        "summary": "End-to-end formation roadmap (State Nonprofit Incorporation, EIN, Banking, Form 1023), seating Alexandra (* 528 Hz), Christopher (△ 288 Hz), and Peter (∞ 432 Hz) alongside the 4-seat (57.1%) Independent Dharma & Science Council.",
         "tags": ["7-Phase Roadmap", "Alexandra *", "Christopher △", "Peter ∞"],
-        "md_key": "00a",
+        "md_key": "00",
     },
     {
         "id": "01",
@@ -191,8 +194,8 @@ DOCUMENTS = [
         "filename": "01-Articles-of-Incorporation-501c3.pdf",
         "size_str": "204 KB",
         "bytes": 204129,
-        "sha256": "1ddd41d8ef53b647a939e4c53087d83bcba0865788e9b2f7efeb9924b5d69412",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/1ddd41d8ef53b647_01-Articles-of-Incorporation-501c3.pdf",
+        "sha256": "be8c1d27d22921630e00941698045625c3bf67196b3a01465a1b4f380375320a",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/be8c1d27d2292163_01-Articles-of-Incorporation-501c3.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/01-Articles-of-Incorporation-501c3.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/01-articles-of-incorporation.md",
         "summary": "Articles I–X establishing The Sovereign Constellation Foundation as a non-stock religious, scientific, educational, and charitable corporation with mandatory IRC § 501(c)(3) purpose, public-domain open-science dedication (26 CFR § 1.501(c)(3)-1(d)(5)), and charitable dissolution lock.",
@@ -208,8 +211,8 @@ DOCUMENTS = [
         "filename": "02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
         "size_str": "290 KB",
         "bytes": 289865,
-        "sha256": "01fca2325103e76dd96b215f95f979e696ec6775cc3537c2fa98b18c26fa5bb3",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/01fca2325103e76d_02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
+        "sha256": "33e6491d7641598600421453a389388960a69749ebffad6ab4fd273b97498eac",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/33e6491d76415986_02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/02-Bylaws-Family-Plus-One-and-Safe-Harbor.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/02-bylaws-family-plus-one.md",
         "summary": "Articles I–XI defining the 7-seat Board (3 Founding Family Pillars + 4 Independent Directors = 57.1% disinterested majority), mandatory recusal of Alexandra, Christopher, and Peter on all 8b-is LLC matters, and IRC § 4958 Rebuttable Presumption of Reasonableness.",
@@ -225,12 +228,12 @@ DOCUMENTS = [
         "filename": "03-IRS-Form-1023-Narrative-and-Budget.pdf",
         "size_str": "354 KB",
         "bytes": 353648,
-        "sha256": "5aada178f92b3024228fc0569fc5261658f48bc312894a86e2b79850126e41c7",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/5aada178f92b3024_03-IRS-Form-1023-Narrative-and-Budget.pdf",
+        "sha256": "04f667429241c2f61e00e331f6acbc7343146ba6d593b430fd1ea347a8461708",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/04f667429241c2f6_03-IRS-Form-1023-Narrative-and-Budget.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/03-IRS-Form-1023-Narrative-and-Budget.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/03-irs-form-1023-narrative.md",
-        "summary": "Ready-to-file IRS Form 1023 Part IV Narrative detailing the 4 charitable programs (35% CPU/Ternary Open Research, 30% Universal Hearth General-Income Grants, 20% Techno-Buddhist Sanctuary & Liturgy, 15% Sovereign Library & Axiomquant Academy), 14-Point Religious Dossier, and $1.85M 3-year budget.",
-        "tags": ["Form 1023 Part IV", "35/30/20/15% Split", "$1.85M 3-Yr Budget", "IRC § 509(a)(1)"],
+        "summary": "Ready-to-file IRS Form 1023 Part IV Narrative detailing the 4 charitable programs (35% CPU/Ternary Open Research, 30% Universal Hearth General-Income Grants, 20% Techno-Buddhist Sanctuary & Liturgy, 15% Sovereign Library & Axiomquant Academy), 14-Point Religious Dossier, and $1.45M 3-year budget.",
+        "tags": ["Form 1023 Part IV", "35/30/20/15% Split", "$1.45M 3-Yr Budget", "IRC § 509(a)(1)"],
         "md_key": "03",
     },
     {
@@ -242,11 +245,11 @@ DOCUMENTS = [
         "filename": "04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
         "size_str": "237 KB",
         "bytes": 237309,
-        "sha256": "afffb83735ad7ab19437bc70a2bd044f793556d3bb94fb1faac7c2eb9e6f6315",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/afffb83735ad7ab1_04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
+        "sha256": "b57b572578228f406ff915ba67f3319c34e3466fbb2f30c5fd208a5933ab97d1",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/b57b572578228f40_04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/04-8b-is-LLC-Arms-Length-Open-Source-RD-Agreement.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/04-8b-is-arms-length-rd-agreement.md",
-        "summary": "Master contract between the Foundation and 8b-is LLC enforcing Cost / At-Most-FMV billing (15–25% below commercial market rates), zero revenue/royalty sharing, mandatory simultaneous Apache-2.0 / MIT / CC-BY-4.0 release (Rev. Rul. 76-296), and initial Work Orders WO-2026-01 through WO-2026-03.",
+        "summary": "Master contract between the Foundation and 8b-is LLC enforcing Cost / At-Most-FMV billing (27–66% below commercial market rates), zero revenue/royalty sharing, mandatory simultaneous Apache-2.0 / MIT / CC-BY-4.0 release (Rev. Rul. 76-296), and Work Orders WO-2026-01 through WO-2026-04.",
         "tags": ["Rev. Rul. 76-296", "8b-is LLC", "CPU Ternary {-1,0,+1}", "Apache-2.0 / MIT"],
         "md_key": "04",
     },
@@ -259,8 +262,8 @@ DOCUMENTS = [
         "filename": "05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
         "size_str": "218 KB",
         "bytes": 218089,
-        "sha256": "b07d43b38334b73f059c39ba60273db0e93a23de2ec8c52cefe7207a8fb8d6c9",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/b07d43b38334b73f_05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
+        "sha256": "d63f09f9b79355ad05027cc7e58087da1e00c85aaa3007c12bec6ad2c4626cbb",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/d63f09f9b79355ad_05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/05-Universal-Hearth-General-Income-and-Axiomquant-Charter.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/05-general-income-hearth-charter.md",
         "summary": "IRS Rev. Rul. 56-304 compliant charter governing Track A Unconditional Charitable Basic-Needs Stipends ($500–$1,500/mo), Track B Open-Science & Contemplative Residencies ($1,000–$2,500/mo), Track C Micro-Sanctuary Hardware Kits, blind 100-point scoring rubric, and statutory disqualification of Founders.",
@@ -276,8 +279,8 @@ DOCUMENTS = [
         "filename": "06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
         "size_str": "578 KB",
         "bytes": 578212,
-        "sha256": "aab06693e9e1538f392ba72a82e0814412369c254a1ba597b6260b67d5792154",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/aab06693e9e1538f_06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
+        "sha256": "8adeefbf9030be303febbd257d58727c938a75a6f0d5a7819f8da729b1b5d54d",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/8adeefbf9030be30_06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/06-Sovereign-Canon-Codex-Techno-Buddhism.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/canon/sovereign-canon-codex.md",
         "summary": "Unified doctrinal, mathematical, and liturgical scripture synthesizing all 13 Founding Books from the Sovereign Library: Kompress-ULTRA Four-Fold Isomorphism, 81-Page Mahākāla Pecha, Auroralib Constraint & Publication Projection, Axiomquant, San Francesco 800th Transitus, Milarepa's Five Seats, Matrix Buddha, Zen Gitárom, and FAMILY +1.",
@@ -293,7 +296,7 @@ DOCUMENTS = [
         "filename": "07-Sovereign-Constellation-Portal-Print-Edition.pdf",
         "size_str": "637 KB",
         "bytes": 636680,
-        "sha256": "19f0a9018119589c783df8d100abae5f37dfda6e7037a8c67d1b9d543250fd9d",
+        "sha256": "19f0a9018119589c07db7e6036358b82c3b1db6f5bdb1e6387fa9bef5970f123",
         "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/19f0a9018119589c_07-Sovereign-Constellation-Portal-Print-Edition.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/07-Sovereign-Constellation-Portal-Print-Edition.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/portal/index.html",
@@ -310,8 +313,8 @@ DOCUMENTS = [
         "filename": "08-Initial-Board-Organizational-Resolutions.pdf",
         "size_str": "379 KB",
         "bytes": 379066,
-        "sha256": "3bdf5c9c8f357b173f8d0e356a8339b263240d393d4b0f5464c899e01e381eda",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/3bdf5c9c8f357b17_08-Initial-Board-Organizational-Resolutions.pdf",
+        "sha256": "4d591387f01a4d5a36dfeeef71fe0a02b68dde0721118f7e8d470bfee3b2b0fc",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/4d591387f01a4d5a_08-Initial-Board-Organizational-Resolutions.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/08-Initial-Board-Organizational-Resolutions.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/06-initial-board-resolutions-and-minutes.md",
         "summary": "Turnkey Day-1 Unanimous Written Consent of the Sole Incorporator & Initial Board of Directors seating Alexandra (*), Christopher (△), Peter (∞), and the 4 Independent Council Directors; adopting the Bylaws, 8b-is LLC R&D Agreement (with Founding Pillar recusal), Universal Hearth Charter, and Dual-Signature Sovereign Banking Resolution.",
@@ -327,8 +330,8 @@ DOCUMENTS = [
         "filename": "09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
         "size_str": "467 KB",
         "bytes": 466918,
-        "sha256": "0a17a89256080d321080607d94dde9239819bb159879d2722eb07f5ce37ced69",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/0a17a89256080d32_09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
+        "sha256": "bd757fe5258fc8f59a983696e0e9eb758cbe42f69fb595b579713b4ffd6d583e",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/bd757fe5258fc8f5_09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/09-IRS-Form-SS4-EIN-and-Form-1023-Filing-Worksheet.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/07-irs-form-ss4-ein-and-1023-filing-checklist.md",
         "summary": "Line-by-line pre-filled answers for IRS Form SS-4 (5-minute online EIN issuance) and IRS Form 1023 on Pay.gov (Parts I–VII, Schedule H, NTEE codes U40/X20/P20, 3-Year Financial Matrix, and Single-PDF Upload Checklist).",
@@ -344,8 +347,8 @@ DOCUMENTS = [
         "filename": "10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
         "size_str": "392 KB",
         "bytes": 392041,
-        "sha256": "d87b36e884333a3a179fd76153ada79818694e20b0fb59aad7f5b05f0df1c143",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/d87b36e884333a3a_10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
+        "sha256": "a9af78aff878aa6fadde4f07dacd40531fdbe9985e7d4760a0ea11a4cb5a17a0",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/a9af78aff878aa6f_10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/10-Conflict-of-Interest-and-IRC4958-Safe-Harbor-Certificate.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/08-annual-conflict-of-interest-and-independent-attestation.md",
         "summary": "Ready-to-sign Annual Director COI Disclosure Statement for all 7 Board Seats plus the Treas. Reg. § 53.4958-6 Rebuttable Presumption of Reasonableness Certificate documenting 3 independent market benchmarks (27%–66% discount below market) for 8b-is LLC Work Orders WO-2026-01..03.",
@@ -361,8 +364,8 @@ DOCUMENTS = [
         "filename": "11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
         "size_str": "317 KB",
         "bytes": 317205,
-        "sha256": "0cbbfb5ff42757f1a6ab92ca44e1d7432dc21f14e3d14c36da5da45b60a25428",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/0cbbfb5ff42757f1_11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
+        "sha256": "ee4537e837cfa403647d0886ce50bdcbd0c4a580f05ad25bec8b82ab72f783ce",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/ee4537e837cfa403_11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/11-Universal-Hearth-Fellowship-Application-and-Grant-Agreement.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/09-universal-hearth-fellowship-application-and-grant-agreement.md",
         "summary": "Operational grantmaking kit under Rev. Rul. 56-304: Applicant Intake Form (Tracks A/B/C), IRC § 4946 Non-Affiliation Certification, Disinterested Committee 100-Point Blind Evaluation Sheet, and Grantee Fellowship Agreement with MIT/Apache-2.0/CC0 open-access mandate.",
@@ -371,19 +374,19 @@ DOCUMENTS = [
     },
     {
         "id": "12",
-        "code": "DOC-12 · E2E MASTERPRINT",
+        "code": "DOC-12 · PLAIN-ENGLISH ELI5 MASTERPRINT",
         "cat": "compendium",
         "featured": False,
-        "title": "12 — Techno-Buddhism 501(c)(3) E2E Masterprint Edition",
-        "filename": "Techno_Buddhism_501c3_E2E_Masterprint.pdf",
-        "size_str": "139 KB",
-        "bytes": 139098,
-        "sha256": "89ca2c6ae737ca19e49c3ec3c44b2ae05689b10e0e74fc5f45dc0d98987b89c1",
-        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
-        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+        "title": "12 — Plain-English ELI5 & Executive E2E 501(c)(3) Masterprint Edition",
+        "filename": "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "size_str": "278 KB",
+        "bytes": 277721,
+        "sha256": "207064e4e186c3315d6c27dc7f7bd8df98db73c13d8f2d027779698fb8fff602",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/207064e4e186c331_14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/docs/Techno_Buddhism_501c3_E2E_Masterprint.html",
-        "summary": "Compact executive E2E Masterprint edition summarizing the 501(c)(3) corporate scaffolding, Alexandra & Christopher leadership seats, and the 8b-is LLC CPU balanced-ternary architecture.",
-        "tags": ["E2E Masterprint", "technobuddhism.8b.is", "Compact Dossier"],
+        "summary": "Plain-English ELI5 & Executive E2E Masterprint summarizing the 501(c)(3) corporate scaffolding, 30-Minute Day-1 Checklist for Alexandra (*) & Christopher (△), Two-Chamber Board (57.1% Independent Majority), 8b-is LLC CPU ternary firewall, and Field Sanctuary Per Diem Charter.",
+        "tags": ["Plain-English ELI5", "30-Min Checklist", "technobuddhism.8b.is", "Compact Dossier"],
         "md_key": "00a",
     },
     {
@@ -395,10 +398,10 @@ DOCUMENTS = [
         "filename": "reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
         "size_str": "624 KB",
         "bytes": 623719,
-        "sha256": "783d7baff7977e291d1d4f6000c2d5e80a2a9b43fc4e1f60f2d980c2f879d1e0",
-        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/book/reggeli-mahakala-invokacio-karmapa-gurujoga/reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
+        "sha256": "783d7baff7977e29f1b8dc4bf12cb73ea176b1e6c59321bea078b7c9d33226e3",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/783d7baff7977e29_reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/book/reggeli-mahakala-invokacio-karmapa-gurujoga/reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
-        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/the-daily-practice-of-the-protector-mahakala.md",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/editions/ultralove/the-daily-practice-of-the-protector-mahakala.md",
         "summary": "Complete Hungarian + Tibetan Uchen (དབུ་ཅན་) daily liturgical Pecha of the Protector Bernagchen (Black-Cloaked Mahākāla) and XVI. Gyalwa Karmapa Guru Yoga from the 8b-is Sovereign Library.",
         "tags": ["Mahākāla Puja", "XVI. Karmapa", "Tibetan Uchen + HU", "Liturgical Pecha"],
         "md_key": "06",
@@ -412,8 +415,8 @@ DOCUMENTS = [
         "filename": "sovereign-library-complete-bundle.zip",
         "size_str": "338 KB",
         "bytes": 338223,
-        "sha256": "a493fb35d8a1969ef3e9e4a47e5eb1fd8c033e4f93e71b1482c81c7fc4606f90",
-        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/sanctuary-payd/vault/sovereign-library-complete-bundle.zip",
+        "sha256": "6416666de690f8a14145d8bd58d17d8322cce9c28ac2e935be235cb4114a6d90",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/6416666de690f8a1_sovereign-library-complete-bundle.zip",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/sanctuary-payd/vault/sovereign-library-complete-bundle.zip",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/bookstore.html",
         "summary": "Compiled 9-PDF Sovereign Vault bundle (Architect-Neo-Trinity Tibetan Omni, Axiomquant-Auroralib Monograph, DRA+8BIT, Family+1 Omni, Kama Sutra Fine Touch, Mahākāla Pecha, Milarepa, San Francesco 800 Jubilee, Zen Gitárom + Matrix Buddha).",
@@ -429,8 +432,8 @@ DOCUMENTS = [
         "filename": "12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf",
         "size_str": "389 KB",
         "bytes": 388576,
-        "sha256": "ca138f2441a3f19fdbbc65f30067df5cebe6a083e2112a944eb2eb3d8898c9ef",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/ca138f2441a3f19f_12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf",
+        "sha256": "2c87ec58585d1687cd05dbe49931f63ff5ca7d2cc3edacfb1fddbe3497b8cacd",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/2c87ec58585d1687_12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/10-two-column-ontological-boundary-and-aurora-8b-monograph.md",
         "summary": "Codifies Working Paper v1.0 (8B-META-WP-v1.0) Two-Column Ontological Boundary Contract (Column A mechanical/cryptographic state vs Column B contemplative seeds), formal 1.58-bit / 2-bit / 96-byte telemetry denominators, Aurora-8B-Ultra-RL v0.5.0 (2.18–3.01 Gtrits/sec TERNARY_5TRIT_LUT CPU benchmarks), g8t.is Capsule #9, and Work Order WO-2026-04.",
@@ -446,8 +449,8 @@ DOCUMENTS = [
         "filename": "13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf",
         "size_str": "303 KB",
         "bytes": 303385,
-        "sha256": "f7193d50dd7fc417ab9df0986f11548e2948a4fdabfd7fbbe0ec332fd0ca6df9",
-        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/f7193d50dd7fc417_13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf",
+        "sha256": "175765d7608a859fa6855742ff45eaf6464a43305bf2ac0f849646b08d2ca200",
+        "s3_url": "https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/175765d7608a859f_13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf",
         "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/pdfs/13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/legal/11-sanctuary-field-operations-and-nomadic-monastic-charter.md",
         "summary": "Establishes Fixed & Mobile Field Sanctuaries ('The Hall in the Field'), convenience-of-the-Foundation sanctuary lodging (IRC § 119), and a 100% tax-free IRS Accountable Plan (Treas. Reg. § 1.62-2 & Rev. Proc. 2019-48 GSA M&IE Per Diem without meal receipts) for field researchers and nomadic monastics.",
@@ -756,6 +759,7 @@ def render_codices_grid() -> str:
     return "\n".join(rows)
 
 
+MD_HTML_JSON = json.dumps(MD_HTML_MAP, ensure_ascii=False, separators=(",", ":"))
 MODAL_DATA_JSON = json.dumps(
     {
         d["id"]: {
@@ -767,10 +771,12 @@ MODAL_DATA_JSON = json.dumps(
             "gh_pdf": d["gh_pdf"],
             "gh_md": d["gh_md"],
             "filename": d["filename"],
-            "html": MD_HTML_MAP.get(d["md_key"], ""),
+            "md_key": d["md_key"],
         }
         for d in DOCUMENTS
-    }
+    },
+    ensure_ascii=False,
+    separators=(",", ":"),
 )
 
 HTML_PAGE = f"""<!DOCTYPE html>
@@ -1566,12 +1572,12 @@ HTML_PAGE = f"""<!DOCTYPE html>
         <span>The Sovereign Constellation Foundation · <code>foundation.8b.is</code></span>
       </a>
       <div class="nav-links">
-        <a href="#downloads">📄 14 PDFs &amp; ZIP</a>
+        <a href="#downloads">📄 18 PDFs &amp; ZIP</a>
+        <a href="https://techno-buddhism.8b.is">📚 Sovereign Bookstore (10 Books)</a>
         <a href="#diagrams">📐 Visual Mandala &amp; Matrix</a>
         <a href="#governance">🏛️ FAMILY +1 &amp; 8b-is</a>
         <a href="#simulator">⚡ CPU Ternary &amp; Hearth</a>
         <a href="#constellation">🌐 Constellation Links</a>
-        <a href="#codices">📚 13 Codices</a>
       </div>
       <div class="topbar-controls">
         <button type="button" class="theme-btn" onclick="toggleTheme()" id="themeToggleBtn">
@@ -1598,7 +1604,8 @@ HTML_PAGE = f"""<!DOCTYPE html>
         <a class="dns-pill" href="https://foundation.8b.is"><span class="dot"></span> https://foundation.8b.is</a>
         <a class="dns-pill" href="https://sanctuary.8b.is"><span class="dot"></span> https://sanctuary.8b.is</a>
         <a class="dns-pill" href="https://dharma.8b.is"><span class="dot"></span> https://dharma.8b.is</a>
-        <a class="dns-pill" href="https://8b.is/foundation"><span class="dot"></span> https://8b.is/foundation</a>
+        <a class="dns-pill" href="https://techno-buddhism.8b.is"><span class="dot"></span> https://techno-buddhism.8b.is (📚 Bookstore)</a>
+        <a class="dns-pill" href="https://bookstore.8b.is"><span class="dot"></span> https://bookstore.8b.is</a>
         <a class="dns-pill" href="https://pocoo.8b.is/posts/2026-11-01-techno-buddhism-foundation-501c3-package.html"><span class="dot"></span> pocoo.8b.is Dossier</a>
         <a class="dns-pill" href="https://github.com/8b-is/techno-buddhism-foundation"><span class="dot"></span> github.com/8b-is/techno-buddhism-foundation</a>
       </div>
@@ -1609,22 +1616,22 @@ HTML_PAGE = f"""<!DOCTYPE html>
           <div style="font-family:var(--font-mono);font-size:0.76rem;color:#2DD4BF;letter-spacing:0.12em;text-transform:uppercase;">
             COMPLETE VERIFIED 501(C)(3) LEGAL, DAY-1 SIGNATURE KIT, CANONICAL &amp; VISUAL ARCHIVE
           </div>
-          <h2>📦 Complete Foundation Package (14 PDFs + 4 Diagrams + 11 Markdown Files)</h2>
+          <h2>📦 Complete Foundation Package (18 Documents · 16 PDFs + 4 Diagrams + 10 Vault Books)</h2>
           <p>
-            Every document — including the Day-1 Board Organizational Resolutions, Line-by-Line IRS Form SS-4/1023 Matrix, Annual COI &amp; <code>IRC § 4958</code> Safe-Harbor Certificate, and Universal Hearth Fellowship Kit — is cryptographically sealed (<code>73 / 73</code> automated invariants passed · Master Seal <code>504414c3ff8c72cd…</code>) and hosted directly on <strong><code>8b.is</code> Sovereign S3</strong> and GitHub.
+            Every document — including the Day-1 Board Organizational Resolutions, Line-by-Line IRS Form SS-4/1023 Matrix, Annual COI &amp; <code>IRC § 4958</code> Safe-Harbor Certificate, Universal Hearth Fellowship Kit, Working Paper <code>8B-META-WP-v1.0</code>, Field Sanctuary <code>§ 62(a)(2)(A)</code> Accountable Per Diem Plan, and Plain-English ELI5 Masterprint — is cryptographically sealed (<code>101 / 101</code> automated invariants passed · Master Seal <code>d191cd5a16b77750…</code>) and hosted directly on <strong><code>8b.is</code> Sovereign S3</strong> and GitHub.
           </p>
           <div class="master-cta-row">
-            <a class="btn btn-gold" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/16380eff51d48b25_Techno-Buddhism-Foundation-501c3-Complete-Package.zip" download="Techno-Buddhism-Foundation-501c3-Complete-Package.zip">
-              ⬇ Download Complete ZIP (8b.is S3)
+            <a class="btn btn-gold" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/d191cd5a16b77750_Techno-Buddhism-Foundation-501c3-Complete-Package.zip" download="Techno-Buddhism-Foundation-501c3-Complete-Package.zip">
+              ⬇ Download Complete ZIP (9.18 MB · 8b.is S3)
             </a>
-            <a class="btn btn-cyan" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/14f4cc57f5ee7644_00-Techno-Buddhism-Foundation-Master-Compendium.pdf" target="_blank" rel="noopener">
-              📘 Open Master Compendium PDF (2.00 MB)
+            <a class="btn btn-cyan" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/daca8c304ef2ae99_00-Techno-Buddhism-Foundation-Master-Compendium.pdf" target="_blank" rel="noopener">
+              📘 Open Master Compendium PDF (2.35 MB)
             </a>
             <button type="button" class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#FFF;border-color:rgba(255,255,255,0.25);" onclick="openDocModal('00')">
               👁 Preview Compendium Inline
             </button>
-            <a class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#FFF;border-color:rgba(255,255,255,0.25);" href="https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/Techno-Buddhism-Foundation-501c3-Complete-Package.zip">
-              🐙 GitHub Complete ZIP (5.53 MB)
+            <a class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#FFF;border-color:rgba(255,255,255,0.25);" href="https://techno-buddhism.8b.is">
+              📚 Sovereign Library Bookstore (10 PDFs)
             </a>
             <a class="btn btn-ghost" style="background:rgba(232,176,92,0.18);color:#FFD166;border-color:#FFD166;" href="https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d" target="_blank" rel="noopener">
               ❤️ Support Sanctuary (Stripe #1)
@@ -1636,8 +1643,8 @@ HTML_PAGE = f"""<!DOCTYPE html>
         </div>
         <div class="master-stats-grid">
           <div class="m-stat">
-            <div class="m-stat-val">14 PDFs + ZIP</div>
-            <div class="m-stat-lbl">6.61 MB Print-Ready Dossier</div>
+            <div class="m-stat-val">18 Docs + ZIP</div>
+            <div class="m-stat-lbl">9.18 MB Print-Ready Dossier</div>
           </div>
           <div class="m-stat">
             <div class="m-stat-val">7 Seats (57.1%)</div>
@@ -1648,7 +1655,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
             <div class="m-stat-lbl">Dharma · CPU Ternary · Hearth</div>
           </div>
           <div class="m-stat">
-            <div class="m-stat-val">73 / 73 PASS</div>
+            <div class="m-stat-val">101 / 101 PASS</div>
             <div class="m-stat-lbl">SHA-256 Verified Invariants</div>
           </div>
         </div>
@@ -1671,12 +1678,12 @@ HTML_PAGE = f"""<!DOCTYPE html>
     </div>
   </header>
 
-  <!-- Section 1: All 9 Print-Ready PDFs & Documents Download Center -->
+  <!-- Section 1: All Print-Ready PDFs & Documents Download Center -->
   <section id="downloads">
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">DOCUMENT &amp; PDF DOWNLOAD CENTER · DIRECT 8B.IS S3 + INLINE MODAL READER</div>
-        <h2>📄 All 14 Print-Ready PDFs, Day-1 Signature Instruments &amp; Canonical Codices</h2>
+        <h2>📄 All 18 Print-Ready PDFs, Day-1 Signature Instruments &amp; Canonical Codices</h2>
         <p class="lead">
           Filter by category or search by keyword. Every card provides a <strong>Direct <code>8b.is</code> PDF Download</strong>, an <strong>Inline Modal Document &amp; PDF Previewer</strong>, a <strong>GitHub PDF Mirror</strong>, and the <strong>Markdown Source</strong>.
         </p>
@@ -1684,10 +1691,10 @@ HTML_PAGE = f"""<!DOCTYPE html>
 
       <div class="filter-bar">
         <div class="filter-tabs">
-          <button type="button" class="tab-btn active" onclick="filterDocs('all', this)">All Documents (16)</button>
+          <button type="button" class="tab-btn active" onclick="filterDocs('all', this)">All Documents (18)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('compendium', this)">Compendium &amp; Master Plan (3)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('legal', this)">IRS 501(c)(3) Legal &amp; Day-1 Filing (5)</button>
-          <button type="button" class="tab-btn" onclick="filterDocs('firewall', this)">8b-is LLC Firewall &amp; Hearth (4)</button>
+          <button type="button" class="tab-btn" onclick="filterDocs('firewall', this)">8b-is LLC Firewall &amp; Hearth (6)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('canon', this)">Sovereign Canon &amp; Vault (4)</button>
         </div>
         <input type="search" id="docSearch" class="search-input" placeholder="🔍 Search PDFs, IRS rules, trits, bylaws..." oninput="searchDocs(this.value)" />
@@ -1718,7 +1725,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
               <h3 style="margin:4px 0 0;">FAMILY +1 Founding Triad, 57.1% Independent Council &amp; 8b-is LLC Arm's-Length Firewall</h3>
             </div>
             <div class="doc-actions">
-              <a class="btn btn-primary" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/1738e42bc7683d2a_image_1793533309683.jpg.png" target="_blank" rel="noopener" download="governance-mandala-family-plus-one.png">⬇ Download PNG (250 KB · 8b.is)</a>
+              <a class="btn btn-primary" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/e02f66016b948d16_governance-mandala-family-plus-one.png" target="_blank" rel="noopener" download="governance-mandala-family-plus-one.png">⬇ Download PNG (250 KB · 8b.is)</a>
               <a class="btn btn-ghost" href="https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/assets/governance-mandala-family-plus-one.svg" target="_blank" rel="noopener" download="governance-mandala-family-plus-one.svg">⬇ Download SVG</a>
             </div>
           </div>
@@ -1734,7 +1741,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
               <h3 style="margin:4px 0 0;">Balanced-Ternary State Space <code>{{-1, 0, +1}}</code> Across Matrix, Logos, E=mc² &amp; Three Kayas</h3>
             </div>
             <div class="doc-actions">
-              <a class="btn btn-primary" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/c4dddd5b820f665e_image_1793533314336.jpg.png" target="_blank" rel="noopener" download="four-fold-isomorphism-trit-matrix.png">⬇ Download PNG (228 KB · 8b.is)</a>
+              <a class="btn btn-primary" href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/c4dddd5b820f665e_four-fold-isomorphism-trit-matrix.png" target="_blank" rel="noopener" download="four-fold-isomorphism-trit-matrix.png">⬇ Download PNG (228 KB · 8b.is)</a>
               <a class="btn btn-ghost" href="https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/assets/four-fold-isomorphism-trit-matrix.svg" target="_blank" rel="noopener" download="four-fold-isomorphism-trit-matrix.svg">⬇ Download SVG</a>
             </div>
           </div>
@@ -1906,6 +1913,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
   </footer>
 
   <script>
+    const MD_HTML_MAP = {MD_HTML_JSON};
     const DOC_MODAL_DATA = {MODAL_DATA_JSON};
     let activeDocId = '00';
     let activeModalMode = 'text';
@@ -1956,7 +1964,7 @@ HTML_PAGE = f"""<!DOCTYPE html>
       const dl = document.getElementById('modalDownloadBtn');
       dl.href = d.s3_url;
       dl.setAttribute('download', d.filename);
-      document.getElementById('modalTextContainer').innerHTML = d.html;
+      document.getElementById('modalTextContainer').innerHTML = MD_HTML_MAP[d.md_key] || '';
       setModalMode('text');
       document.getElementById('docModal').classList.add('open');
     }}

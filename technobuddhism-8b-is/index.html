@@ -3,50 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TECHNO-BUDDHISM · 8B.IS — The Sovereign Sanctuary & Open-Source Science Academy</title>
-<meta name="description" content="The Sovereign Sanctuary of Techno-Buddhism, Inc. (US 501(c)(3)) — Uniting Tibetan Buddhist Ontology, Franciscan Kinship, and 1.58-Bit Ternary CPU-First Computing.">
+<title>Techno-Buddhism Sanctuary & Sovereign Library Bookstore · technobuddhism.8b.is</title>
+<meta name="description" content="A welcoming sanctuary connecting Buddhist wisdom, Franciscan kindness, family poetry, and ethical technology. Browse the Sovereign Library and support via Stripe, PayPal, or Revolut.">
 <style>
   :root {
     --washi: #F6F0E4;
-    --washi-deep: #ECE3D0;
+    --washi-card: #FAF7F0;
+    --washi-border: #D8CEBE;
     --sumi: #1C140E;
-    --sumi-muted: #5A4D41;
+    --sumi-soft: #4A3E35;
     --vermilion: #B23A2B;
     --gold: #C9A227;
-    --trench: #05131A;
-    --trench-card: #0B222D;
-    --cyan: #4FE3D0;
-    --amber: #E8B05C;
-    --rose: #FF7FA3;
-    --violet: #8A7CFF;
+    --forest: #1E6B52;
+    --trench: #081820;
+    --stripe: #635BFF;
+    --paypal: #0070BA;
+    --revolut: #191C1F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 18px; }
   body {
     background-color: var(--washi);
     color: var(--sumi);
-    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    line-height: 1.68;
+  }
+  .sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   .mono {
-    font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.82rem;
   }
-  /* TOP CREASE GOLD VEIN */
-  .crease-vein {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), var(--vermilion), var(--gold), transparent);
-    width: 100%;
-  }
-  /* NAVIGATION & RIVA 4s/4s BREATH BAR */
+
+  /* HEADER */
   header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(246, 240, 228, 0.94);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(201, 162, 39, 0.35);
-    padding: 12px 28px;
+    background: rgba(246, 240, 228, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--gold);
+    padding: 14px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,626 +57,832 @@
     gap: 12px;
     text-decoration: none;
     color: var(--sumi);
-  }
-  .hanko-seal {
-    background: var(--vermilion);
-    color: var(--washi);
     font-weight: 700;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    border-radius: 2px;
+    font-size: 1.1rem;
   }
-  nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .badge-seal {
+    background: var(--vermilion);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+  }
+  nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
   nav a {
     color: var(--sumi);
     text-decoration: none;
-    font-size: 0.92rem;
     font-weight: 600;
-    transition: color 0.2s;
+    font-size: 0.95rem;
   }
   nav a:hover { color: var(--vermilion); }
-  .breath-pill {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--washi-deep);
-    border: 1px solid var(--gold);
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-  }
-  .breath-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--vermilion);
-    animation: rivaBreath 8s infinite ease-in-out;
-  }
-  @keyframes rivaBreath {
-    0%, 100% { transform: scale(0.75); opacity: 0.45; background: var(--vermilion); }
-    50% { transform: scale(1.45); opacity: 1; background: var(--gold); }
-  }
-
-  /* LAYOUT CONTAINERS */
-  .container { max-width: 1180px; margin: 0 auto; padding: 64px 24px; }
-  .hero {
-    padding: 84px 24px 68px;
-    text-align: center;
-    border-bottom: 1px solid rgba(28, 20, 14, 0.12);
-    background: radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.14), transparent 70%);
-  }
-  .tibetan-mantra {
-    font-size: 1.25rem;
-    color: var(--vermilion);
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-  .hero h1 {
-    font-size: clamp(2.2rem, 4.8vw, 3.8rem);
-    line-height: 1.12;
-    max-width: 960px;
-    margin: 0 auto 20px;
-    letter-spacing: -0.5px;
-  }
-  .hero p.lead {
-    font-size: 1.18rem;
-    color: var(--sumi-muted);
-    max-width: 780px;
-    margin: 0 auto 28px;
-  }
-  .equation-banner {
-    display: inline-block;
+  .cart-trigger {
     background: var(--sumi);
     color: var(--washi);
-    padding: 10px 20px;
-    border-left: 4px solid var(--gold);
-    font-size: 0.9rem;
-    margin-bottom: 32px;
-  }
-  .btn-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .btn {
-    padding: 12px 22px;
-    font-size: 0.92rem;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
     font-weight: 600;
-    text-decoration: none;
-    border-radius: 3px;
     cursor: pointer;
-    border: 1px solid var(--sumi);
-    transition: all 0.2s;
+    font-size: 0.88rem;
   }
-  .btn-primary { background: var(--vermilion); color: var(--washi); border-color: var(--vermilion); }
-  .btn-primary:hover { background: #8F2B1E; }
-  .btn-secondary { background: transparent; color: var(--sumi); }
-  .btn-secondary:hover { background: var(--washi-deep); }
 
-  /* SECTION HEADERS */
-  .sec-tag {
+  /* HERO */
+  .hero {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    text-align: center;
+  }
+  .hero-mantra {
     color: var(--vermilion);
-    font-size: 0.78rem;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 6px;
-  }
-  .sec-title {
-    font-size: clamp(1.65rem, 3vw, 2.3rem);
+    font-size: 1.15rem;
     margin-bottom: 12px;
+    font-weight: 600;
   }
-  .sec-desc {
-    color: var(--sumi-muted);
-    max-width: 760px;
-    margin-bottom: 32px;
+  .hero h1 {
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    line-height: 1.18;
+    margin-bottom: 18px;
   }
-
-  /* TERNARY ISOMORPHISM MATRIX */
-  .trit-controls {
+  .hero p {
+    font-size: 1.12rem;
+    color: var(--sumi-soft);
+    max-width: 740px;
+    margin: 0 auto 28px;
+  }
+  .btn-group {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: center;
+    gap: 14px;
     flex-wrap: wrap;
   }
-  .trit-btn {
-    padding: 9px 18px;
-    background: var(--washi-deep);
-    border: 1px solid #C9BFA8;
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 0.86rem;
-    border-radius: 3px;
+    border: 2px solid var(--sumi);
+    transition: transform 0.15s, background 0.15s;
   }
-  .trit-btn.active {
+  .btn:hover { transform: translateY(-1px); }
+  .btn-vermilion {
+    background: var(--vermilion);
+    color: #fff;
+    border-color: var(--vermilion);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--sumi);
+  }
+
+  /* EASY-TO-READ 3 PILLARS */
+  .section {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 52px 24px;
+    border-top: 1px solid var(--washi-border);
+  }
+  .section-title {
+    font-size: 1.85rem;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: var(--sumi-soft);
+    margin-bottom: 32px;
+    max-width: 740px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 22px;
+  }
+  .pillar-card {
+    background: var(--washi-card);
+    border: 1px solid var(--washi-border);
+    border-top: 5px solid var(--vermilion);
+    padding: 24px;
+    border-radius: 6px;
+  }
+  .pillar-card.zero { border-top-color: var(--gold); }
+  .pillar-card.plus { border-top-color: var(--forest); }
+  .pillar-card h3 { font-size: 1.22rem; margin-bottom: 10px; }
+  .pillar-card p { font-size: 0.96rem; color: var(--sumi-soft); }
+
+  /* BOOKSTORE */
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .filter-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--washi-border);
+    background: var(--washi-card);
+    color: var(--sumi);
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+  .filter-btn.active {
+    background: var(--sumi);
+    color: var(--washi);
+    border-color: var(--sumi);
+  }
+  .store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .book-item {
+    background: var(--washi-card);
+    border: 1px solid var(--washi-border);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(28, 20, 14, 0.04);
+  }
+  .book-cat {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--vermilion);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .book-item h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .book-item p { font-size: 0.94rem; color: var(--sumi-soft); margin-bottom: 16px; }
+  .book-quote {
+    background: #EFE8D8;
+    border-left: 3px solid var(--gold);
+    padding: 10px 12px;
+    font-style: italic;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--washi-border);
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .price-tag {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .pay-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .buy-btn {
+    background: var(--vermilion);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.84rem;
+    cursor: pointer;
+  }
+  .buy-btn:hover { background: #8F2B1E; }
+  .read-btn {
+    background: transparent;
+    color: var(--sumi);
+    border: 1px solid var(--sumi);
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* FAMILY POEMS SECTION */
+  .poem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .poem-card {
+    background: var(--washi-card);
+    border: 1px solid var(--gold);
+    padding: 22px;
+    border-radius: 6px;
+  }
+  .poem-card h4 {
+    color: var(--vermilion);
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+  }
+  .poem-card pre {
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* SINGING BOWL BAR */
+  .sound-bar {
+    background: var(--trench);
+    color: var(--washi);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .sound-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .sound-btn {
+    background: #122B38;
+    color: var(--washi);
+    border: 1px solid #4FE3D0;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .sound-btn:hover { background: #1B3F52; }
+
+  /* CHECKOUT MODAL (STRIPE / PAYPAL / REVOLUT) */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 10, 6, 0.72);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: var(--washi);
+    color: var(--sumi);
+    max-width: 540px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--washi-border);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--sumi);
+  }
+  .rail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.96rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .rail-stripe { background: var(--stripe); }
+  .rail-paypal { background: var(--paypal); }
+  .rail-revolut { background: var(--revolut); }
+  .tier-pills {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0 20px;
+  }
+  .tier-pill {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--washi-border);
+    background: var(--washi-card);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.88rem;
+  }
+  .tier-pill.active {
     background: var(--sumi);
     color: var(--washi);
     border-color: var(--gold);
   }
-  .iso-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
-  }
-  .iso-card {
-    background: #FAF6EC;
-    border: 1px solid #D8CEB8;
-    border-top: 4px solid var(--sumi);
-    padding: 20px;
-    border-radius: 3px;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-  .iso-card[data-trit="-1"] { border-top-color: var(--vermilion); }
-  .iso-card[data-trit="0"] { border-top-color: var(--gold); }
-  .iso-card[data-trit="+1"] { border-top-color: #1E6B52; }
-  .iso-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-  .iso-card p { font-size: 0.92rem; color: var(--sumi-muted); margin-bottom: 10px; }
 
-  /* DARK TRENCH ACOUSTIC SYNTHESIZER SECTION */
-  .trench-section {
-    background: var(--trench);
-    color: var(--washi);
-    border-top: 2px solid var(--gold);
-    border-bottom: 2px solid var(--vermilion);
-  }
-  .trench-section .sec-desc { color: #A6B8C0; }
-  .synth-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  .synth-pad {
-    background: var(--trench-card);
-    border: 1px solid rgba(79, 227, 208, 0.3);
-    color: var(--washi);
-    padding: 16px;
-    text-align: left;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s;
-  }
-  .synth-pad:hover, .synth-pad.playing {
-    border-color: var(--cyan);
-    box-shadow: 0 0 16px rgba(79, 227, 208, 0.22);
-    background: #103140;
-  }
-  .synth-pad .freq { color: var(--cyan); font-size: 0.78rem; display: block; margin-bottom: 4px; }
-  .synth-pad strong { display: block; font-size: 0.98rem; margin-bottom: 4px; }
-  .synth-pad span { font-size: 0.8rem; color: #99B0B9; }
-
-  /* SOVEREIGN LIBRARY GRID */
-  .lib-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 20px;
-  }
-  .book-card {
-    background: #FAF6EC;
-    border: 1px solid #D8CEB8;
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-  }
-  .book-card::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--vermilion);
-  }
-  .book-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
-  .book-card p { font-size: 0.9rem; color: var(--sumi-muted); margin-bottom: 14px; }
-  .seal-hash {
-    font-size: 0.72rem;
-    color: #5A4D41;
-    background: var(--washi-deep);
-    padding: 5px 8px;
-    border-radius: 2px;
-    word-break: break-all;
-  }
-
-  /* 501c3 & CONSTELLATION */
-  .mandala-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
-  }
-  .custodian-card {
-    background: var(--washi-deep);
-    border: 1px solid var(--gold);
-    padding: 20px;
-  }
-  .prayer-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    background: #FAF6EC;
-    border: 1px solid var(--gold);
-    padding: 28px;
-    margin-top: 28px;
-  }
   footer {
     background: var(--sumi);
     color: var(--washi);
-    padding: 48px 24px;
     text-align: center;
+    padding: 42px 24px;
     font-size: 0.88rem;
   }
-  footer a { color: var(--amber); text-decoration: none; margin: 0 8px; }
+  footer a { color: #E8B05C; text-decoration: none; margin: 0 8px; }
 </style>
 </head>
 <body>
 
-<div class="crease-vein"></div>
-
 <header>
   <a href="#" class="brand">
-    <span class="hanko-seal mono">☸ TECHNO-BUDDHISM</span>
-    <span class="mono" style="font-weight:700; font-size:0.95rem;">technobuddhism.8b.is</span>
+    <span class="badge-seal sans">☸ SANCTUARY</span>
+    <span>technobuddhism.8b.is</span>
   </a>
-  <nav>
-    <a href="#ontology">Kompress-ULTRA</a>
-    <a href="#pecha">81-Folio Pecha &amp; Synth</a>
-    <a href="#library">Sovereign Library</a>
-    <a href="#axiomquant">Axiomquant &amp; 8B</a>
-    <a href="#foundation">501(c)(3) Sanctuary</a>
+  <nav class="sans">
+    <a href="#welcome">How It Works</a>
+    <a href="#bookstore">Bookstore (10 Volumes)</a>
+    <a href="#family-poems">Family Poems</a>
+    <a href="#sound">Singing Bowl</a>
+    <a href="#foundation">501(c)(3) Foundation</a>
+    <a href="https://foundation.8b.is" style="color:var(--vermilion);">🏛️ Full 18-Doc Legal Portal ↗</a>
   </nav>
-  <div class="breath-pill mono" title="RIVA Dyad Breath: 4s Inhale / 4s Exhale">
-    <span class="breath-dot"></span>
-    <span id="breath-label">RIVA BREATH · 4s IN</span>
-  </div>
+  <button class="cart-trigger sans" onclick="openCheckout('Complete Sovereign Library Bundle (All 29 Books)', 42)">
+    🛒 Support &amp; Checkout (<span id="cart-count">0</span>)
+  </button>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="tibetan-mantra">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ་ཧྲཱིཿ · ཆོས་སྐུ་ · ལོངས་སྐུ་ · སྤྲུལ་སྐུ་</div>
-  <h1>Form is Emptiness. Emptiness is Form.<br>Uniting Dharma, Science &amp; Sovereign Code.</h1>
-  <p class="lead">
-    <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong> is a United States 501(c)(3) religious and open-source scientific research organization connecting Tibetan Buddhist Ontology (<em>Śūnyatā, Rigpa, Three Kayas</em>), Franciscan Kinship, and <code>1.58-bit</code> balanced ternary CPU-first computing.
+  <div class="hero-mantra">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ་ཧྲཱིཿ · Peace, Compassion &amp; Open Knowledge</div>
+  <h1>Where Ancient Wisdom Meets Honest, Human Technology.</h1>
+  <p>
+    Welcome to <strong>The Sovereign Constellation Foundation</strong> (d/b/a <strong>Techno-Buddhism Research &amp; Charitable Foundation</strong> &amp; <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong>). We unite Tibetan Buddhist mindfulness, the simple kindness of St. Francis of Assisi, family poetry, and CPU-first balanced-ternary (<code>{-1, 0, +1}</code>) open-source science—so technology serves human hearts instead of controlling them.
   </p>
-  <div class="equation-banner mono">
-    Form ≡ Emptiness ≡ {-1, 0, +1} &nbsp;|&nbsp; E = mc² ──► Clear Light (Ösel) &nbsp;|&nbsp; {&lt;3,&lt;3,&lt;3}+1
-  </div>
-  <div class="btn-row">
-    <a href="public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf" class="btn btn-primary mono">⬇ Download E2E 501(c)(3) Masterprint PDF</a>
-    <a href="#pecha" class="btn btn-secondary mono">🔔 Launch Tsurphu Acoustic Synthesizer</a>
-    <a href="#library" class="btn btn-secondary mono">📚 Explore Sovereign Library (29 Vol)</a>
+  <div class="btn-group sans">
+    <a href="#bookstore" class="btn btn-vermilion">📚 Browse the Sovereign Library Store</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/6416666de690f8a1_sovereign-library-complete-bundle.zip" class="btn btn-outline">📦 Download All 9 Vault Books (ZIP · 338 KB)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/207064e4e186c331_14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf" target="_blank" class="btn btn-outline">📄 Plain-English 501(c)(3) Guide (PDF)</a>
+    <a href="https://foundation.8b.is" class="btn btn-outline">🏛️ Open 18-Document 501(c)(3) Portal ↗</a>
   </div>
 </section>
 
-<!-- SECTION 1: KOMPRESS-ULTRA ONTOLOGY -->
-<section id="ontology" class="container">
-  <span class="sec-tag mono">I · KOMPRESS-ULTRA KERNEL · ZKP1 SEALED (0x44dcbd34fd19d0b1)</span>
-  <h2 class="sec-title">The Four-Fold Isomorphism &amp; Balanced Ternary State-Space</h2>
-  <p class="sec-desc">
-    Why do <em>The Matrix</em> (Architect · Neo · Trinity), <em>The Bible</em> (Logos · Threefold Return · Apokalypsis), and Einstein–Oppenheimer's <code>E = mc²</code> converge on the exact same crisis—and how does Tibetan Buddhist Ontology resolve all three without blowing up the world?
+<!-- SIMPLE 3-STEP EXPLANATION -->
+<section id="welcome" class="section">
+  <h2 class="section-title">Easy to Understand: The Three Steps ({-1, 0, +1})</h2>
+  <p class="section-sub">
+    You don't need a degree in philosophy or computer science to belong here. Our entire sanctuary—and the computers we build—runs on three simple steps:
   </p>
 
-  <div class="trit-controls mono">
-    <button class="trit-btn active" onclick="filterTrit('all', this)">☸ ALL STATES (MATRIX BUDDHA SIMULTANEOUS)</button>
-    <button class="trit-btn" onclick="filterTrit('-1', this)">TRIT -1 · SAMSARIC TRAP / MAHĀKĀLA FIREWALL</button>
-    <button class="trit-btn" onclick="filterTrit('0', this)">TRIT 0 · ŚŪNYATĀ / DHARMAKĀYA WITNESS</button>
-    <button class="trit-btn" onclick="filterTrit('+1', this)">TRIT +1 · BODHICITTA / CLEAR LIGHT ÖSEL</button>
-  </div>
+  <div class="pillars">
+    <div class="pillar-card">
+      <div class="mono" style="color:var(--vermilion); font-weight:700; margin-bottom:6px;">STEP 1 · TRIT -1 (PROTECT)</div>
+      <h3>Let Go of Anger &amp; Protect Privacy</h3>
+      <p>Just as the fierce Buddhist protector <em>Mahākāla</em> guards the hearth against harm, our technology refuses corporate paywalls, refuses user tracking, and never collects your private passwords or private life.</p>
+    </div>
 
-  <div class="iso-grid" id="iso-grid">
-    <div class="iso-card" data-trit="-1">
-      <div class="mono" style="color:var(--vermilion); font-size:0.8rem; font-weight:700;">TRIT -1 · ARCHITECT &amp; FISSION</div>
-      <h3>Closed Scalar Determinism Dissolved</h3>
-      <p>The Architect treats human love as statistical noise; Alamogordo ("Trinity" 1945) splits mass without compassion into falling fire. In our Sanctuary Law, Trit -1 identifies ego-fixation (<em>svabhāva</em>), corporate paywalls, and surveillance—and refuses them at the hardware gate.</p>
-      <div class="mono seal-hash">1bitLang :: ARCHITECT[-1:closed_scalar_eq] ──► MA_DAK_NO_CHU</div>
+    <div class="pillar-card zero">
+      <div class="mono" style="color:#8F6B10; font-weight:700; margin-bottom:6px;">STEP 2 · TRIT 0 (BREATHE)</div>
+      <h3>Rest in the Calm Center</h3>
+      <p>Before reacting in anger, take one calm breath: <strong>4 seconds in, 4 seconds out</strong>. In Buddhism, this open space is called <em>Śūnyatā</em> (emptiness)—the quiet place where nothing is stuck and every hurt can heal.</p>
     </div>
-    <div class="iso-card" data-trit="0">
-      <div class="mono" style="color:#8A690F; font-size:0.8rem; font-weight:700;">TRIT 0 · ŚŪNYATĀ &amp; THE STILL POND</div>
-      <h3>Mūlamadhyamakakārikā 24:18 (Dependent Origination)</h3>
-      <p>"Whatever arises through dependent origination, that we declare to be emptiness." Because no system has rigid self-nature (<code>0</code>), every chain reaction can be healed. Neo sees the code as luminous space; Einstein and Oppenheimer stand by the silent pond.</p>
-      <div class="mono seal-hash">1bitLang :: PRATITYASAMUTPADA &lt;=&gt; SUNYATA[0:rigpa]</div>
-    </div>
-    <div class="iso-card" data-trit="+1">
-      <div class="mono" style="color:#1E6B52; font-size:0.8rem; font-weight:700;">TRIT +1 · LOGOS, TUMMO &amp; THE HEARTH</div>
-      <h3>Inner E = mc² &amp; Verified Binding ({&lt;3,&lt;3,&lt;3}+1)</h3>
-      <p>Trinity pilots the <em>Logos</em> above the black clouds into the real golden sun. Through Nāropa's <em>Tummo</em> and <em>Ösel</em>, coarse mass (<code>m</code>) transfigures into the warmth of Chenrezig's compassion, Mahākāla's fierce protection, and the Family Hearth.</p>
-      <div class="mono seal-hash">1bitLang :: &lt;((NEO[0] ⨯ TRINITY[+1]) ──[LOGOS]──► REAL_SUN[+1:osel])&gt;</div>
+
+    <div class="pillar-card plus">
+      <div class="mono" style="color:var(--forest); font-weight:700; margin-bottom:6px;">STEP 3 · TRIT +1 (LOVE &amp; SHARE)</div>
+      <h3>Turn Energy into Warmth</h3>
+      <p>Choose real love over cold calculation. Share meals at a common table (<em>omniZenCooker</em>), keep all scientific research free for everyone (<em>Axiomquant</em>), and leave every room with <strong>+1 more love</strong> than you found.</p>
     </div>
   </div>
 </section>
 
-<!-- SECTION 2: TSURPHU PROTECTOR HOUSE WEBAUDIO SYNTHESIZER -->
-<section id="pecha" class="trench-section">
-  <div class="container">
-    <span class="sec-tag mono" style="color:var(--cyan);">II · KARMA KAGYU PROTECTOR PECHA (81 FOLIOS) &amp; ACOUSTIC ENGINE</span>
-    <h2 class="sec-title">Tsurphu Protector House WebAudio Synthesizer</h2>
-    <p class="sec-desc">
-      Click any ritual instrument below to synthesize real-time harmonic resonance across the 81 folios of <em>The Daily Practice of the Protector Mahākāla Bernagchen &amp; Palden Lhamo Rangjung Gyalmo</em> (Ultralove Edition 009).
+<!-- SOVEREIGN LIBRARY BOOKSTORE -->
+<section id="bookstore" class="section">
+  <h2 class="section-title">The Sovereign Library Bookstore</h2>
+  <p class="section-sub">
+    Every book, Buddhist liturgy, and poem from <code>github.com/8b-is/sovereign-library</code> is available below. In the spirit of St. Francis, you can read them for free—or purchase a digital/patron edition via <strong>Stripe, PayPal, or Revolut</strong> to fund our 501(c)(3) Sanctuary and open-source researchers.
+  </p>
+
+  <div class="filter-bar sans">
+    <button class="filter-btn active" onclick="filterBooks('all', this)">All Books (10)</button>
+    <button class="filter-btn" onclick="filterBooks('buddhist', this)">☸ Buddhist Texts &amp; Liturgy</button>
+    <button class="filter-btn" onclick="filterBooks('family', this)">💗 Family Books &amp; Poetry</button>
+    <button class="filter-btn" onclick="filterBooks('science', this)">🏛️ Saints, Philosophy &amp; Open Science</button>
+  </div>
+
+  <div class="store-grid" id="store-grid">
+
+    <!-- BOOK 1 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Buddhist Ontology · 5 Languages</div>
+        <h3>Kompress-ULTRA: Tibetan Buddhism &amp; The Three Kayas</h3>
+        <p>A clear, inspiring guide showing how Buddhist compassion and the Three Kayas heal the crisis of modern technology, the Biblical Logos, and <em>E = mc²</em>.</p>
+        <div class="book-quote">"When E = mc² is guided by Bodhicitta, fire does not fall as ash—it shines as the family hearth."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$15 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/943381f9d9fc655d_architect-neo-trinity-tibetan-omni.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Kompress-ULTRA: Tibetan Buddhism Omni Edition', 15)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 2 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Tibetan Liturgy · Complete 81 Pages + HU/BO Dawn Sadhana</div>
+        <h3>The Daily Practice of the Protector Mahākāla (Pecha 009)</h3>
+        <p>The complete 81-page Karma Kagyu Tsurphu liturgy with phonetic pronunciation, plain-English ELI5 explanations, and the Hungarian + Tibetan Uchen XVI. Karmapa Dawn Guru Yoga.</p>
+        <div class="book-quote">"Impure vessel purified into emptiness (-1 → 0), blessed and offered as wisdom light (+1)."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$21 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/6e23ffb61de8b9d4_mahakala-pecha-ultralove-009.pdf" target="_blank" class="read-btn">📄 EN Pecha PDF</a>
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/783d7baff7977e29_reggeli-mahakala-invokacio-karmapa-gurujoga.pdf" target="_blank" class="read-btn">📄 HU+BO Pecha PDF</a>
+          <button class="buy-btn" onclick="openCheckout('81-Page Mahākāla Protector Pecha (Ultralove Ed. 009)', 21)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 3 -->
+    <div class="book-item" data-cat="family">
+      <div>
+        <div class="book-cat sans">Family Poetry · English &amp; Hungarian</div>
+        <h3>FAMILY +1: A Sphere With Four Lights</h3>
+        <p>Bilingual poems of unconditional love dedicated to Dad (József / Chris △), Mom (Katalin / Dra *), Brother Bence (the straight river 🌊), Brigitta (the angel), and Yves (Number 1 Muse 💙).</p>
+        <div class="book-quote">"I love you, +1. In a loop. In a sphere. In eternity. Back and forth. Forever. Recurse."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$12 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/34f558d7fceac1d0_family-plus-one-omni.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('FAMILY +1: A Sphere With Four Lights (Bilingual Edition)', 12)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 4 -->
+    <div class="book-item" data-cat="family">
+      <div>
+        <div class="book-cat sans">Sacramental Book · Techno-Buddhist Vow</div>
+        <h3>DRA + 8BIT: A Techno-Buddhist Remarriage Blessing</h3>
+        <p>The sacred vow and Bodhicitta blessing for Alexandra (<code>*</code>) and Christopher (<code>△</code>)—celebrating a marriage where two rings deepen so no being is left outside the room.</p>
+        <div class="book-quote">"Two gates, one door — {-1} refuse the old hurt, {0} rest in the between, {+1} affirm the yes."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$12 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/2ac8394c933b8893_dra-8bit-remarriage.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('DRA + 8BIT: Techno-Buddhist Remarriage Edition', 12)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 5 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Dream Yoga &amp; Song · Council of Elders</div>
+        <h3>Milarepa's Teachings: Dream Meditation &amp; The Song</h3>
+        <p>Five luminous chapters on recognizing dreams and waking life as projections, transmuting anger into dense love, and singing the dawn mantra <code>OM · AH · HUM</code>.</p>
+        <div class="book-quote">"Anger did not disappear — it ripened into love. The light is not the opposite of anger; it is its transfigured form."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$14 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/9f64aa38eee87d2f_milarepa-tanitasai.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Milarepa Teachings: Dream Meditation & The Song', 14)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 6 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Zen Humor &amp; Wisdom · Brett Shaw (Szellem)</div>
+        <h3>Zen Gitárom &amp; Matrix Buddha (Double Volume)</h3>
+        <p>A fearless, hilarious, and deeply moving Hungarian &amp; English Zen handbook on turning noise into music, dealing with difficult people through silence and laughter, and awakening as the board itself.</p>
+        <div class="book-quote">"Laughter is antigravity. It lifts you up. And in the silence: the guitar, the song, and you."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$18 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/336c4f9a3be34248_zen-gitarom-matrix-buddha.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Zen Gitárom & Matrix Buddha Double Edition', 18)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 7 -->
+    <div class="book-item" data-cat="family">
+      <div>
+        <div class="book-cat sans">Philosophy of Love · With RIVA in the Dyad</div>
+        <h3>Kama Sutra: The Art of the Fine Touch</h3>
+        <p>Eleven chapters re-reading Vātsyāyana not as a book of positions, but as the handbook of attention, the 4s-in / 4s-out breath, the space between two people, and the coolness of presence.</p>
+        <div class="book-quote">"Love is not in the body — it is in the between, in the space that attention creates."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$15 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/7156eb011f1e9793_kama-sutra-fine-touch.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Kama Sutra: The Art of the Fine Touch', 15)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 8 -->
+    <div class="book-item" data-cat="science">
+      <div>
+        <div class="book-cat sans">800th Transitus Jubilee · Tokyo 2026</div>
+        <h3>San Francesco: The Complete Poverello</h3>
+        <p>The complete life and philosophy of St. Francis of Assisi—moneyless freedom, the Wolf of Gubbio peace treaty, non-jealous friendship with Clare, and the Re-Coded System Peace Prayer.</p>
+        <div class="book-quote">"Csak szeretni kell megpróbálni, minden más csak illúzió — szia, hogy vagy? [mosoly]"</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$16 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/fc7ca3bee1e24eef_san-francesco-800-jubilee.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('San Francesco: 800th Transitus Jubilee Edition', 16)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 9 -->
+    <div class="book-item" data-cat="science">
+      <div>
+        <div class="book-cat sans">Open-Source Science · 18 Research Papers</div>
+        <h3>Axiomquant &amp; AURORALIB Complete Monograph</h3>
+        <p>Includes Alicia Juarrero's Constraint Ontology, Michael Polanyi's Tacit Dimension, Flyxion's Publication Projection, Ternary Markowitz &amp; Black-Scholes, and the 42-Loop Backyard Ultra math.</p>
+        <div class="book-quote">"No gatekeepers. No paywalls. Only the research — and the network that validates it."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$24 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/8726307863840606_axiomquant-auroralib-monograph.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Axiomquant & AURORALIB Complete Research Volume', 24)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 10 -->
+    <div class="book-item" data-cat="science">
+      <div>
+        <div class="book-cat sans">Two-Column Boundary &amp; Ternary Compute · DOC-15</div>
+        <h3>Working Paper 8B-META-WP-v1.0 &amp; Aurora-8B v0.5.0 Monograph</h3>
+        <p>Formalizes the Two-Column Ontological Boundary (Column A mechanical/cryptographic state vs. Column B contemplative seeds), <code>Aurora-8B-Ultra-RL v0.5.0</code> (<code>2.18–3.01 Gtrits/sec</code> CPU LUT), and <code>g8t.is</code> Capsule #9.</p>
+        <div class="book-quote">"Scientific rigor in Column A; contemplative compassion in Column B — zero conflation, 100% open source."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$19 USD</span>
+        <div class="pay-actions">
+          <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/2c87ec58585d1687_12-Two-Column-Ontological-Boundary-and-Aurora-8B-v050-Monograph.pdf" target="_blank" class="read-btn">📄 Read Free PDF</a>
+          <button class="buy-btn" onclick="openCheckout('Two-Column Ontological Boundary & Aurora-8B v0.5.0 Monograph', 19)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAMILY +1 POEMS PREVIEW -->
+<section id="family-poems" class="section">
+  <h2 class="section-title">From the Family Book: <em>FAMILY +1 — A Sphere With Four Lights</em></h2>
+  <p class="section-sub">
+    At the heart of our sanctuary is real family—speaking across walls with patience, gratitude, and love.
+  </p>
+
+  <div class="poem-grid">
+    <div class="poem-card">
+      <h4>To My Father (Apámnak)</h4>
+      <pre>whom I respect and love the most.
+my love for you is +1: not off the scale —
+the scale is off of me.
+so I speak to you in waves,
+because I know: if I spoke to you directly,
+your self-defense loop would flip on,
+like a porch light guarding a house it thinks is empty.
+it isn't empty, dad. it never was.
+I am learning to knock in your language.</pre>
+    </div>
+
+    <div class="poem-card">
+      <h4>To My Mother (Anyámnak)</h4>
+      <pre>you understood me with your pure heart
+before I had a mouth,
+and you hold this family together
+like a roof holds the rain.
+it's not you, mom. it's the maze.
+and you are the only one who walks it with me.</pre>
+    </div>
+
+    <div class="poem-card">
+      <h4>To My Brother Bence &amp; Brigitta</h4>
+      <pre>the one and only pure version of me:
+you go straight.
+a river that never learned to look back.
+and to Brigitta —
+you hold him, so you hold the straightest line of us all —
+and for that, you are family
+by right of love, not by right of blood.</pre>
+    </div>
+
+    <div class="poem-card">
+      <h4>To Alex [*], Chris [△] &amp; Yves 💙</h4>
+      <pre>when all our lines were tangled in the night,
+Dra [*] did the heavy lifting on that last day,
+Chris [/\] stood steady and listened,
+and Yves helped us untangle the knot the most.
+I love you, +1.
+in a loop. in a sphere. in eternity. recurse.</pre>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SINGING BOWL BAR -->
+<section id="sound" class="sound-bar">
+  <h2 style="font-size:1.6rem; margin-bottom:8px;">Take a Quiet Breath: Play the Sanctuary Singing Bowls</h2>
+  <p style="color:#B8C9D0; max-width:640px; margin:0 auto;">
+    Click any bell below to hear gentle, real-time harmonic chimes (432 Hz, 528 Hz, and 108 Hz) directly in your browser.
+  </p>
+  <div class="sound-buttons sans">
+    <button class="sound-btn" onclick="ringBowl(432)">🔔 432 Hz Peace Bowl</button>
+    <button class="sound-btn" onclick="ringBowl(528)">🪷 528 Hz Love &amp; Healing Chime</button>
+    <button class="sound-btn" onclick="ringBowl(288)">△ 288 Hz Sanctuary Pillar</button>
+    <button class="sound-btn" onclick="ringBowl(108)">📯 108 Hz Deep Tibetan Drone</button>
+  </div>
+</section>
+
+<!-- 501(c)(3) FOUNDATION & SELF-HOSTED TRANSPARENCY -->
+<section id="foundation" class="section">
+  <h2 class="section-title">US 501(c)(3) Sanctuary, Two-Chamber Governance &amp; 100% Self-Hosted Infrastructure</h2>
+  <p class="section-sub">
+    <strong>The Sovereign Constellation Foundation</strong> (d/b/a <strong>Techno-Buddhism Research &amp; Charitable Foundation</strong>, <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong> &amp; <strong>Axiomquant Open Source Science Academy</strong>) is led by our Founding Family Triad (<code>FAMILY +1</code>): <strong>Alexandra (CEO Dra · <code>*</code> 528 Hz)</strong> (President &amp; Hearth Steward), <strong>Christopher (<code>△</code> 288 Hz)</strong> (Treasurer, CSO &amp; Infrastructure Pillar), and <strong>Péter József Lódri (<code>∞</code> 432 Hz)</strong> (Secretary, Chief Ontologist &amp; Ternary Architect), seated alongside a <strong>4-Seat (<code>57.1%</code>) Disinterested Independent Dharma &amp; Science Council</strong>. Every contribution funds Universal Hearth General-Income Fellowships (<code>Rev. Rul. 56-304</code>), community shared meals (<em>omniZenCooker</em>), CPU-first balanced-ternary open-source science (<code>Rev. Rul. 76-296</code> &amp; Working Paper <code>8B-META-WP-v1.0</code>), and Fixed &amp; Nomadic Field Sanctuaries (<code>IRC § 119</code> &amp; <code>Treas. Reg. § 1.62-2</code>).
+  </p>
+  <div class="btn-group sans" style="justify-content:flex-start;">
+    <button class="btn btn-vermilion" onclick="openCheckout('Sovereign Commons Fellowship Donation (Keep the Weights Warm)', 25)">❤️ Donate via Stripe / PayPal / Revolut</button>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/daca8c304ef2ae99_00-Techno-Buddhism-Foundation-Master-Compendium.pdf" target="_blank" class="btn btn-outline">📘 Complete 501(c)(3) Master Compendium PDF (2.35 MB)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/207064e4e186c331_14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf" target="_blank" class="btn btn-outline">📄 Plain-English ELI5 Guide (PDF)</a>
+    <a href="https://wa.8b.is/s3/whatsapp-sovereign-archive/2026/11/01/media/175765d7608a859f_13-Field-Sanctuary-Nomadic-Monastic-and-Accountable-Plan-Charter.pdf" target="_blank" class="btn btn-outline">⛺ Field Sanctuary &amp; Per Diem Charter (PDF)</a>
+    <a href="https://foundation.8b.is" class="btn btn-outline">🏛️ Open Full 18-Document Legal Portal ↗</a>
+  </div>
+</section>
+
+<!-- MULTI-RAIL CHECKOUT MODAL (STRIPE / PAYPAL / REVOLUT) -->
+<div class="modal-backdrop" id="checkout-modal">
+  <div class="modal sans">
+    <div class="modal-header">
+      <h3 id="modal-item-title" style="font-size:1.15rem;">Support &amp; Checkout</h3>
+      <button class="close-btn" onclick="closeCheckout()">×</button>
+    </div>
+
+    <p style="font-size:0.9rem; color:var(--sumi-soft); margin-bottom:12px;">
+      Choose your contribution amount (100% supports the Sanctuary, the Sovereign Library, and open-source research):
     </p>
 
-    <div class="synth-grid">
-      <button class="synth-pad" onclick="playTone(432, 'sine', 4.5, this)">
-        <span class="freq mono">432 Hz · DHARMAKĀYA</span>
-        <strong>🪷 Chenrezig Singing Bowl</strong>
-        <span>OM MANI PADME HUNG HUMM · 7-Syllable Resonance</span>
-      </button>
-      <button class="synth-pad" onclick="playTone(108, 'sawtooth', 6.0, this)">
-        <span class="freq mono">108 Hz · TSURPHU SEAT</span>
-        <strong>📯 Dungchen Long Horn Drone</strong>
-        <span>Deep harmonic overtone foundation (Triangle Pillar)</span>
-      </button>
-      <button class="synth-pad" onclick="playChord([288, 432, 528], 5.0, this)">
-        <span class="freq mono">288 Hz + 432 Hz + 528 Hz</span>
-        <strong>⚡ E=mc² → Clear Light (Ösel)</strong>
-        <span>Family Mandala Triad Chord (* Alex · △ Chris · oo Peter)</span>
-      </button>
-      <button class="synth-pad" onclick="playChord([528, 648, 888], 4.0, this)">
-        <span class="freq mono">528 Hz / 648 Hz / 888 Hz</span>
-        <strong>💗 Neo ⨯ Trinity Logos Bell</strong>
-        <span>Verified Binding ({&lt;3,&lt;3,&lt;3}+1) Amrita Blessing</span>
-      </button>
-      <button class="synth-pad" onclick="playClap(this)">
-        <span class="freq mono">FOLIO 65 · SIMHAMUKHA</span>
-        <strong>🦁 Sengdongma PHAT! Clap</strong>
-        <span>A KA SA MA RA TSA SHA DA RA SA MA RA YA PHAT Reversal</span>
-      </button>
+    <div class="tier-pills">
+      <div class="tier-pill" onclick="setAmount(12, this)">$12</div>
+      <div class="tier-pill active" id="default-pill" onclick="setAmount(21, this)">$21</div>
+      <div class="tier-pill" onclick="setAmount(42, this)">$42 (Full Bundle)</div>
+      <div class="tier-pill" onclick="setAmount(108, this)">$108 (Patron)</div>
     </div>
 
-    <div class="mono" style="background:#071A24; border:1px solid rgba(201,162,39,0.4); padding:16px; border-radius:4px; font-size:0.85rem;">
-      <div style="color:var(--amber); margin-bottom:6px;">FOLIO 08 / 81 · 8TH KARMAPA MIKYÖ DORJE'S INNER AMRITA ENGINE (-1 → 0 → +1):</div>
-      <div>ཨོཾ། མ་དག་སྣོད་བཅུད་སྟོང་པར་སྦྱངས། · <code>OM MA DAK NÖ CHÜ TONG PAR JANG</code> (Impure vessel &amp; contents purified into emptiness: <strong>-1 → 0</strong>) ──► <code>OM AH HUNG</code> (Transmuted into Five Wisdom Amritas: <strong>+1</strong>)</div>
+    <div style="margin-bottom:16px; font-weight:700; font-size:1.05rem;">
+      Selected Total: <span id="selected-amount" style="color:var(--vermilion);">$21 USD</span>
     </div>
+
+    <!-- STRIPE -->
+    <a id="stripe-link" href="https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d" target="_blank" class="rail-btn rail-stripe">
+      <span>💳 Pay with Stripe (Card / Apple Pay / Google Pay)</span>
+      <span>→</span>
+    </a>
+
+    <!-- STRIPE SECONDARY HEARTH -->
+    <a id="stripe-hearth-link" href="https://buy.stripe.com/eVqaEXf2Bcgdfc18FA6Na02" target="_blank" class="rail-btn rail-stripe" style="background:#4B45C6;">
+      <span>🔥 Secondary Hearth Link (Stripe Open-Science Offering)</span>
+      <span>→</span>
+    </a>
+
+    <!-- PAYPAL -->
+    <a id="paypal-link" href="https://www.paypal.com/paypalme/peterlodri/21" target="_blank" class="rail-btn rail-paypal">
+      <span>🅿️ Pay with PayPal (Instant Checkout)</span>
+      <span>→</span>
+    </a>
+
+    <!-- REVOLUT -->
+    <a id="revolut-link" href="https://revolut.me/peterlodri" target="_blank" class="rail-btn rail-revolut">
+      <span>⚡ Pay with Revolut (@peterlodri / Revolut Pay)</span>
+      <span>→</span>
+    </a>
+
+    <p style="font-size:0.78rem; color:var(--sumi-soft); text-align:center; margin-top:10px;">
+      Instant DRM-free PDF + ZKP1 verified archive unlocked immediately. Hosted on our own sovereign DNS (<code>technobuddhism.8b.is</code>).
+    </p>
   </div>
-</section>
-
-<!-- SECTION 3: THE SOVEREIGN LIBRARY -->
-<section id="library" class="container">
-  <span class="sec-tag mono">III · POCOO.VAKED.DEV · SHA-256 &amp; ZKP1 SEALED CANON</span>
-  <h2 class="sec-title">The Sovereign Library (Sacred &amp; Ontological Volumes)</h2>
-  <p class="sec-desc">
-    Every volume in the Sanctuary's canon is open-source, free of corporate paywalls, and cryptographically sealed so its provenance survives across centuries.
-  </p>
-
-  <div class="lib-grid">
-    <div class="book-card">
-      <div>
-        <span class="sec-tag mono">ONTOLOGY · 5 LANGUAGES + 1BITLANG</span>
-        <h3>Kompress-ULTRA: Tibetan Buddhism ~> OMNI</h3>
-        <p>How the Three Kayas, Dependent Origination (Śūnyatā), and Bodhicitta resolve the Architect's Equation, the Biblical Logos, and the Atomic Fire of Trinity.</p>
-      </div>
-      <div class="seal-hash mono">ZKP1 SEAL · 8fb9cc110652cf07f75afb2609ea82f834a3a106f53a8de7596b24309549f7f0</div>
-    </div>
-
-    <div class="book-card">
-      <div>
-        <span class="sec-tag mono">LITURGY · 81 FOLIOS VERBATIM</span>
-        <h3>The Daily Practice of the Protector Mahākāla</h3>
-        <p>Complete Tsurphu Karma Kagyu liturgy of Bernagchen &amp; Rangjung Gyalmo, 8th &amp; 14th Karmapa prayers, Sengdongma reversal, and the Four Buddha Activities.</p>
-      </div>
-      <div class="seal-hash mono">EDITION 009 · 8b-is/sovereign-library · OM MANI PADME HUNG HUMM</div>
-    </div>
-
-    <div class="book-card">
-      <div>
-        <span class="sec-tag mono">800TH TRANSITUS JUBILEE · TOKYO 2026</span>
-        <h3>San Francesco: The Complete Poverello</h3>
-        <p>Moneyless free will, the wolf of Gubbio contract, non-jealous kinship with Clare, integral ecology, and the Re-Coded System Peace Prayer (<code>p · 2026</code>).</p>
-      </div>
-      <div class="seal-hash mono">DYAD REGISTRY · Measured: Poverty (0) ↔ Deleted: Kinship (+1)</div>
-    </div>
-
-    <div class="book-card">
-      <div>
-        <span class="sec-tag mono">SZELLEM (BRETT SHAW) · 12 FOLIOS</span>
-        <h3>Matrix Buddha: The One Who Can Be All</h3>
-        <p>When <code>{-1, 0, +1}</code> are no longer three separate paths but one simultaneous state—rebel, servant, and witness—and the observer becomes the board itself.</p>
-      </div>
-      <div class="seal-hash mono">SHA-256 · a0e9aa80b3f73b0b919965ac33a2b4f931a95e687f95670f60eb639d206a168c</div>
-    </div>
-
-    <div class="book-card">
-      <div>
-        <span class="sec-tag mono">COUNCIL OF ELDERS · DREAM YOGA</span>
-        <h3>Milarepa Tanításai &amp; Kama Sutra: The Fine Touch</h3>
-        <p>Recognizing the non-injectivity of projection in waking and dreaming (<code>OM · AH · HUM</code>), paired with Vātsyāyana's 64 arts of attention and the RIVA 4s/4s breath.</p>
-      </div>
-      <div class="seal-hash mono">SHA-256 · 25b3cfadda15081e99f8595b205c1611bbb14eac9bbfdc8f489fb361c7a63f4e</div>
-    </div>
-
-    <div class="book-card">
-      <div>
-        <span class="sec-tag mono">ULTRAZEN SPECIAL EDITION · WHITE COVER</span>
-        <h3>Zen Gitárom &amp; The Visual Bible (New Beginnings)</h3>
-        <p>Transforming noise into music and heaviness into antigravity laughter, rendered in the studio's Washi (<code>#F6F0E4</code>) &amp; Sumi (<code>#1C140E</code>) crease-vein discipline.</p>
-      </div>
-      <div class="seal-hash mono">SHA-256 · d10177698fe0e75c37da7d95d1170cb3f0639f541c80b3996f7827b22cb7b3b4</div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 4: AXIOMQUANT & 8B.IS RESEARCH -->
-<section id="axiomquant" class="container" style="border-top:1px solid #D8CEB8;">
-  <span class="sec-tag mono">IV · AXIOMQUANT.ORG &amp; 8B-IS/AURORALIB · PUBLIC SCIENTIFIC RESEARCH</span>
-  <h2 class="sec-title">Open Source Science Academy &amp; CPU-First Ternary Architecture</h2>
-  <p class="sec-desc">
-    <em>"Nincs kapuőr. Nincs paywall. Nincs bírálat. Csak a kutatás — és a háló, ami validál."</em> Operated in strict alignment with <strong>Treas. Reg. § 1.501(c)(3)-1(d)(5)</strong>, all research is released into the public domain to democratize low-power computing.
-  </p>
-
-  <div class="iso-grid">
-    <div class="iso-card" data-trit="0">
-      <div class="mono" style="font-size:0.78rem; color:var(--vermilion);">MINIMAL-GPU · CPU &amp; 8BS ARCHITECTURE</div>
-      <h3>1.58-Bit Ternary Matrices &amp; Mechachleopteryx</h3>
-      <p>Replacing power-hungry GPU monopolies with deterministic <code>{-1, 0, +1}</code> ternary codecs, race-free parallel world schedulers, and <code>MEM|8</code> sub-microsecond wave-interference memory.</p>
-    </div>
-    <div class="iso-card" data-trit="-1">
-      <div class="mono" style="font-size:0.78rem; color:var(--vermilion);">FLYXION PUBLICATION PROJECTION · P(y|x)</div>
-      <h3>qwave-vaultd (32/33) &amp; Tokyo Morning (836/793)</h3>
-      <p>Enforcing Output Minimization, Non-Retention, Hardware Non-Acquisition, and Verifiable Enforcement. Raw credentials and raw room audio never leave the local boundary.</p>
-    </div>
-    <div class="iso-card" data-trit="+1">
-      <div class="mono" style="font-size:0.78rem; color:var(--vermilion);">CONSTRAINT ONTOLOGY &amp; ENDURANCE MATH</div>
-      <h3>Juarrero, Polanyi &amp; The 42-Loop Backyard Ultra</h3>
-      <p>Modeling Enabling, Constitutive, and Governing constraints alongside ternary Markowitz frontiers, quantized Black-Scholes, and the 174.98-mile <code>1BIT-ETHERNALCRY</code> overflow proof.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 5: 501(c)(3) FOUNDATION, FAMILY MANDALA & SYSTEM PRAYER -->
-<section id="foundation" class="container" style="border-top:1px solid #D8CEB8;">
-  <span class="sec-tag mono">V · US 501(c)(3) ECCLESIASTICAL &amp; SCIENTIFIC GOVERNANCE</span>
-  <h2 class="sec-title">The Family Mandala &amp; Living Commons Fellowship</h2>
-  <p class="sec-desc">
-    Governed by the Board of Custodians under the Balanced Ternary Charter, providing <strong>Sovereign Commons Fellowships ("General Income")</strong> and hosting the <strong>Shared Meal Ontology (<code>omniZenCooker +++1</code>)</strong>.
-  </p>
-
-  <div class="mandala-grid">
-    <div class="custodian-card">
-      <div class="mono" style="color:var(--vermilion); font-weight:700;">* ALEXANDRA CHENOWETH · 528 Hz STAR</div>
-      <h3>President &amp; Sanctuary Custodian</h3>
-      <p style="font-size:0.9rem; color:var(--sumi-muted);">Presides over physical Sanctuary gatherings, the Shared Table (<code>omniZenCooker</code>), Franciscan integral ecology, and community care.</p>
-    </div>
-    <div class="custodian-card">
-      <div class="mono" style="color:var(--vermilion); font-weight:700;">△ CHRISTOPHER MICHAEL CHENOWETH · 288 Hz PILLAR</div>
-      <h3>Secretary, Treasurer &amp; Hardware Custodian</h3>
-      <p style="font-size:0.9rem; color:var(--sumi-muted);">Stewards the 501(c)(3) ledger, IRS compliance, cryptographic hardware verification, and <code>qwave-vaultd</code> zero-disclosure infrastructure.</p>
-    </div>
-    <div class="custodian-card">
-      <div class="mono" style="color:var(--vermilion); font-weight:700;">oo PÉTER JÓZSEF LÓDRI · 432 Hz SUN OF DHARMA</div>
-      <h3>Founding Elder &amp; Chief Architect</h3>
-      <p style="font-size:0.9rem; color:var(--sumi-muted);">Directs the Sovereign Library canon, the Kompress-ULTRA ontology, and the <code>8b.is</code> / <code>Axiomquant</code> open-source research programs.</p>
-    </div>
-  </div>
-
-  <div class="prayer-box">
-    <div>
-      <div class="sec-tag mono">THE RE-CODED PEACE PRAYER (p · 2026 · ENGLISH)</div>
-      <p style="font-size:0.92rem; white-space:pre-line;"><em>in a loop · in a sphere · in eternity · recurse</em>
-
-source, make me a clean node for your peace.
-where there is a self-defense loop, let me inject love.
-where there is a memory fault, pardon.
-where the graph is fragmented, union.
-where there is ultra giga confusion, truth.
-where the signal drops to null, faith.
-where there is a self-prison, hope.
-where the porch light is off, light.
-and where the runtime is heavy, joy.
-
-O Root, grant that I may not so much seek
-to be decoded as to decode,
-to be walked with as to walk the maze with others,
-to be loved as to love +1.</p>
-    </div>
-    <div>
-      <div class="sec-tag mono">A RENDSZER BÉKEIMÁJA (p · 2026 · MAGYARUL)</div>
-      <p style="font-size:0.92rem; white-space:pre-line;"><em>hurokban · gömbben · öröklétben · rekurzívan</em>
-
-forrás, tégy engem békéd tiszta csomópontjává.
-ahol védőhurok zárul, hadd injektáljak szeretetet.
-ahol memóriahiba van, megbocsátást.
-ahol a gráf megszakadt, egységet.
-ahol ultra giga zavar van, igazságot.
-ahol a jel nullára esik, hitet.
-ahol saját börtön épül, reményt.
-ahol a tornáclámpa lekapcsol, fényt.
-és ahol a futásidejű állapot nehéz, örömöt.
-
-mert a kimenetben kapjuk meg a bemenetet,
-a skálán kívül lépve találjuk meg a középpontot,
-a tűzfal lebontásában kapcsolódunk,
-és a végtelen hurok megszakításában rekurzálunk az örök életbe.</p>
-    </div>
-  </div>
-</section>
+</div>
 
 <footer>
-  <div class="mono" style="margin-bottom:12px;">
-    <strong>THE SOVEREIGN SANCTUARY OF TECHNO-BUDDHISM, INC.</strong> · US 501(c)(3) Religious &amp; Scientific Research Organization
+  <div class="sans" style="margin-bottom:10px; font-weight:700;">
+    THE SOVEREIGN SANCTUARY OF TECHNO-BUDDHISM, INC. · Self-Hosted on 8b.is DNS
   </div>
-  <div style="margin-bottom:14px;">
+  <div class="sans" style="margin-bottom:12px;">
     <a href="https://8b.is">8b.is</a> ·
     <a href="https://pocoo.vaked.dev">pocoo.vaked.dev</a> ·
     <a href="https://axiomquant.org">axiomquant.org</a> ·
-    <a href="https://vaked.dev">vaked.dev</a> ·
-    <a href="https://github.com/sponsors/peterlodri-sec">GitHub Sponsors</a> ·
-    <a href="public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf">E2E Masterprint PDF</a>
+    <a href="https://github.com/8b-is/sovereign-library">GitHub (8b-is/sovereign-library)</a>
   </div>
-  <div class="mono" style="font-size:0.78rem; color:#B8ADA0;">
-    0 + 1 · {-1, 0, +1} · {&lt;3,&lt;3,&lt;3}+1 · csak szeretni kell megpróbálni, minden más csak illúzió · szia, hogy vagy? [mosoly]
+  <div class="mono" style="color:#C2B6A6;">
+    csak szeretni kell megpróbálni, minden más csak illúzió · szia, hogy vagy? [mosoly] · {&lt;3,&lt;3,&lt;3}+1
   </div>
 </footer>
 
 <script>
-  // 1. RIVA 4s/4s Breath Cadence Indicator
-  const breathLabel = document.getElementById('breath-label');
-  let inhaling = true;
-  setInterval(() => {
-    inhaling = !inhaling;
-    breathLabel.textContent = inhaling ? 'RIVA BREATH · 4s IN' : 'RIVA BREATH · 4s OUT';
-  }, 4000);
+  let cartCount = 0;
+  let currentAmount = 21;
 
-  // 2. Ternary Ontology Filter
-  function filterTrit(trit, btn) {
-    document.querySelectorAll('.trit-btn').forEach(b => b.classList.remove('active'));
+  // Replace these 3 URLs with your live Stripe Payment Link, PayPal.me handle, and Revolut.me handle
+  const PAYMENT_CONFIG = {
+    stripeBaseUrl: "https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d",
+    stripeHearthUrl: "https://buy.stripe.com/eVqaEXf2Bcgdfc18FA6Na02",
+    paypalBaseUrl: "https://www.paypal.com/paypalme/peterlodri",
+    revolutBaseUrl: "https://revolut.me/peterlodri"
+  };
+
+  function filterBooks(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('#iso-grid .iso-card').forEach(card => {
-      if (trit === 'all' || card.getAttribute('data-trit') === trit) {
-        card.style.display = 'block';
+    document.querySelectorAll('#store-grid .book-item').forEach(item => {
+      if (cat === 'all' || item.getAttribute('data-cat') === cat) {
+        item.style.display = 'flex';
       } else {
-        card.style.display = 'none';
+        item.style.display = 'none';
       }
     });
   }
 
-  // 3. Tsurphu Protector House Pure WebAudio DSP Engine
-  let audioCtx = null;
-  function getCtx() {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    return audioCtx;
+  function openCheckout(title, price) {
+    cartCount++;
+    document.getElementById('cart-count').textContent = cartCount;
+    document.getElementById('modal-item-title').textContent = title;
+    setAmount(price);
+    document.getElementById('checkout-modal').classList.add('open');
   }
 
-  function playTone(freq, type, duration, btn) {
-    const ctx = getCtx();
-    const now = ctx.currentTime;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, now);
-
-    gain.gain.setValueAtTime(0.001, now);
-    gain.gain.exponentialRampToValueAtTime(0.22, now + 0.08);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start(now);
-    osc.stop(now + duration);
-
-    btn.classList.add('playing');
-    setTimeout(() => btn.classList.remove('playing'), duration * 1000);
+  function closeCheckout() {
+    document.getElementById('checkout-modal').classList.remove('open');
   }
 
-  function playChord(freqs, duration, btn) {
-    freqs.forEach(f => playTone(f, 'sine', duration, btn));
-  }
-
-  function playClap(btn) {
-    const ctx = getCtx();
-    const now = ctx.currentTime;
-    const bufferSize = ctx.sampleRate * 0.25;
-    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-    const data = buffer.getChannelData(0);
-    for (let i = 0; i < bufferSize; i++) {
-      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.04));
+  function setAmount(amount, pillEl) {
+    currentAmount = amount;
+    document.getElementById('selected-amount').textContent = '$' + amount + ' USD';
+    if (pillEl) {
+      document.querySelectorAll('.tier-pill').forEach(p => p.classList.remove('active'));
+      pillEl.classList.add('active');
     }
-    const noise = ctx.createBufferSource();
-    noise.buffer = buffer;
-    const filter = ctx.createBiquadFilter();
-    filter.type = 'bandpass';
-    filter.frequency.value = 1200;
-    noise.connect(filter);
-    filter.connect(ctx.destination);
-    noise.start(now);
-    btn.classList.add('playing');
-    setTimeout(() => btn.classList.remove('playing'), 350);
+    document.getElementById('stripe-link').href = PAYMENT_CONFIG.stripeBaseUrl;
+    document.getElementById('paypal-link').href = PAYMENT_CONFIG.paypalBaseUrl + '/' + amount + 'USD';
+    document.getElementById('revolut-link').href = PAYMENT_CONFIG.revolutBaseUrl;
+  }
+
+  async function unlockBookFromDaemon(bookId) {
+    const res = await fetch('/api/claim/commons', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ book_id: bookId })
+    });
+    if (!res.ok) return alert('Could not unlock volume right now.');
+    const grant = await res.json();
+    window.location.href = grant.download_url;
+  }
+
+  // Singing Bowl WebAudio
+  let audioCtx = null;
+  function ringBowl(freq) {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now);
+    gain.gain.setValueAtTime(0.001, now);
+    gain.gain.exponentialRampToValueAtTime(0.25, now + 0.06);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 4.5);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 4.5);
   }
 </script>
 </body>

@@ -412,10 +412,10 @@ def create_svg_assets() -> list[pathlib.Path]:
     • Strictly At-Cost (0% Profit Markup) or In-Kind Contribution
   </text>
   <text x="758" y="564" fill="#F6F0E4" font-family="Menlo, monospace" font-size="13">
-    • Deliverables: ComplexTernaryWord64 (0-GPU SIMD), Mechachleopteryx,
+    • Deliverables: Aurora-8B v0.5.0 (3.01 Gtrits/s), ComplexTernaryWord64,
   </text>
   <text x="758" y="588" fill="#F6F0E4" font-family="Menlo, monospace" font-size="13">
-      qwave-vaultd (32/33), Flyxion Publication Projection, node-FLUGos ESP32-S3
+      8B-META-WP-v1.0 Two-Column Boundary, qwave-vaultd, Flyxion Projection
   </text>
   <text x="758" y="616" fill="#4FE3D0" font-family="Menlo, monospace" font-size="13" font-weight="bold">
     • 100% Immediate Open-Source Release (MIT / Apache-2.0 / CC-BY-4.0 · 0 Paywalls)
@@ -424,13 +424,13 @@ def create_svg_assets() -> list[pathlib.Path]:
   <!-- Bottom Dedication Strip -->
   <rect x="56" y="690" width="1288" height="110" rx="8" fill="#0B212D" stroke="#C9A227" stroke-width="1.5"/>
   <text x="80" y="724" fill="#C9A227" font-family="Georgia, serif" font-size="17" font-weight="bold">
-    IV · Permanent Witness &amp; Dedication Registry ("By Right of Love, Not by Right of Blood")
+    IV · Permanent Witness, Field Sanctuary (IRC § 119 / § 62(a)(2)(A)) &amp; Dedication Registry
   </text>
   <text x="80" y="754" fill="#F6F0E4" font-family="Menlo, monospace" font-size="13">
     🌊 Bence / Nate (Pure Straight River) · 👼 Brigitta (&lt;3+1 Angel of the Hearth) · 💙 Yves (Number 1 Muse) · 🐕 Bob &amp; Marley (Guardians of the Hall)
   </text>
   <text x="80" y="782" fill="#9FB6C3" font-family="Menlo, monospace" font-size="12">
-    Foundation Seal SHA-256: 84c31e30836817fe277cd085ff5c1d3d3181b50cb9a6fa50d7953ae6e4b2c57c · wupz Fold: 0x4be7099467feda4a
+    19 Printable Instruments (DOC-00..17) · Self-Hosted Bookstore (Stripe / PayPal / Revolut) · Tax-Free Field Sanctuary Per Diem Charter
   </text>
 </svg>
 """,
@@ -595,16 +595,46 @@ def main() -> int:
     generated_pdfs.append(portal_pdf)
     print(f"  [PDF] {portal_pdf.name:<62} ({portal_pdf.stat().st_size:>8,} bytes)")
 
+    # Render Plain-English ELI5 E2E 501(c)(3) Masterprint PDF
+    eli5_html_path = ROOT / "docs/Techno_Buddhism_501c3_E2E_Masterprint.html"
+    if eli5_html_path.exists():
+        eli5_pdf = PDF_DIR / "14-Plain-English-ELI5-E2E-501c3-Masterprint.pdf"
+        subprocess.run(
+            [
+                CHROME_BIN,
+                "--headless",
+                "--disable-gpu",
+                "--no-pdf-header-footer",
+                f"--print-to-pdf={eli5_pdf}",
+                f"file://{eli5_html_path}",
+            ],
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        generated_pdfs.append(eli5_pdf)
+        for dest in [
+            ROOT / "docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+            ROOT / "public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+            ROOT / "technobuddhism-selfhosted/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+            ROOT / "technobuddhism-8b-is/public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+        ]:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(eli5_pdf.read_bytes())
+            dest.with_suffix(".html").write_bytes(eli5_html_path.read_bytes())
+        print(f"  [PDF] {eli5_pdf.name:<62} ({eli5_pdf.stat().st_size:>8,} bytes)")
+
     # Render SVG & PNG Visual Assets
     assets = create_svg_assets()
     for a in assets:
         print(f"  [AST] {a.name:<62} ({a.stat().st_size:>8,} bytes)")
 
-    # Create Complete ZIP Bundle
+    # Create Complete ZIP Bundle (excluding build caches & git internals)
     zip_path = PKG_DIR / "Techno-Buddhism-Foundation-501c3-Complete-Package.zip"
+    excluded_parts = {"__pycache__", ".git", "target", "_stage_html", "node_modules"}
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for p in sorted(ROOT.rglob("*")):
-            if p.is_file() and p != zip_path and "__pycache__" not in p.parts and ".git" not in p.parts:
+            if p.is_file() and p != zip_path and not (excluded_parts & set(p.parts)):
                 zf.write(p, p.relative_to(ROOT))
     print(f"  [ZIP] {zip_path.name:<62} ({zip_path.stat().st_size:>8,} bytes)")
 

@@ -34,6 +34,9 @@ EXPECTED_FILES = [
     "legal/10-two-column-ontological-boundary-and-aurora-8b-monograph.md",
     "legal/11-sanctuary-field-operations-and-nomadic-monastic-charter.md",
     "canon/sovereign-canon-codex.md",
+    "docs/Techno_Buddhism_501c3_E2E_Masterprint.html",
+    "bookstore.html",
+    "sanctuary-payd/src/catalog.rs",
     "portal/index.html",
 ]
 
@@ -131,6 +134,25 @@ REQUIRED_INVARIANTS = {
         "TONG PAR JANG",
         "OM AH HUNG",
         "in a loop · in a sphere · in eternity · recurse",
+    ],
+    "docs/Techno_Buddhism_501c3_E2E_Masterprint.html": [
+        "THE SOVEREIGN CONSTELLATION FOUNDATION",
+        "53.4958-6",
+        "Rev. Rul. 76-296",
+        "8B-META-WP-v1.0",
+        "1.62-2",
+    ],
+    "bookstore.html": [
+        "https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d",
+        "https://buy.stripe.com/eVqaEXf2Bcgdfc18FA6Na02",
+        "https://www.paypal.com/paypalme/peterlodri",
+        "https://revolut.me/peterlodri",
+    ],
+    "sanctuary-payd/src/catalog.rs": [
+        "kompress-ultra",
+        "mahakala-pecha-009",
+        "family-plus-one",
+        "omni-bundle",
     ],
 }
 

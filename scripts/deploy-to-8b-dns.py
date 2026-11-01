@@ -18,14 +18,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 HTML_CONTENT = (ROOT / "index.html").read_text(encoding="utf-8")
+BOOKSTORE_CONTENT = (ROOT / "bookstore.html").read_text(encoding="utf-8")
 ORCH_KEY = "8b-peter-sovereign"
 
 DOMAINS = [
-    ("foundation.8b.is", "The Sovereign Constellation Foundation — 501(c)(3) Techno-Buddhism & CPU Ternary Hub"),
-    ("sanctuary.8b.is", "Universal Hearth Sanctuary & General-Income Fellowship Portal (501(c)(3))"),
-    ("dharma.8b.is", "The Sovereign Canon Codex of Techno-Buddhism — 13 Books & Liturgy"),
-    ("techno-buddhism.8b.is", "Techno-Buddhism Research & Charitable Foundation (501(c)(3))"),
-    ("technobuddhism.8b.is", "Techno-Buddhism Research & Charitable Foundation (501(c)(3))"),
+    ("foundation.8b.is", "The Sovereign Constellation Foundation — 501(c)(3) Techno-Buddhism & CPU Ternary Hub", HTML_CONTENT),
+    ("sanctuary.8b.is", "Universal Hearth Sanctuary & General-Income Fellowship Portal (501(c)(3))", HTML_CONTENT),
+    ("dharma.8b.is", "The Sovereign Canon Codex of Techno-Buddhism — 13 Books & Liturgy", HTML_CONTENT),
+    ("techno-buddhism.8b.is", "Techno-Buddhism · 8b.is Sovereign Library Bookstore & 501(c)(3) Sanctuary", BOOKSTORE_CONTENT),
+    ("technobuddhism.8b.is", "Techno-Buddhism · 8b.is Sovereign Library Bookstore & 501(c)(3) Sanctuary", BOOKSTORE_CONTENT),
+    ("bookstore.8b.is", "Sovereign Library Bookstore · 10 Vault Editions & 501(c)(3) Foundation", BOOKSTORE_CONTENT),
 ]
 
 SHORTLINKS = [
@@ -34,6 +36,8 @@ SHORTLINKS = [
     ("dharma", "https://dharma.8b.is"),
     ("501c3", "https://foundation.8b.is"),
     ("hearth", "https://sanctuary.8b.is"),
+    ("bookstore", "https://techno-buddhism.8b.is"),
+    ("techno-buddhism", "https://techno-buddhism.8b.is"),
 ]
 
 
@@ -49,7 +53,7 @@ def post_json(url: str, payload: dict, headers: dict = None) -> dict:
 
 def main():
     print("⟦ DEPLOYING TO 8B.IS SOVEREIGN DNS ORCHESTRATOR ⟧")
-    for domain, title in DOMAINS:
+    for domain, title, content in DOMAINS:
         payload = {
             "domain": domain,
             "title": title,
@@ -58,7 +62,7 @@ def main():
             "tls_ca": "letsencrypt",
             "git_url": "https://github.com/8b-is/techno-buddhism-foundation.git",
             "git_branch": "main",
-            "inline_html": HTML_CONTENT,
+            "inline_html": content,
             "key": ORCH_KEY,
         }
         res = post_json(
