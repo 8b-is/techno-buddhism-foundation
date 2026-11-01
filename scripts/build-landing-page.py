@@ -377,12 +377,46 @@ DOCUMENTS = [
         "size_str": "139 KB",
         "bytes": 139098,
         "sha256": "89ca2c6ae737ca19e49c3ec3c44b2ae05689b10e0e74fc5f45dc0d98987b89c1",
-        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
-        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/public/docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf",
         "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/docs/Techno_Buddhism_501c3_E2E_Masterprint.html",
         "summary": "Compact executive E2E Masterprint edition summarizing the 501(c)(3) corporate scaffolding, Alexandra & Christopher leadership seats, and the 8b-is LLC CPU balanced-ternary architecture.",
         "tags": ["E2E Masterprint", "technobuddhism.8b.is", "Compact Dossier"],
         "md_key": "00a",
+    },
+    {
+        "id": "13",
+        "code": "DOC-13 · MAHĀKĀLA DAWN PUJA PECHA",
+        "cat": "canon",
+        "featured": False,
+        "title": "13 — Reggeli Mahākála Invokáció & XVI. Karmapa Gurujóga (HU + BO Pecha PDF)",
+        "filename": "reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
+        "size_str": "624 KB",
+        "bytes": 623719,
+        "sha256": "783d7baff7977e291d1d4f6000c2d5e80a2a9b43fc4e1f60f2d980c2f879d1e0",
+        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/book/reggeli-mahakala-invokacio-karmapa-gurujoga/reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/book/reggeli-mahakala-invokacio-karmapa-gurujoga/reggeli-mahakala-invokacio-karmapa-gurujoga.pdf",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/the-daily-practice-of-the-protector-mahakala.md",
+        "summary": "Complete Hungarian + Tibetan Uchen (དབུ་ཅན་) daily liturgical Pecha of the Protector Bernagchen (Black-Cloaked Mahākāla) and XVI. Gyalwa Karmapa Guru Yoga from the 8b-is Sovereign Library.",
+        "tags": ["Mahākāla Puja", "XVI. Karmapa", "Tibetan Uchen + HU", "Liturgical Pecha"],
+        "md_key": "06",
+    },
+    {
+        "id": "14",
+        "code": "DOC-14 · SOVEREIGN VAULT 9-BOOK BUNDLE",
+        "cat": "canon",
+        "featured": False,
+        "title": "14 — Sovereign Library Complete 9-Book Compiled Vault Bundle (ZIP)",
+        "filename": "sovereign-library-complete-bundle.zip",
+        "size_str": "338 KB",
+        "bytes": 338223,
+        "sha256": "a493fb35d8a1969ef3e9e4a47e5eb1fd8c033e4f93e71b1482c81c7fc4606f90",
+        "s3_url": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/sanctuary-payd/vault/sovereign-library-complete-bundle.zip",
+        "gh_pdf": "https://github.com/8b-is/techno-buddhism-foundation/raw/main/sanctuary-payd/vault/sovereign-library-complete-bundle.zip",
+        "gh_md": "https://github.com/8b-is/techno-buddhism-foundation/blob/main/bookstore.html",
+        "summary": "Compiled 9-PDF Sovereign Vault bundle (Architect-Neo-Trinity Tibetan Omni, Axiomquant-Auroralib Monograph, DRA+8BIT, Family+1 Omni, Kama Sutra Fine Touch, Mahākāla Pecha, Milarepa, San Francesco 800 Jubilee, Zen Gitárom + Matrix Buddha).",
+        "tags": ["9-Book Vault ZIP", "sanctuary-payd", "Sovereign Library", "Print PDFs"],
+        "md_key": "06",
     },
 ]
 
@@ -1554,7 +1588,13 @@ HTML_PAGE = f"""<!DOCTYPE html>
               👁 Preview Compendium Inline
             </button>
             <a class="btn btn-ghost" style="background:rgba(255,255,255,0.1);color:#FFF;border-color:rgba(255,255,255,0.25);" href="https://github.com/8b-is/techno-buddhism-foundation/raw/main/package/Techno-Buddhism-Foundation-501c3-Complete-Package.zip">
-              🐙 GitHub Complete ZIP (5.49 MB)
+              🐙 GitHub Complete ZIP (5.53 MB)
+            </a>
+            <a class="btn btn-ghost" style="background:rgba(232,176,92,0.18);color:#FFD166;border-color:#FFD166;" href="https://buy.stripe.com/9B64gzcW3fz49R77p7bMQ0d" target="_blank" rel="noopener">
+              ❤️ Support Sanctuary (Stripe #1)
+            </a>
+            <a class="btn btn-ghost" style="background:rgba(45,212,191,0.15);color:#4FD1C5;border-color:#4FD1C5;" href="https://buy.stripe.com/eVqaEXf2Bcgdfc18FA6Na02" target="_blank" rel="noopener">
+              ✨ Sanctuary Offering (Stripe #2)
             </a>
           </div>
         </div>
@@ -1608,11 +1648,11 @@ HTML_PAGE = f"""<!DOCTYPE html>
 
       <div class="filter-bar">
         <div class="filter-tabs">
-          <button type="button" class="tab-btn active" onclick="filterDocs('all', this)">All Documents (14)</button>
+          <button type="button" class="tab-btn active" onclick="filterDocs('all', this)">All Documents (16)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('compendium', this)">Compendium &amp; Master Plan (3)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('legal', this)">IRS 501(c)(3) Legal &amp; Day-1 Filing (5)</button>
           <button type="button" class="tab-btn" onclick="filterDocs('firewall', this)">8b-is LLC Firewall &amp; Hearth (4)</button>
-          <button type="button" class="tab-btn" onclick="filterDocs('canon', this)">Sovereign Canon &amp; Portal (2)</button>
+          <button type="button" class="tab-btn" onclick="filterDocs('canon', this)">Sovereign Canon &amp; Vault (4)</button>
         </div>
         <input type="search" id="docSearch" class="search-input" placeholder="🔍 Search PDFs, IRS rules, trits, bylaws..." oninput="searchDocs(this.value)" />
       </div>

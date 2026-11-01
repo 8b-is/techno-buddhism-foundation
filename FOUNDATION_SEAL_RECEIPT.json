@@ -9,7 +9,7 @@
   "arms_length_rd_partner": "8b-is LLC (0% profit markup · 100% open-source public dedication)",
   "files_verified": 12,
   "invariants_verified": 73,
-  "total_bytes": 494325,
-  "wupz_64bit_xor_fold": "0xce5a740f1d6c73ad",
-  "foundation_sha256_seal": "9b4210eb73eeda8c68ab9c4d81e798e7d5e898dbe8ea53edbd6294145bcc55f3"
+  "total_bytes": 540976,
+  "wupz_64bit_xor_fold": "0x7c552677aaee450e",
+  "foundation_sha256_seal": "f85a7a7c8e627426486ce3e2b6ecc6dc078b144b3048004dfab213b4aba3b1c5"
 }
