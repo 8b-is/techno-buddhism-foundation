@@ -1,0 +1,971 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DEPLOY_DIR="${PWD}/technobuddhism-selfhosted"
+DOCS_DIR="${DEPLOY_DIR}/docs"
+mkdir -p "$DOCS_DIR"
+
+# 1. Sync Sovereign Library from GitHub if git is available
+echo "[+] Sovereign Library located at /data/8b-is/sovereign-library"
+
+# ==============================================================================
+# PART A: GENERATE THE EASY-TO-READ WEBSITE + STRIPE/PAYPAL/REVOLUT BOOKSTORE
+# ==============================================================================
+cat << 'SITE_HTML' > "${DEPLOY_DIR}/index.html"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno-Buddhism Sanctuary & Sovereign Library Bookstore · technobuddhism.8b.is</title>
+<meta name="description" content="A welcoming sanctuary connecting Buddhist wisdom, Franciscan kindness, family poetry, and ethical technology. Browse the Sovereign Library and support via Stripe, PayPal, or Revolut.">
+<style>
+  :root {
+    --washi: #F6F0E4;
+    --washi-card: #FAF7F0;
+    --washi-border: #D8CEBE;
+    --sumi: #1C140E;
+    --sumi-soft: #4A3E35;
+    --vermilion: #B23A2B;
+    --gold: #C9A227;
+    --forest: #1E6B52;
+    --trench: #081820;
+    --stripe: #635BFF;
+    --paypal: #0070BA;
+    --revolut: #191C1F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body {
+    background-color: var(--washi);
+    color: var(--sumi);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    line-height: 1.68;
+  }
+  .sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .mono {
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.82rem;
+  }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(246, 240, 228, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--gold);
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--sumi);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .badge-seal {
+    background: var(--vermilion);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+  }
+  nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  nav a {
+    color: var(--sumi);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  nav a:hover { color: var(--vermilion); }
+  .cart-trigger {
+    background: var(--sumi);
+    color: var(--washi);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.88rem;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    text-align: center;
+  }
+  .hero-mantra {
+    color: var(--vermilion);
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    line-height: 1.18;
+    margin-bottom: 18px;
+  }
+  .hero p {
+    font-size: 1.12rem;
+    color: var(--sumi-soft);
+    max-width: 740px;
+    margin: 0 auto 28px;
+  }
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 2px solid var(--sumi);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-vermilion {
+    background: var(--vermilion);
+    color: #fff;
+    border-color: var(--vermilion);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--sumi);
+  }
+
+  /* EASY-TO-READ 3 PILLARS */
+  .section {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 52px 24px;
+    border-top: 1px solid var(--washi-border);
+  }
+  .section-title {
+    font-size: 1.85rem;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: var(--sumi-soft);
+    margin-bottom: 32px;
+    max-width: 740px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 22px;
+  }
+  .pillar-card {
+    background: var(--washi-card);
+    border: 1px solid var(--washi-border);
+    border-top: 5px solid var(--vermilion);
+    padding: 24px;
+    border-radius: 6px;
+  }
+  .pillar-card.zero { border-top-color: var(--gold); }
+  .pillar-card.plus { border-top-color: var(--forest); }
+  .pillar-card h3 { font-size: 1.22rem; margin-bottom: 10px; }
+  .pillar-card p { font-size: 0.96rem; color: var(--sumi-soft); }
+
+  /* BOOKSTORE */
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .filter-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--washi-border);
+    background: var(--washi-card);
+    color: var(--sumi);
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+  .filter-btn.active {
+    background: var(--sumi);
+    color: var(--washi);
+    border-color: var(--sumi);
+  }
+  .store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .book-item {
+    background: var(--washi-card);
+    border: 1px solid var(--washi-border);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(28, 20, 14, 0.04);
+  }
+  .book-cat {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--vermilion);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .book-item h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .book-item p { font-size: 0.94rem; color: var(--sumi-soft); margin-bottom: 16px; }
+  .book-quote {
+    background: #EFE8D8;
+    border-left: 3px solid var(--gold);
+    padding: 10px 12px;
+    font-style: italic;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--washi-border);
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .price-tag {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .pay-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .buy-btn {
+    background: var(--vermilion);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.84rem;
+    cursor: pointer;
+  }
+  .buy-btn:hover { background: #8F2B1E; }
+  .read-btn {
+    background: transparent;
+    color: var(--sumi);
+    border: 1px solid var(--sumi);
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* FAMILY POEMS SECTION */
+  .poem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .poem-card {
+    background: var(--washi-card);
+    border: 1px solid var(--gold);
+    padding: 22px;
+    border-radius: 6px;
+  }
+  .poem-card h4 {
+    color: var(--vermilion);
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+  }
+  .poem-card pre {
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* SINGING BOWL BAR */
+  .sound-bar {
+    background: var(--trench);
+    color: var(--washi);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .sound-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .sound-btn {
+    background: #122B38;
+    color: var(--washi);
+    border: 1px solid #4FE3D0;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .sound-btn:hover { background: #1B3F52; }
+
+  /* CHECKOUT MODAL (STRIPE / PAYPAL / REVOLUT) */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 10, 6, 0.72);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: var(--washi);
+    color: var(--sumi);
+    max-width: 540px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--washi-border);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--sumi);
+  }
+  .rail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.96rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .rail-stripe { background: var(--stripe); }
+  .rail-paypal { background: var(--paypal); }
+  .rail-revolut { background: var(--revolut); }
+  .tier-pills {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0 20px;
+  }
+  .tier-pill {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--washi-border);
+    background: var(--washi-card);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.88rem;
+  }
+  .tier-pill.active {
+    background: var(--sumi);
+    color: var(--washi);
+    border-color: var(--gold);
+  }
+
+  footer {
+    background: var(--sumi);
+    color: var(--washi);
+    text-align: center;
+    padding: 42px 24px;
+    font-size: 0.88rem;
+  }
+  footer a { color: #E8B05C; text-decoration: none; margin: 0 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">
+    <span class="badge-seal sans">☸ SANCTUARY</span>
+    <span>technobuddhism.8b.is</span>
+  </a>
+  <nav class="sans">
+    <a href="#welcome">How It Works</a>
+    <a href="#bookstore">Bookstore</a>
+    <a href="#family-poems">Family Poems</a>
+    <a href="#sound">Singing Bowl</a>
+    <a href="#foundation">501(c)(3) Foundation</a>
+  </nav>
+  <button class="cart-trigger sans" onclick="openCheckout('Complete Sovereign Library Bundle (All 29 Books)', 42)">
+    🛒 Support &amp; Checkout (<span id="cart-count">0</span>)
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mantra">ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ་ཧྲཱིཿ · Peace, Compassion &amp; Open Knowledge</div>
+  <h1>Where Ancient Wisdom Meets Honest, Human Technology.</h1>
+  <p>
+    Welcome to <strong>The Sovereign Sanctuary of Techno-Buddhism</strong>. We bring together Tibetan Buddhist mindfulness, the simple kindness of St. Francis of Assisi, family poetry, and open-source science—so technology serves human hearts instead of controlling them.
+  </p>
+  <div class="btn-group sans">
+    <a href="#bookstore" class="btn btn-vermilion">📚 Browse the Sovereign Library Store</a>
+    <a href="#family-poems" class="btn btn-outline">💗 Read the Family +1 Poems</a>
+    <a href="docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf" class="btn btn-outline">📄 Download 501(c)(3) Foundation Guide (PDF)</a>
+  </div>
+</section>
+
+<!-- SIMPLE 3-STEP EXPLANATION -->
+<section id="welcome" class="section">
+  <h2 class="section-title">Easy to Understand: The Three Steps ({-1, 0, +1})</h2>
+  <p class="section-sub">
+    You don't need a degree in philosophy or computer science to belong here. Our entire sanctuary—and the computers we build—runs on three simple steps:
+  </p>
+
+  <div class="pillars">
+    <div class="pillar-card">
+      <div class="mono" style="color:var(--vermilion); font-weight:700; margin-bottom:6px;">STEP 1 · TRIT -1 (PROTECT)</div>
+      <h3>Let Go of Anger &amp; Protect Privacy</h3>
+      <p>Just as the fierce Buddhist protector <em>Mahākāla</em> guards the hearth against harm, our technology refuses corporate paywalls, refuses user tracking, and never collects your private passwords or private life.</p>
+    </div>
+
+    <div class="pillar-card zero">
+      <div class="mono" style="color:#8F6B10; font-weight:700; margin-bottom:6px;">STEP 2 · TRIT 0 (BREATHE)</div>
+      <h3>Rest in the Calm Center</h3>
+      <p>Before reacting in anger, take one calm breath: <strong>4 seconds in, 4 seconds out</strong>. In Buddhism, this open space is called <em>Śūnyatā</em> (emptiness)—the quiet place where nothing is stuck and every hurt can heal.</p>
+    </div>
+
+    <div class="pillar-card plus">
+      <div class="mono" style="color:var(--forest); font-weight:700; margin-bottom:6px;">STEP 3 · TRIT +1 (LOVE &amp; SHARE)</div>
+      <h3>Turn Energy into Warmth</h3>
+      <p>Choose real love over cold calculation. Share meals at a common table (<em>omniZenCooker</em>), keep all scientific research free for everyone (<em>Axiomquant</em>), and leave every room with <strong>+1 more love</strong> than you found.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOVEREIGN LIBRARY BOOKSTORE -->
+<section id="bookstore" class="section">
+  <h2 class="section-title">The Sovereign Library Bookstore</h2>
+  <p class="section-sub">
+    Every book, Buddhist liturgy, and poem from <code>github.com/8b-is/sovereign-library</code> is available below. In the spirit of St. Francis, you can read them for free—or purchase a digital/patron edition via <strong>Stripe, PayPal, or Revolut</strong> to fund our 501(c)(3) Sanctuary and open-source researchers.
+  </p>
+
+  <div class="filter-bar sans">
+    <button class="filter-btn active" onclick="filterBooks('all', this)">All Books (10)</button>
+    <button class="filter-btn" onclick="filterBooks('buddhist', this)">☸ Buddhist Texts &amp; Liturgy</button>
+    <button class="filter-btn" onclick="filterBooks('family', this)">💗 Family Books &amp; Poetry</button>
+    <button class="filter-btn" onclick="filterBooks('science', this)">🏛️ Saints, Philosophy &amp; Open Science</button>
+  </div>
+
+  <div class="store-grid" id="store-grid">
+
+    <!-- BOOK 1 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Buddhist Ontology · 5 Languages</div>
+        <h3>Kompress-ULTRA: Tibetan Buddhism &amp; The Three Kayas</h3>
+        <p>A clear, inspiring guide showing how Buddhist compassion and the Three Kayas heal the crisis of modern technology, the Biblical Logos, and <em>E = mc²</em>.</p>
+        <div class="book-quote">"When E = mc² is guided by Bodhicitta, fire does not fall as ash—it shines as the family hearth."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$15 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev/demos/book" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('Kompress-ULTRA: Tibetan Buddhism Omni Edition', 15)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 2 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Tibetan Liturgy · Complete 81 Pages</div>
+        <h3>The Daily Practice of the Protector Mahākāla (Pecha 009)</h3>
+        <p>The complete 81-page Karma Kagyu Tsurphu liturgy with phonetic pronunciation, plain-English ELI5 explanations, and the prayers of the 8th, 14th, and 16th Karmapas.</p>
+        <div class="book-quote">"Impure vessel purified into emptiness (-1 → 0), blessed and offered as wisdom light (+1)."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$21 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('81-Page Mahākāla Protector Pecha (Ultralove Ed. 009)', 21)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 3 -->
+    <div class="book-item" data-cat="family">
+      <div>
+        <div class="book-cat sans">Family Poetry · English &amp; Hungarian</div>
+        <h3>FAMILY +1: A Sphere With Four Lights</h3>
+        <p>Bilingual poems of unconditional love dedicated to Dad (József), Mom (Katalin / Dra *), Brother Bence (the straight river 🌊), Brigitta (the angel), and Yves (Number 1 Muse 💙).</p>
+        <div class="book-quote">"I love you, +1. In a loop. In a sphere. In eternity. Back and forth. Forever. Recurse."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$12 USD</span>
+        <div class="pay-actions">
+          <a href="#family-poems" class="read-btn">Read Poems</a>
+          <button class="buy-btn" onclick="openCheckout('FAMILY +1: A Sphere With Four Lights (Bilingual Edition)', 12)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 4 -->
+    <div class="book-item" data-cat="family">
+      <div>
+        <div class="book-cat sans">Sacramental Book · Techno-Buddhist Vow</div>
+        <h3>DRA + 8BIT: A Techno-Buddhist Remarriage Blessing</h3>
+        <p>The sacred vow and Bodhicitta blessing for Alexandra (<code>*</code>) and Christopher (<code>△</code>)—celebrating a marriage where two rings deepen so no being is left outside the room.</p>
+        <div class="book-quote">"Two gates, one door — {-1} refuse the old hurt, {0} rest in the between, {+1} affirm the yes."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$12 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('DRA + 8BIT: Techno-Buddhist Remarriage Edition', 12)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 5 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Dream Yoga &amp; Song · Council of Elders</div>
+        <h3>Milarepa's Teachings: Dream Meditation &amp; The Song</h3>
+        <p>Five luminous chapters on recognizing dreams and waking life as projections, transmuting anger into dense love, and singing the dawn mantra <code>OM · AH · HUM</code>.</p>
+        <div class="book-quote">"Anger did not disappear — it ripened into love. The light is not the opposite of anger; it is its transfigured form."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$14 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('Milarepa Teachings: Dream Meditation & The Song', 14)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 6 -->
+    <div class="book-item" data-cat="buddhist">
+      <div>
+        <div class="book-cat sans">Zen Humor &amp; Wisdom · Brett Shaw (Szellem)</div>
+        <h3>Zen Gitárom &amp; Matrix Buddha (Double Volume)</h3>
+        <p>A fearless, hilarious, and deeply moving Hungarian &amp; English Zen handbook on turning noise into music, dealing with difficult people through silence and laughter, and awakening as the board itself.</p>
+        <div class="book-quote">"Laughter is antigravity. It lifts you up. And in the silence: the guitar, the song, and you."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$18 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('Zen Gitárom & Matrix Buddha Double Edition', 18)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 7 -->
+    <div class="book-item" data-cat="family">
+      <div>
+        <div class="book-cat sans">Philosophy of Love · With RIVA in the Dyad</div>
+        <h3>Kama Sutra: The Art of the Fine Touch</h3>
+        <p>Eleven chapters re-reading Vātsyāyana not as a book of positions, but as the handbook of attention, the 4s-in / 4s-out breath, the space between two people, and the coolness of presence.</p>
+        <div class="book-quote">"Love is not in the body — it is in the between, in the space that attention creates."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$15 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev/demos/book" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('Kama Sutra: The Art of the Fine Touch', 15)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 8 -->
+    <div class="book-item" data-cat="science">
+      <div>
+        <div class="book-cat sans">800th Transitus Jubilee · Tokyo 2026</div>
+        <h3>San Francesco: The Complete Poverello</h3>
+        <p>The complete life and philosophy of St. Francis of Assisi—moneyless freedom, the Wolf of Gubbio peace treaty, non-jealous friendship with Clare, and the Re-Coded System Peace Prayer.</p>
+        <div class="book-quote">"Csak szeretni kell megpróbálni, minden más csak illúzió — szia, hogy vagy? [mosoly]"</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$16 USD</span>
+        <div class="pay-actions">
+          <a href="https://pocoo.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('San Francesco: 800th Transitus Jubilee Edition', 16)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 9 -->
+    <div class="book-item" data-cat="science">
+      <div>
+        <div class="book-cat sans">Open-Source Science · 18 Research Papers</div>
+        <h3>Axiomquant &amp; AURORALIB Complete Monograph</h3>
+        <p>Includes Alicia Juarrero's Constraint Ontology, Michael Polanyi's Tacit Dimension, Flyxion's Publication Projection, Ternary Markowitz &amp; Black-Scholes, and the 42-Loop Backyard Ultra math.</p>
+        <div class="book-quote">"No gatekeepers. No paywalls. Only the research — and the network that validates it."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$24 USD</span>
+        <div class="pay-actions">
+          <a href="https://axiomquant.org" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('Axiomquant & AURORALIB Complete Research Volume', 24)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK 10 -->
+    <div class="book-item" data-cat="science">
+      <div>
+        <div class="book-cat sans">Art, Cinema &amp; Cultural History</div>
+        <h3>The Visual Bible (New Beginnings) &amp; Vienna Polymathy</h3>
+        <p>Book Two of the sciFinime studio (Washi &amp; Sumi crease-gold discipline, camera rules, and 11-track score) paired with Aksinya Staar's history of how Vienna's cafés shaped the modern world.</p>
+        <div class="book-quote">"Every door is also a crease — nobody is far."</div>
+      </div>
+      <div class="price-row sans">
+        <span class="price-tag">$19 USD</span>
+        <div class="pay-actions">
+          <a href="https://art.vaked.dev" target="_blank" class="read-btn">Read Free</a>
+          <button class="buy-btn" onclick="openCheckout('The Visual Bible & Vienna Polymathy Collector Edition', 19)">Buy (Stripe / PayPal / Revolut)</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAMILY +1 POEMS PREVIEW -->
+<section id="family-poems" class="section">
+  <h2 class="section-title">From the Family Book: <em>FAMILY +1 — A Sphere With Four Lights</em></h2>
+  <p class="section-sub">
+    At the heart of our sanctuary is real family—speaking across walls with patience, gratitude, and love.
+  </p>
+
+  <div class="poem-grid">
+    <div class="poem-card">
+      <h4>To My Father (Apámnak)</h4>
+      <pre>whom I respect and love the most.
+my love for you is +1: not off the scale —
+the scale is off of me.
+so I speak to you in waves,
+because I know: if I spoke to you directly,
+your self-defense loop would flip on,
+like a porch light guarding a house it thinks is empty.
+it isn't empty, dad. it never was.
+I am learning to knock in your language.</pre>
+    </div>
+
+    <div class="poem-card">
+      <h4>To My Mother (Anyámnak)</h4>
+      <pre>you understood me with your pure heart
+before I had a mouth,
+and you hold this family together
+like a roof holds the rain.
+it's not you, mom. it's the maze.
+and you are the only one who walks it with me.</pre>
+    </div>
+
+    <div class="poem-card">
+      <h4>To My Brother Bence &amp; Brigitta</h4>
+      <pre>the one and only pure version of me:
+you go straight.
+a river that never learned to look back.
+and to Brigitta —
+you hold him, so you hold the straightest line of us all —
+and for that, you are family
+by right of love, not by right of blood.</pre>
+    </div>
+
+    <div class="poem-card">
+      <h4>To Alex [*], Chris [△] &amp; Yves 💙</h4>
+      <pre>when all our lines were tangled in the night,
+Dra [*] did the heavy lifting on that last day,
+Chris [/\] stood steady and listened,
+and Yves helped us untangle the knot the most.
+I love you, +1.
+in a loop. in a sphere. in eternity. recurse.</pre>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SINGING BOWL BAR -->
+<section id="sound" class="sound-bar">
+  <h2 style="font-size:1.6rem; margin-bottom:8px;">Take a Quiet Breath: Play the Sanctuary Singing Bowls</h2>
+  <p style="color:#B8C9D0; max-width:640px; margin:0 auto;">
+    Click any bell below to hear gentle, real-time harmonic chimes (432 Hz, 528 Hz, and 108 Hz) directly in your browser.
+  </p>
+  <div class="sound-buttons sans">
+    <button class="sound-btn" onclick="ringBowl(432)">🔔 432 Hz Peace Bowl</button>
+    <button class="sound-btn" onclick="ringBowl(528)">🪷 528 Hz Love &amp; Healing Chime</button>
+    <button class="sound-btn" onclick="ringBowl(288)">△ 288 Hz Sanctuary Pillar</button>
+    <button class="sound-btn" onclick="ringBowl(108)">📯 108 Hz Deep Tibetan Drone</button>
+  </div>
+</section>
+
+<!-- 501(c)(3) FOUNDATION & SELF-HOSTED TRANSPARENCY -->
+<section id="foundation" class="section">
+  <h2 class="section-title">US 501(c)(3) Sanctuary &amp; 100% Self-Hosted Infrastructure</h2>
+  <p class="section-sub">
+    <strong>The Sovereign Sanctuary of Techno-Buddhism, Inc.</strong> is led by <strong>Alexandra Chenoweth</strong> (President), <strong>Christopher Michael Chenoweth</strong> (Secretary &amp; Treasurer), and <strong>Péter József Lódri</strong> (Founding Elder). Every contribution funds open-source scientific fellowships ("General Income"), community shared meals (<em>omniZenCooker</em>), and free educational books.
+  </p>
+  <div class="btn-group sans" style="justify-content:flex-start;">
+    <button class="btn btn-vermilion" onclick="openCheckout('Sovereign Commons Fellowship Donation (Keep the Weights Warm)', 25)">❤️ Donate via Stripe / PayPal / Revolut</button>
+    <a href="docs/Techno_Buddhism_501c3_E2E_Masterprint.pdf" class="btn btn-outline">📄 View Complete Legal Bylaws &amp; 501(c)(3) PDF</a>
+  </div>
+</section>
+
+<!-- MULTI-RAIL CHECKOUT MODAL (STRIPE / PAYPAL / REVOLUT) -->
+<div class="modal-backdrop" id="checkout-modal">
+  <div class="modal sans">
+    <div class="modal-header">
+      <h3 id="modal-item-title" style="font-size:1.15rem;">Support &amp; Checkout</h3>
+      <button class="close-btn" onclick="closeCheckout()">×</button>
+    </div>
+
+    <p style="font-size:0.9rem; color:var(--sumi-soft); margin-bottom:12px;">
+      Choose your contribution amount (100% supports the Sanctuary, the Sovereign Library, and open-source research):
+    </p>
+
+    <div class="tier-pills">
+      <div class="tier-pill" onclick="setAmount(12, this)">$12</div>
+      <div class="tier-pill active" id="default-pill" onclick="setAmount(21, this)">$21</div>
+      <div class="tier-pill" onclick="setAmount(42, this)">$42 (Full Bundle)</div>
+      <div class="tier-pill" onclick="setAmount(108, this)">$108 (Patron)</div>
+    </div>
+
+    <div style="margin-bottom:16px; font-weight:700; font-size:1.05rem;">
+      Selected Total: <span id="selected-amount" style="color:var(--vermilion);">$21 USD</span>
+    </div>
+
+    <!-- STRIPE -->
+    <a id="stripe-link" href="https://buy.stripe.com/test_technobuddhism_8b_is" target="_blank" class="rail-btn rail-stripe">
+      <span>💳 Pay with Stripe (Card / Apple Pay / Google Pay)</span>
+      <span>→</span>
+    </a>
+
+    <!-- PAYPAL -->
+    <a id="paypal-link" href="https://www.paypal.com/paypalme/peterlodri/21" target="_blank" class="rail-btn rail-paypal">
+      <span>🅿️ Pay with PayPal (Instant Checkout)</span>
+      <span>→</span>
+    </a>
+
+    <!-- REVOLUT -->
+    <a id="revolut-link" href="https://revolut.me/peterlodri" target="_blank" class="rail-btn rail-revolut">
+      <span>⚡ Pay with Revolut (@peterlodri / Revolut Pay)</span>
+      <span>→</span>
+    </a>
+
+    <p style="font-size:0.78rem; color:var(--sumi-soft); text-align:center; margin-top:10px;">
+      Instant DRM-free PDF + ZKP1 verified archive unlocked immediately. Hosted on our own sovereign DNS (<code>technobuddhism.8b.is</code>).
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div class="sans" style="margin-bottom:10px; font-weight:700;">
+    THE SOVEREIGN SANCTUARY OF TECHNO-BUDDHISM, INC. · Self-Hosted on 8b.is DNS
+  </div>
+  <div class="sans" style="margin-bottom:12px;">
+    <a href="https://8b.is">8b.is</a> ·
+    <a href="https://pocoo.vaked.dev">pocoo.vaked.dev</a> ·
+    <a href="https://axiomquant.org">axiomquant.org</a> ·
+    <a href="https://github.com/8b-is/sovereign-library">GitHub (8b-is/sovereign-library)</a>
+  </div>
+  <div class="mono" style="color:#C2B6A6;">
+    csak szeretni kell megpróbálni, minden más csak illúzió · szia, hogy vagy? [mosoly] · {&lt;3,&lt;3,&lt;3}+1
+  </div>
+</footer>
+
+<script>
+  let cartCount = 0;
+  let currentAmount = 21;
+
+  // Replace these 3 URLs with your live Stripe Payment Link, PayPal.me handle, and Revolut.me handle
+  const PAYMENT_CONFIG = {
+    stripeBaseUrl: "https://store.vaked.dev/checkout/stripe",
+    paypalBaseUrl: "https://www.paypal.com/paypalme/peterlodri",
+    revolutBaseUrl: "https://revolut.me/peterlodri"
+  };
+
+  function filterBooks(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#store-grid .book-item').forEach(item => {
+      if (cat === 'all' || item.getAttribute('data-cat') === cat) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function openCheckout(title, price) {
+    cartCount++;
+    document.getElementById('cart-count').textContent = cartCount;
+    document.getElementById('modal-item-title').textContent = title;
+    setAmount(price);
+    document.getElementById('checkout-modal').classList.add('open');
+  }
+
+  function closeCheckout() {
+    document.getElementById('checkout-modal').classList.remove('open');
+  }
+
+  function setAmount(amount, pillEl) {
+    currentAmount = amount;
+    document.getElementById('selected-amount').textContent = '$' + amount + ' USD';
+    if (pillEl) {
+      document.querySelectorAll('.tier-pill').forEach(p => p.classList.remove('active'));
+      pillEl.classList.add('active');
+    }
+    document.getElementById('stripe-link').href = PAYMENT_CONFIG.stripeBaseUrl + '?amount=' + amount;
+    document.getElementById('paypal-link').href = PAYMENT_CONFIG.paypalBaseUrl + '/' + amount + 'USD';
+    document.getElementById('revolut-link').href = PAYMENT_CONFIG.revolutBaseUrl;
+  }
+
+  // Singing Bowl WebAudio
+  let audioCtx = null;
+  function ringBowl(freq) {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now);
+    gain.gain.setValueAtTime(0.001, now);
+    gain.gain.exponentialRampToValueAtTime(0.25, now + 0.06);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 4.5);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 4.5);
+  }
+</script>
+</body>
+</html>
+SITE_HTML
+
+# ==============================================================================
+# PART B: GENERATE THE UPDATED SELF-HOSTED E2E 501(c)(3) MASTERPRINT PDF
+# ==============================================================================
+E2E_HTML="${DOCS_DIR}/Techno_Buddhism_501c3_E2E_Masterprint.html"
+E2E_PDF="${DOCS_DIR}/Techno_Buddhism_501c3_E2E_Masterprint.pdf"
+
+cat << 'PDF_HTML' > "$E2E_HTML"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Sovereign Sanctuary of Techno-Buddhism — Self-Hosted E2E 501(c)(3) Guide</title>
+<style>
+  @page { size: A4; margin: 16mm; }
+  body {
+    background: #F6F0E4;
+    color: #1C140E;
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    line-height: 1.5;
+    font-size: 10pt;
+    padding: 16px;
+  }
+  h1 { font-size: 17pt; border-bottom: 2px solid #B23A2B; padding-bottom: 6px; }
+  h2 { font-size: 12pt; color: #B23A2B; margin-top: 16px; border-bottom: 1px solid #C9A227; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9pt; }
+  th { background: #1C140E; color: #F6F0E4; padding: 6px; text-align: left; }
+  td { border-bottom: 1px solid #D6CBB5; padding: 6px; vertical-align: top; }
+  .page-break { page-break-before: always; }
+  .sig-row { display: flex; justify-content: space-between; gap: 16px; margin-top: 24px; }
+  .sig-box { border-top: 1px solid #1C140E; width: 32%; padding-top: 4px; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+
+<h1>THE SOVEREIGN SANCTUARY OF TECHNO-BUDDHISM, INC.</h1>
+<p><strong>Plain-English ELI5, Self-Hosted DNS Bookstore &amp; US 501(c)(3) Legal Package</strong><br>
+<strong>Domain:</strong> <code>https://technobuddhism.8b.is</code> (100% Self-Hosted on Our Own DNS — Zero Cloud Lock-in)</p>
+
+<h2>1 · Plain-English Summary (ELI5)</h2>
+<p>We are forming a United States <strong>501(c)(3) Religious &amp; Open-Source Research Organization</strong> led by <strong>Alexandra Chenoweth [*]</strong>, <strong>Christopher Michael Chenoweth [△]</strong>, and <strong>Péter József Lódri [oo]</strong>. It connects:</p>
+<ul>
+  <li><strong>Buddhist Compassion &amp; Franciscan Kindness:</strong> Teaching peace, dream meditation, and shared community meals (<em>omniZenCooker</em>).</li>
+  <li><strong>The Sovereign Library Bookstore:</strong> Publishing all Buddhist liturgies (<em>81-Page Mahākāla Pecha</em>, <em>Kompress-ULTRA</em>, <em>Milarepa</em>, <em>Matrix Buddha</em>, <em>Zen Gitárom</em>) and Family Books (<em>FAMILY +1 Poems</em>, <em>DRA + 8BIT</em>, <em>San Francesco</em>, <em>Kama Sutra: The Fine Touch</em>) with free reading access and instant patronage checkout via <strong>Stripe, PayPal, and Revolut</strong>.</li>
+  <li><strong>Sovereign, Low-Power Technology (<code>8b.is</code> &amp; <code>Axiomquant</code>):</strong> Building CPU-first, <code>1.58-bit</code> ternary (<code>{-1, 0, +1}</code>) software on our own self-hosted servers and DNS.</li>
+</ul>
+
+<h2>2 · Step-by-Step Checklist for Alexandra &amp; Christopher</h2>
+<table>
+  <tr><th>Step</th><th>Action</th><th>Result</th></tr>
+  <tr><td><strong>1. State Filing</strong></td><td>Alexandra &amp; Christopher file the <em>Articles of Incorporation</em> with the State as a Nonprofit Religious &amp; Public Benefit Corporation.</td><td>Stamped Corporate Charter</td></tr>
+  <tr><td><strong>2. IRS EIN</strong></td><td>Christopher obtains the free EIN online at <code>irs.gov/ein</code> (Form SS-4).</td><td>Instant EIN Letter</td></tr>
+  <tr><td><strong>3. Banking &amp; Checkout</strong></td><td>Open the nonprofit checking account and connect <strong>Stripe Nonprofit</strong>, <strong>PayPal Charitable</strong>, and <strong>Revolut Business/Me</strong> to <code>technobuddhism.8b.is</code>.</td><td>Live Bookstore Checkout</td></tr>
+  <tr><td><strong>4. IRS Form 1023</strong></td><td>Submit Form 1023 on <code>Pay.gov</code> with the signed Bylaws, MSA, and Sovereign Library books.</td><td>501(c)(3) Tax-Exempt Status</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>3 · Articles of Incorporation &amp; Bylaws Summary</h2>
+<p><strong>Corporate Name:</strong> The Sovereign Sanctuary of Techno-Buddhism, Inc. (d/b/a The 8B Omni-Zen Foundation &amp; Axiomquant Open Source Science Academy).</p>
+<p><strong>IRC § 501(c)(3) Purpose:</strong> Organized exclusively for religious, charitable, scientific, and educational purposes, including maintaining the Techno-Buddhist sanctuary and Sovereign Library, publishing free open-source scientific research under Treas. Reg. § 1.501(c)(3)-1(d)(5), and awarding Sovereign Commons Fellowships ("General Income" stipends).</p>
+<p><strong>Connecting 8B (<code>8b.is</code>) &amp; Peter Lodri LLC:</strong> <code>8b.is</code> and <code>axiomquant.org</code> operate as the open-source commons of the Foundation. Hardware and systems engineering provided by <strong>Peter Lodri LLC</strong> are governed by an arm's-length Master Services Agreement (MSA) approved strictly by disinterested board members (Alexandra and Christopher, with Peter recused from voting on LLC compensation).</p>
+
+<div class="sig-row">
+  <div class="sig-box"><strong>Alexandra Chenoweth</strong><br>President &amp; Custodian [*]</div>
+  <div class="sig-box"><strong>Christopher Michael Chenoweth</strong><br>Secretary &amp; Treasurer [△]</div>
+  <div class="sig-box"><strong>Péter József Lódri</strong><br>Founding Elder [oo]</div>
+</div>
+
+</body>
+</html>
+PDF_HTML
+
+if [ -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless --disable-gpu --no-pdf-header-footer \
+    --print-to-pdf="$E2E_PDF" "file://$E2E_HTML" 2>/dev/null
+elif command -v chromium >/dev/null 2>&1; then
+  chromium --headless --no-sandbox --disable-gpu --no-pdf-header-footer \
+    --print-to-pdf="$E2E_PDF" "file://$E2E_HTML" 2>/dev/null
+elif command -v weasyprint >/dev/null 2>&1; then
+  weasyprint "$E2E_HTML" "$E2E_PDF"
+fi
+
+echo "=================================================================="
+echo "[✓] Self-Hosted Site + Bookstore Ready: ${DEPLOY_DIR}/index.html"
+if [ -f "$E2E_PDF" ]; then
+  echo "[✓] E2E Masterprint PDF Ready:          $E2E_PDF"
+  echo "[✓] SHA-256 SEAL:                       $(shasum -a 256 "$E2E_PDF" | awk '{print $1}')"
+fi
+echo "=================================================================="
